@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "日新工大第三方客户端 MVP 路线",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1000, 980]
+  },
+  "lanes": [
+    { "id": "product", "label": "产品讨论" },
+    { "id": "governance", "label": "授权与数据边界" },
+    { "id": "engineering", "label": "Flutter 工程" },
+    { "id": "verification", "label": "验证与交付" },
+    { "id": "deferred", "label": "暂缓能力", "variant": "exception" }
+  ],
+  "phases": [
+    { "id": "discovery", "label": "定义", "fromCol": 0, "toCol": 1 },
+    { "id": "proof", "label": "取证", "fromCol": 2, "toCol": 3, "variant": "security" },
+    { "id": "build", "label": "实现", "fromCol": 4, "toCol": 4, "variant": "emphasis" },
+    { "id": "acceptance", "label": "验收", "fromCol": 5, "toCol": 5, "variant": "dashed" }
+  ],
+  "groups": [
+    { "id": "scope_gate", "label": "MVP 范围门", "lane": "product", "fromCol": 0, "toCol": 1, "variant": "emphasis" },
+    { "id": "permission_gate", "label": "授权与安全门", "lane": "governance", "fromCol": 2, "toCol": 3, "variant": "security" },
+    { "id": "implementation", "label": "垂直切片", "lane": "engineering", "fromCol": 3, "toCol": 5, "variant": "dashed" }
+  ],
+  "mainPath": [
+    "goal",
+    "dataset",
+    "source",
+    "permission",
+    "contract",
+    "slice",
+    "acceptance",
+    "decision"
+  ],
+  "nodes": [
+    { "id": "goal", "lane": "product", "col": 0, "type": "frontend", "label": "确认用户价值", "sublabel": "谁在何时查看什么" },
+    { "id": "dataset", "lane": "product", "col": 1, "type": "database", "label": "四类核心数据", "sublabel": "课表·通知·余额·信息" },
+    { "id": "source", "lane": "governance", "col": 2, "type": "external", "label": "接口取证", "sublabel": "来源、字段、频率" },
+    { "id": "permission", "lane": "governance", "col": 3, "type": "security", "label": "落实授权范围", "sublabel": "读取、充值、代理分开", "tag": "已获授权" },
+    { "id": "contract", "lane": "engineering", "col": 4, "type": "backend", "label": "冻结本地契约", "sublabel": "模型、错误、脱敏" },
+    { "id": "slice", "lane": "engineering", "col": 5, "type": "frontend", "label": "完成垂直切片", "sublabel": "请求→解析→页面" },
+    { "id": "acceptance", "lane": "verification", "col": 5, "type": "security", "label": "MVP 验收", "sublabel": "测试、真机、失败态" },
+    { "id": "decision", "lane": "product", "col": 5, "type": "messagebus", "label": "继续或收缩", "sublabel": "以证据决定下一步" },
+    { "id": "fixture", "lane": "engineering", "col": 2, "type": "database", "label": "脱敏样本", "sublabel": "离线开发与测试" },
+    { "id": "auth", "lane": "deferred", "col": 2, "type": "security", "label": "统一身份认证", "sublabel": "SSO、会话、退出" },
+    { "id": "write", "lane": "deferred", "col": 5, "type": "external", "label": "充值交易专项", "sublabel": "订单、支付、回执" }
+  ],
+  "edges": [
+    { "id": "goal_dataset", "from": "goal", "to": "dataset", "variant": "default" },
+    { "id": "dataset_source", "from": "dataset", "to": "source", "variant": "default" },
+    { "id": "source_permission", "from": "source", "to": "permission", "variant": "security" },
+    { "id": "permission_contract", "from": "permission", "to": "contract", "variant": "emphasis" },
+    { "id": "contract_slice", "from": "contract", "to": "slice", "variant": "default" },
+    { "id": "slice_acceptance", "from": "slice", "to": "acceptance", "variant": "emphasis" },
+    { "id": "acceptance_decision", "from": "acceptance", "to": "decision", "variant": "default", "fromSide": "right", "toSide": "right", "route": "outside-right" },
+    { "id": "source_fixture", "from": "source", "to": "fixture", "label": "脱敏保存", "variant": "dashed", "role": "branch" },
+    { "id": "permission_auth", "from": "permission", "to": "auth", "label": "会话前置", "variant": "security", "role": "branch" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "MVP 完成线",
+      "items": [
+        "四类只读数据端到端可用",
+        "读取与充值的授权边界清楚",
+        "无网络、过期数据和字段变化均有失败态"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "当前待确认",
+      "items": [
+        "接口文档、字段和会话方式",
+        "充值是否有沙箱、回调和对账接口",
+        "MVP 的首轮真实验收平台"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "明确不进入首版",
+      "items": [
+        "代存统一身份认证密码",
+        "充值交易先独立设计和验收",
+        "绕过访问控制、风控或验证码"
+      ]
+    }
+  ]
+}

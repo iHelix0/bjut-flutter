@@ -1,0 +1,26 @@
+[
+  {
+    "id": "campus-services",
+    "title": "校园服务",
+    "category": "服务指南",
+    "body": "这里将整理校园卡、图书馆、网络与常用校内服务的入口和使用时间。当前内容为基础占位，待补充学校官方来源。",
+    "updatedAt": "2026-09-01",
+    "sourceUrl": "https://www.bjut.edu.cn/"
+  },
+  {
+    "id": "library",
+    "title": "图书馆信息",
+    "category": "图书馆",
+    "body": "这里将提供图书馆开放时间、座位服务和常用入口。具体时间以学校图书馆最新公告为准。",
+    "updatedAt": "2026-09-01",
+    "sourceUrl": "https://lib.bjut.edu.cn/"
+  },
+  {
+    "id": "campus-links",
+    "title": "常用入口",
+    "category": "入口导航",
+    "body": "这里将集中放置学校门户、教务、图书馆和信息化服务等入口。接入前会为每个入口补充来源和更新时间。",
+    "updatedAt": "2026-09-01",
+    "sourceUrl": "https://www.bjut.edu.cn/"
+  }
+]
