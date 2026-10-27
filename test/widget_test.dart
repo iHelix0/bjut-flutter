@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:bjut_campus/app/app.dart';
+import 'package:bjut_campus/features/information/data/information_repository.dart';
 import 'package:bjut_campus/features/information/presentation/information_page.dart';
 
 void main() {
@@ -26,5 +27,21 @@ void main() {
     expect(find.text('校内信息'), findsOneWidget);
     expect(find.text('校园服务'), findsOneWidget);
     expect(find.text('图书馆信息'), findsOneWidget);
+  });
+
+  testWidgets('信息页刷新不把 Future 返回给 setState', (tester) async {
+    await tester.runAsync(() async {
+      await tester.pumpWidget(const MaterialApp(home: InformationPage()));
+      await InformationRepository().getItems();
+    });
+    await tester.pumpAndSettle();
+    final refresh = tester
+        .widget<RefreshIndicator>(find.byType(RefreshIndicator))
+        .onRefresh;
+    await tester.runAsync(refresh);
+    await tester.pumpAndSettle();
+    expect(find.text('校内信息'), findsOneWidget);
+    expect(find.text('校园服务'), findsOneWidget);
+    expect(tester.takeException(), isNull);
   });
 }

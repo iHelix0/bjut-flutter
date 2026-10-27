@@ -34,7 +34,9 @@ class _SchedulePageState extends State<SchedulePage> {
 
   Future<void> _reload() async {
     final next = _repository.getSchedule();
-    setState(() => _schedule = next);
+    setState(() {
+      _schedule = next;
+    });
     try {
       await next;
     } catch (_) {
@@ -51,10 +53,7 @@ class _SchedulePageState extends State<SchedulePage> {
         physics: const AlwaysScrollableScrollPhysics(),
         padding: const EdgeInsets.fromLTRB(20, 16, 20, 28),
         children: [
-          Text(
-            '课表离线示例',
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
+          Text('课表离线示例', style: Theme.of(context).textTheme.headlineSmall),
           const SizedBox(height: 12),
           const Card(
             child: Padding(

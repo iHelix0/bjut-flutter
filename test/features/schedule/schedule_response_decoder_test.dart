@@ -50,23 +50,26 @@ void main() {
     expect(data.weekdays, ['  opaque-日?  ', '', 'not-in-classes']);
   });
 
-  test('empty lists are valid and no sample count becomes a protocol limit', () {
-    final empty = decoder.decodeData(
-      scheduleFixture('empty_data'),
-      httpStatus: 200,
-    );
-    expect(empty.classes, isEmpty);
-    expect(empty.weekdays, isEmpty);
-    final json = dataJson();
-    final row = json['d']['classes'][0];
-    json['d']['classes'] = List.filled(80, row);
-    json['d']['weekdays'] = List.generate(30, (index) => 'opaque-$index');
-    final data = decoder.decodeData(jsonEncode(json), httpStatus: 200);
-    expect(data.classes, hasLength(80));
-    expect(data.weekdays, hasLength(30));
-    // Repeated course IDs may represent multiple meetings; never deduplicate.
-    expect(data.classes.last.courseId, data.classes.first.courseId);
-  });
+  test(
+    'empty lists are valid and no sample count becomes a protocol limit',
+    () {
+      final empty = decoder.decodeData(
+        scheduleFixture('empty_data'),
+        httpStatus: 200,
+      );
+      expect(empty.classes, isEmpty);
+      expect(empty.weekdays, isEmpty);
+      final json = dataJson();
+      final row = json['d']['classes'][0];
+      json['d']['classes'] = List.filled(80, row);
+      json['d']['weekdays'] = List.generate(30, (index) => 'opaque-$index');
+      final data = decoder.decodeData(jsonEncode(json), httpStatus: 200);
+      expect(data.classes, hasLength(80));
+      expect(data.weekdays, hasLength(30));
+      // Repeated course IDs may represent multiple meetings; never deduplicate.
+      expect(data.classes.last.courseId, data.classes.first.courseId);
+    },
+  );
 
   test('business success depends on numeric e, not localized m text', () {
     final json = dataJson();
@@ -102,11 +105,11 @@ void main() {
       for (final body in [exampleData(), '<html>fictional error</html>']) {
         expect(
           () => decoder.decodeData(body, httpStatus: status),
-          throwsA(failure(ScheduleFailureKind.transport).having(
-            (error) => error.httpStatus,
-            'httpStatus',
-            status,
-          )),
+          throwsA(
+            failure(
+              ScheduleFailureKind.transport,
+            ).having((error) => error.httpStatus, 'httpStatus', status),
+          ),
         );
         expect(
           () => decoder.decodeIndex(body, httpStatus: status),
@@ -116,21 +119,30 @@ void main() {
     });
   }
 
-  test('HTTP 200 does not imply business success; d may be absent on error', () {
-    for (final body in [
-      scheduleFixture('business_error'),
-      jsonEncode({'e': 123, 'm': 'fictional error'}),
-    ]) {
-      for (final decode in [decoder.decodeData, decoder.decodeIndex]) {
-        expect(
-          () => decode(body, httpStatus: 200),
-          throwsA(isA<ScheduleFailure>()
-              .having((error) => error.kind, 'kind', ScheduleFailureKind.business)
-              .having((error) => error.businessCode, 'businessCode', 123)),
-        );
+  test(
+    'HTTP 200 does not imply business success; d may be absent on error',
+    () {
+      for (final body in [
+        scheduleFixture('business_error'),
+        jsonEncode({'e': 123, 'm': 'fictional error'}),
+      ]) {
+        for (final decode in [decoder.decodeData, decoder.decodeIndex]) {
+          expect(
+            () => decode(body, httpStatus: 200),
+            throwsA(
+              isA<ScheduleFailure>()
+                  .having(
+                    (error) => error.kind,
+                    'kind',
+                    ScheduleFailureKind.business,
+                  )
+                  .having((error) => error.businessCode, 'businessCode', 123),
+            ),
+          );
+        }
       }
-    }
-  });
+    },
+  );
 
   for (final fixture in ['malformed', 'missing_fields', 'wrong_type']) {
     test('$fixture fixture produces a safe data failure', () {
@@ -143,7 +155,12 @@ void main() {
 
   test('invalid JSON roots and success envelope fields are rejected', () {
     for (final value in [
-      null, [], 'text', 1, true, {},
+      null,
+      [],
+      'text',
+      1,
+      true,
+      {},
       {'e': '0', 'm': 'ok', 'd': {}},
       {'e': false, 'm': 'ok', 'd': {}},
       {'e': null, 'm': 'ok', 'd': {}},
@@ -165,7 +182,14 @@ void main() {
 
   test('missing or wrong list shapes never silently drop rows', () {
     for (final field in ['classes', 'weekdays']) {
-      for (final value in [null, {}, 'text', 1, [null], [false]]) {
+      for (final value in [
+        null,
+        {},
+        'text',
+        1,
+        [null],
+        [false],
+      ]) {
         final json = dataJson();
         json['d'][field] = value;
         expect(
@@ -183,8 +207,13 @@ void main() {
   });
 
   for (final field in [
-    'course_id', 'course_name', 'location', 'weekday',
-    'lessons', 'teacher', 'week',
+    'course_id',
+    'course_name',
+    'location',
+    'weekday',
+    'lessons',
+    'teacher',
+    'week',
   ]) {
     test('course $field must exist and remain a string', () {
       for (final value in [null, 1, true, [], {}]) {

@@ -1,83 +1,69 @@
 # 候选分支与 CI 状态
 
-日期：2026-10-27。状态：新授权连接已只读核对具备写权限，但执行器 Git 传输仍
-使用原只读身份，获新授权后的一次推送重试仍被远端 HTTP 403 拒绝，已停止。
-**测试分支尚未发布，GitHub Actions 未启动，无 run ID 或通过结果**。
+日期：2026-10-27。状态：测试分支已成功发布并自动触发 Actions；首轮失败已取得
+真实日志，正在提交可恢复问题修复。**尚不宣称最终验证通过**。
 
-## 基线和公开范围
+## 分支、基线与发布
 
-本地候选和远端 `main` 均核对为
-`85c13af15d1b09c250dc340bef5341fbe8422285`；既有候选包的 25 文件摘要全部与
-工作区一致。独立本地分支为 `codex/offline-schedule-ci-20261027`。
+- 分支：[codex/offline-schedule-ci-20261027](https://github.com/iHelix0/bjut-flutter/tree/codex/offline-schedule-ci-20261027)。
+- 首次远端 tip：`727ba2410e4ef9cebbc507f11a0749b320f98cc1`，tree 与原本地
+  `be34bc406ba7bbbb64388ef426717c9a852fa62e` 完全相同。
+- main 仍是 `85c13af15d1b09c250dc340bef5341fbe8422285`，没有合并或 Release。
+- 执行器旧 Git 传输身份曾被 403 拒绝；用户明确配置的新仓库拥有者连接核实为
+  `push:true` 后，通过其正式 Git 数据接口发布。没有转移/创建凭据或继续旧 CLI 推送。
+- 工具不支持覆盖作者/提交者时间字段，远端 SHA 已改变；对应关系及原历史保存
+  说明见 [PUBLICATION.md](PUBLICATION.md)，不把新 SHA 写成原 SHA。
 
-用户新增授权仅覆盖公开独立测试分支、Actions 验证和可恢复问题修复，不覆盖
-修改 main、发布 Release、校园写操作或私人数据访问。本轮将执行器路径、内部
-会话/Library 标识从拟公开文档移除；APK、原始扫描输出、凭据、真实个人响应不
-进入提交。运行日志和私人交接信息保留在仓库外。
+## 首次真实 CI 结果与修复
 
-仓库连接报告 `push:false`；同一配置身份尝试针对上述新分支的 `git push --dry-run`
-被 GitHub 以权限不足、HTTP 403 拒绝（退出码 128）。没有发布任何分支或启动
-Actions；没有在该次拒绝后绕过。该历史失败属于远端授权拒绝，不是自动审批拒绝。
+运行：[40444724804](https://github.com/iHelix0/bjut-flutter/actions/runs/40444724804)，
+事件为 push，head 为上述 `727ba241...`，最终 quality 失败、Android 跳过。
 
-用户随后明确完成连接配置；新连接的仓库拥有者身份已核对 `push:true`，旧连接
-仍只读。已据此完成一次指定测试分支的普通 Git 推送重试，仅使用公开用户名
-提示、不创建或转移凭据。服务器错误仍报告原只读身份，HTTP 403、退出码 128。
-这表示新连接权限与执行器 Git 传输身份不同，不能把 `push:true` 写成推送成功。
-
-重试后只读核对远端仍只有原基线 main，目标分支 Actions 运行数为 0。没有再次
-重试、强推、修改 main 或改凭据。需要将执行器的受支持 Git 连接同步至已授权
-身份，或为它实际使用的身份提供本仓库写权限；不要求用户提供令牌。原本地
-提交历史完整保留在交付 Git bundle 中，不改写历史来掩盖传输阻塞。
-
-## 已准备的工作流
-
-`.github/workflows/candidate.yml` 仅在指定测试分支 push 时自动触发，保留手动触发
-声明；初次运行依赖分支成功发布，不能把配置存在等同于 run 已创建。
-
-- 权限为 `contents: read`，checkout 不持久化凭据，无自动提交或推送、无 secrets。
-- Ubuntu 24.04 上按不可变官方 Flutter revision 安装；不是在本容器改路下载 SDK。
-- quality job 执行 `flutter pub get`、离线工具合成测试、`dart format`、`flutter analyze`
-  和全部 `flutter test`。format/analyze/test 分别记录结果，最终 gate 要求全部成功。
-- formatter 若发现差异会生成可审阅 patch，并使最终检查失败，供后续修复提交；
-  不由 Actions 自动写分支。分析和测试仍会运行，以取得独立失败证据。
-- Android job 依赖 quality 成功；使用 Java 17、SDK 36 / build-tools 36.0.0 /
-  NDK 28.2.13676358，执行 `flutter build apk --debug`。只保留构建摘要，不上传
-  APK 二进制，不签发正式包或 Release。
-- iOS 没有在 Linux 上替代验收；本轮未启动 macOS job、Xcode 或用户 Mac。
-
-## 工具版本来源
-
-2026-10-27 从官方 GitHub refs 核对 stable/tag `3.47.8` 对应
-`737ba8f885dc774b53b442759999a312c9461e4e`，workflow 固定该 SHA 并复核 clone 结果。
-其 [DEPS](https://github.com/flutter/flutter/blob/737ba8f885dc774b53b442759999a312c9461e4e/DEPS)
-指向 Dart revision `416e33b0ffaef062a60ec966bb8c82ed2b83f128`，该 revision 的
-[tools/VERSION](https://github.com/dart-lang/sdk/blob/416e33b0ffaef062a60ec966bb8c82ed2b83f128/tools/VERSION)
-为 stable 3.13.7，满足本项目 Dart `^3.12.2`。这只是源元数据核查，不是本地 SDK
-安装或构建通过。Android SDK/NDK 的候选选择参考同版本
-[FlutterExtension](https://github.com/flutter/flutter/blob/737ba8f885dc774b53b442759999a312c9461e4e/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt)，
-最终兼容性仍需真正 CI 构建确认。
-
-官方 Actions 使用核对后的不可变 revision：
-
-| Action | 版本与 revision |
+| 检查 | 首轮实际结果 |
 |---|---|
-| `actions/checkout` | v6 `d23441a48e516b6c34aea4fa41551a30e30af803` |
-| `actions/setup-java` | v4 `cf277c60eb25467037889841efdb72551f06f6c3` |
-| `actions/upload-artifact` | v4 `ea165f8d65b6e75b540449e92b4886f43607fa02` |
+| 官方固定 Flutter 安装、pub get | 成功：Flutter 3.47.8 / Dart 3.13.7 |
+| Python 合成 ZIP 测试 | 6 项通过 |
+| Dart format | 实际运行，18 文件中 7 文件有格式差异，检查失败 |
+| Flutter analyze | 实际运行，1 个 unnecessary_import，检查失败 |
+| Flutter test | 实际运行，52 通过 / 10 失败 |
+| Android | quality 未通过，跳过；不能声称已构建 |
+| iOS / 真机 / 真实接口 | 未运行 |
 
-## 实际执行边界
+已按日志取回 formatter 的精确补丁。修复刷新赋值箭头闭包把 Future 返回给
+`setState` 的断言（课表及同模式信息页），移除冗余 import，修正窄屏滚动后未
+等待布局的测试，并将真实 asset 测试的 I/O 放入实际异步区。信息页追加同类
+刷新回归。源码修复是否通过必须由下一次 run 确认，不根据静态阅读推断。
 
-| 检查 | 结果 |
+## 工作流与版本来源
+
+`.github/workflows/candidate.yml` 在指定测试分支 push 时运行；仅 `contents: read`，
+checkout 不持久化凭据，无自动提交/推送、无 secrets。quality 独立记录 format、
+analyze、tests 的真实 outcome，最终 gate 要求全部成功；continue-on-error 的
+步骤摘要不能用作通过证据。formatter patch 仅供审阅和后续修复提交。
+
+Android job 依赖 quality 成功，使用 Java 17、SDK 36 / build-tools 36.0.0 /
+NDK 28.2.13676358，执行 `flutter build apk --debug`。仅上传构建 checksum，不
+上传 APK 二进制，不签发正式包。Linux 结果不替代 iOS/Xcode 和设备验收。
+
+官方 Flutter tag 3.47.8 核对为 `737ba8f885dc774b53b442759999a312c9461e4e`，
+workflow 固定此 revision 并复核 clone 结果。其
+[DEPS](https://github.com/flutter/flutter/blob/737ba8f885dc774b53b442759999a312c9461e4e/DEPS)
+指向 Dart `416e33b0ffaef062a60ec966bb8c82ed2b83f128`；其
+[VERSION](https://github.com/dart-lang/sdk/blob/416e33b0ffaef062a60ec966bb8c82ed2b83f128/tools/VERSION)
+为 3.13.7，满足本项目 `^3.12.2`。Android SDK/NDK 选择参考同版本
+[FlutterExtension](https://github.com/flutter/flutter/blob/737ba8f885dc774b53b442759999a312c9461e4e/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt)。
+
+官方 Actions 固定到已核对 revision：
+
+| Action | 版本 / revision |
 |---|---|
-| 原候选 25 文件 SHA256 比对 | 通过 |
-| 离线扫描工具合成测试 | 6 项通过，包含 hash/CRC 拒绝、脱敏、UTF-16LE 偏移 |
-| setup shell 语法 / 补丁空白 | 通过 |
-| Dart format / Flutter analyze / Flutter tests | 未运行；本环境无 SDK、Git 身份不匹配导致远端无 run |
-| Android / iOS 构建 | 未运行 |
-| 原用户 APK 本机全应用扫描 | 未运行；新授权下支持下载重试一次仍失败 |
-| 官方 Flutter manifest 下载 | 新授权下重试一次仍 HTTP 403，已停止 |
+| actions/checkout | v6 `d23441a48e516b6c34aea4fa41551a30e30af803` |
+| actions/setup-java | v4 `cf277c60eb25467037889841efdb72551f06f6c3` |
+| actions/upload-artifact | v4 `ea165f8d65b6e75b540449e92b4886f43607fa02` |
 
-可恢复失败修复要在取得真实日志后进行；目前没有格式化、分析、Flutter 测试或
-Android 构建日志可供判断，不能声明它们成功或用静态阅读替代。Git 传输身份与
-已授权连接一致后，
-只发布上述测试分支并查看对应 commit 的 Actions，逐项修复，不改 main。
+## 消费环境与业务边界
+
+本地仍没有 Flutter SDK，早期官方 manifest 下载返回 403 后已停止；上述实际
+Flutter 执行证据来自获授权的 Actions runner，不是本地运行。消费端 APK 及
+父侧证据包支持下载仍失败，真实 APK 扫描在父侧完成并按来源记录。没有借 CI
+登录校园系统、读取私人数据、调用交易/邮箱写操作或绕过访问控制。

@@ -6,13 +6,11 @@ import 'package:bjut_campus/features/schedule/data/schedule_response_decoder.dar
 String scheduleFixture(String name) =>
     File('test/fixtures/schedule/$name.json').readAsStringSync();
 
-String exampleData() => File(
-  LocalScheduleDataSource.dataAsset,
-).readAsStringSync();
+String exampleData() =>
+    File(LocalScheduleDataSource.dataAsset).readAsStringSync();
 
-String exampleIndex() => File(
-  LocalScheduleDataSource.indexAsset,
-).readAsStringSync();
+String exampleIndex() =>
+    File(LocalScheduleDataSource.indexAsset).readAsStringSync();
 
 SchedulePayload examplePayload({String? data}) {
   const decoder = ScheduleResponseDecoder();

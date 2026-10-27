@@ -7,7 +7,6 @@ import 'package:bjut_campus/features/schedule/data/schedule_response_decoder.dar
 import 'package:bjut_campus/features/schedule/domain/schedule.dart';
 import 'package:bjut_campus/features/schedule/presentation/schedule_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'schedule_test_support.dart';
@@ -47,7 +46,9 @@ Widget navigationPage(ScheduleRepository repository) {
 }
 
 void main() {
-  testWidgets('loading and success retain the fictional-data notice', (tester) async {
+  testWidgets('loading and success retain the fictional-data notice', (
+    tester,
+  ) async {
     final pending = Completer<SchedulePayload>();
     final source = CallbackScheduleDataSource(() => pending.future);
     await tester.pumpWidget(page(ScheduleRepository(dataSource: source)));
@@ -64,7 +65,9 @@ void main() {
     expect(source.calls, 1);
   });
 
-  testWidgets('empty is distinct from failure and keeps the example label', (tester) async {
+  testWidgets('empty is distinct from failure and keeps the example label', (
+    tester,
+  ) async {
     final source = CallbackScheduleDataSource(
       () async => examplePayload(data: scheduleFixture('empty_data')),
     );
@@ -75,30 +78,35 @@ void main() {
     expect(find.textContaining('完全虚构 · 未登录 · 未同步'), findsOneWidget);
   });
 
-  testWidgets('failure, failed retry and recovery do not expose error contents', (tester) async {
-    var shouldFail = true;
-    final source = CallbackScheduleDataSource(() async {
-      if (shouldFail) {
-        throw StateError('fictional-private-marker');
-      }
-      return examplePayload();
-    });
-    await tester.pumpWidget(page(ScheduleRepository(dataSource: source)));
-    await tester.pumpAndSettle();
-    expect(find.text('示例暂时无法加载'), findsOneWidget);
-    expect(find.textContaining('fictional-private-marker'), findsNothing);
-    await tester.tap(find.text('重试示例'));
-    await tester.pumpAndSettle();
-    expect(find.text('示例暂时无法加载'), findsOneWidget);
-    expect(tester.takeException(), isNull);
-    shouldFail = false;
-    await tester.tap(find.text('重试示例'));
-    await tester.pumpAndSettle();
-    expect(find.text('示例课程 A（虚构）'), findsOneWidget);
-    expect(source.calls, 3);
-  });
+  testWidgets(
+    'failure, failed retry and recovery do not expose error contents',
+    (tester) async {
+      var shouldFail = true;
+      final source = CallbackScheduleDataSource(() async {
+        if (shouldFail) {
+          throw StateError('fictional-private-marker');
+        }
+        return examplePayload();
+      });
+      await tester.pumpWidget(page(ScheduleRepository(dataSource: source)));
+      await tester.pumpAndSettle();
+      expect(find.text('示例暂时无法加载'), findsOneWidget);
+      expect(find.textContaining('fictional-private-marker'), findsNothing);
+      await tester.tap(find.text('重试示例'));
+      await tester.pumpAndSettle();
+      expect(find.text('示例暂时无法加载'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      shouldFail = false;
+      await tester.tap(find.text('重试示例'));
+      await tester.pumpAndSettle();
+      expect(find.text('示例课程 A（虚构）'), findsOneWidget);
+      expect(source.calls, 3);
+    },
+  );
 
-  testWidgets('pull refresh failure is handled without an unhandled future', (tester) async {
+  testWidgets('pull refresh failure is handled without an unhandled future', (
+    tester,
+  ) async {
     var shouldFail = false;
     final source = CallbackScheduleDataSource(() async {
       if (shouldFail) {
@@ -116,7 +124,9 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('an obsolete load cannot overwrite a replacement repository', (tester) async {
+  testWidgets('an obsolete load cannot overwrite a replacement repository', (
+    tester,
+  ) async {
     final oldLoad = Completer<SchedulePayload>();
     final oldRepository = ScheduleRepository(
       dataSource: CallbackScheduleDataSource(() => oldLoad.future),
@@ -221,15 +231,11 @@ void main() {
           if (newerFails) {
             newer.completeError(StateError('fictional-newer-error'));
           } else {
-            newer.complete(
-              examplePayload(data: scheduleFixture('empty_data')),
-            );
+            newer.complete(examplePayload(data: scheduleFixture('empty_data')));
           }
           await newerDone;
           await tester.pumpAndSettle();
-          final newestText = newerFails
-              ? '示例暂时无法加载'
-              : '示例中暂无课程';
+          final newestText = newerFails ? '示例暂时无法加载' : '示例中暂无课程';
           expect(find.text(newestText), findsOneWidget);
 
           if (olderFails) {
@@ -256,37 +262,45 @@ void main() {
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
     final source = CallbackScheduleDataSource(() async => examplePayload());
-    await tester.pumpWidget(MaterialApp(
-      builder: (context, child) => MediaQuery(
-        data: MediaQuery.of(context).copyWith(
-          textScaler: const TextScaler.linear(2),
+    await tester.pumpWidget(
+      MaterialApp(
+        builder: (context, child) => MediaQuery(
+          data: MediaQuery.of(
+            context,
+          ).copyWith(textScaler: const TextScaler.linear(2)),
+          child: child!,
         ),
-        child: child!,
+        home: Scaffold(
+          body: SchedulePage(
+            repository: ScheduleRepository(dataSource: source),
+          ),
+        ),
       ),
-      home: Scaffold(
-        body: SchedulePage(repository: ScheduleRepository(dataSource: source)),
-      ),
-    ));
+    );
     await tester.pumpAndSettle();
     await tester.scrollUntilVisible(
       find.text('重新加载本地示例'),
       200,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.pumpAndSettle();
+    expect(find.text('重新加载本地示例').hitTestable(), findsOneWidget);
     expect(tester.takeException(), isNull);
     await tester.tap(find.text('重新加载本地示例'));
     await tester.pumpAndSettle();
     expect(source.calls, 2);
   });
 
-  testWidgets('bottom navigation opens the actual bundled example', (tester) async {
+  testWidgets('bottom navigation opens the actual bundled example', (
+    tester,
+  ) async {
     // Read the real asset bundle, so a missing pubspec registration is caught.
     await tester.runAsync(() async {
-      await rootBundle.loadString(LocalScheduleDataSource.indexAsset);
-      await rootBundle.loadString(LocalScheduleDataSource.dataAsset);
+      await tester.pumpWidget(const BjutCampusApp());
+      await tester.tap(find.byKey(const Key('nav-schedule')));
+      await tester.pump();
+      await LocalScheduleDataSource().load();
     });
-    await tester.pumpWidget(const BjutCampusApp());
-    await tester.tap(find.byKey(const Key('nav-schedule')));
     await tester.pumpAndSettle();
     expect(find.text('课表离线示例'), findsOneWidget);
     expect(find.text('示例课程 A（虚构）'), findsOneWidget);

@@ -4,7 +4,17 @@
 
 更新日期：2026-10-27
 
-状态：基础工程已完成；新增独立课表离线候选与父侧 APK 扫描记录，Flutter 验证受阻
+状态：独立课表离线候选与扩展 APK 证据已发布测试分支，首轮 CI 已执行并进入修复
+
+## 2026-10-27 测试分支发布与首轮 CI
+
+- 通过用户配置的有权连接发布 `codex/offline-schedule-ci-20261027`；首次远端
+  tip `727ba2410e4ef9cebbc507f11a0749b320f98cc1` 与本地 be34bc4 的 tree 一致，
+  [原始 SHA 映射](engineering/PUBLICATION.md) 保留，不冒称 SHA 相同。main 未改。
+- [Actions 40444724804](https://github.com/iHelix0/bjut-flutter/actions/runs/40444724804)
+  已实际运行：format 有差异、analyze 1 个冗余 import、Flutter tests 52 通过 /
+  10 失败；Android 被 quality 阻挡。正在修复真实日志指出的刷新断言和测试问题。
+- 以下下载/权限阻塞为早期阶段历史记录；最新状态以 [CI 记录](engineering/CI_VALIDATION.md) 为准。
 
 ## 2026-10-27 扩展进展
 

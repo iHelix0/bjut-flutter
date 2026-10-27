@@ -21,7 +21,9 @@ class _InformationPageState extends State<InformationPage> {
   }
 
   Future<void> _refresh() async {
-    setState(() => _itemsFuture = _repository.getItems());
+    setState(() {
+      _itemsFuture = _repository.getItems();
+    });
     await _itemsFuture;
   }
 

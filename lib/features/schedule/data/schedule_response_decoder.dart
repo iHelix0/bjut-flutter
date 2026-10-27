@@ -9,18 +9,20 @@ class ScheduleResponseDecoder {
   ScheduleDataDto decodeData(String body, {required int httpStatus}) {
     final data = _envelope(body, httpStatus);
     return ScheduleDataDto(
-      classes: _list(data['classes']).map((value) {
-        final row = _object(value);
-        return ScheduleCourseDto(
-          courseId: _string(row['course_id']),
-          courseName: _string(row['course_name']),
-          location: _string(row['location']),
-          weekday: _string(row['weekday']),
-          lessons: _string(row['lessons']),
-          teacher: _string(row['teacher']),
-          week: _string(row['week']),
-        );
-      }).toList(growable: false),
+      classes: _list(data['classes'])
+          .map((value) {
+            final row = _object(value);
+            return ScheduleCourseDto(
+              courseId: _string(row['course_id']),
+              courseName: _string(row['course_name']),
+              location: _string(row['location']),
+              weekday: _string(row['weekday']),
+              lessons: _string(row['lessons']),
+              teacher: _string(row['teacher']),
+              week: _string(row['week']),
+            );
+          })
+          .toList(growable: false),
       weekdays: _list(data['weekdays']).map(_string).toList(growable: false),
     );
   }
