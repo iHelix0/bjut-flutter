@@ -1472,5 +1472,12 @@
     "new_request_bindings_recovered": 0,
     "verified_runtime_apis_added": 0,
     "notes": "Public itsapp page returns designated-IP restriction text; mail page shows Coremail branding/login UI. Neither recovers app request schema or SSO protocol."
-  }
+  },
+  "apk_identity_evidence_file": "APK_IDENTITY_AND_LIMITS.json",
+  "known_apk_version": {
+    "versionName": "2.8.8",
+    "versionCode": 260801,
+    "source": "parent parsed binary Manifest; not proof of publisher"
+  },
+  "dependency_work_status": "Stopped: no new card/mail JSON fields or factory/request binding; minimal public/sanitized evidence required"
 }

@@ -1,0 +1,57 @@
+{
+  "updated": "2026-10-27",
+  "source": "parent final offline report on same hash-verified APK bytes; consumer did not read APK",
+  "apk_sha256": "33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784",
+  "manifest": {
+    "member": "AndroidManifest.xml",
+    "offset_reference": "attribute entry offsets relative to uncompressed binary Manifest member, not APK offsets",
+    "attributes": {
+      "package": {
+        "value": "cn.edu.bjut.app",
+        "member_attribute_offset_hex": "0x5b78"
+      },
+      "versionName": {
+        "value": "2.8.8",
+        "member_attribute_offset_hex": "0x5b3c"
+      },
+      "versionCode": {
+        "value": 260801,
+        "member_attribute_offset_hex": "0x5b28"
+      },
+      "label": {
+        "value": "日新工大",
+        "member_attribute_offset_hex": "0x7370"
+      }
+    }
+  },
+  "public_certificate": {
+    "sha256": "37865399e49ec437c7b60d24c58499f659da26593a98b70b8bd967e4b4cc3ac7",
+    "sources": [
+      "META-INF/CERT.RSA",
+      "APK v2/v3 blocks"
+    ],
+    "reported_fingerprints_match": true,
+    "full_apk_signature_verified": false,
+    "official_certificate_compared": false,
+    "official_publisher_proven": false,
+    "private_key_read": false,
+    "notes": "Public certificate parsing/fingerprint matching only; no verification of complete APK signature or official provenance"
+  },
+  "aot": {
+    "member": "lib/arm64-v8a/libapp.so",
+    "architecture": "AArch64",
+    "elf_build_id": "083986ecb3cc95272084271656e9c6e2",
+    "exports": "Dart snapshot exports only",
+    "business_elf_symbols_found": false,
+    "debug_sections_found": false,
+    "reliable_version_matched_dart_object_pool_snapshot_parser_available": false,
+    "current_parent_objdump_supports_object_architecture": false,
+    "notes": "Earlier AOT names/source URIs are string/name clues, not recovered ELF business symbols or method bodies. This is the current tool limitation, not a claim that every objdump/parser lacks AArch64 support."
+  },
+  "new_json_fields_recovered": [],
+  "new_factory_request_bindings_recovered": [],
+  "inference_boundary": "Do not assign adjacent strings to model fields, derive endpoint bindings from names, or treat metadata/certificate equality as official-source proof",
+  "dependency_work_status": "Stopped pending minimal public/sanitized evidence; no further tools/download retries or authenticated access performed",
+  "minimum_plan_file": "PUBLIC_ENTRY_FOLLOWUP.md",
+  "version_screen_required": false
+}
