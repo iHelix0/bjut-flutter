@@ -6,9 +6,9 @@ Android debug 构建均已实际通过；真实校园接入、iOS 与设备行�
 ## 已验证版本和结果
 
 - [测试分支](https://github.com/iHelix0/bjut-flutter/tree/codex/offline-schedule-ci-20261027)
-- 被验证远端 SHA：`56499cb090f900e97448f0b6e7047d7f6c8e7e84`
-- 对应原本地 SHA：`802ea4be49cc4238c2d075db65cec28520e87cc0`
-- [Actions 40446494590](https://github.com/iHelix0/bjut-flutter/actions/runs/40446494590)：completed / success，quality 与 Android 两个 job 均 success。
+- 被验证远端 SHA：`bfdfdff67206d3514ac1456592fe8455f9aee672`
+- 对应原本地 SHA：`cf564727fb5ba47fee021a5c51bd8ef7287f927a`
+- [Actions 40458129415](https://github.com/iHelix0/bjut-flutter/actions/runs/40458129415)：completed / success，quality 与 Android 两个 job 均 success。
 - [机器可读结果](CI_RESULTS.json)，[原始/远端 SHA 映射](PUBLICATION.md)。
 
 | 检查 | 实际结果 |
@@ -17,16 +17,21 @@ Android debug 构建均已实际通过；真实校园接入、iOS 与设备行�
 | Flutter analyze | No issues found；通过 |
 | Flutter test | 64 通过，0 失败 |
 | Python 合成 ZIP 测试 | 6 通过，0 失败 |
-| Android debug build | `flutter build apk --debug` / `assembleDebug` 通过；Gradle 133.8 秒 |
+| Android debug build | `flutter build apk --debug` / `assembleDebug` 通过；Gradle 111.1 秒 |
 | iOS / 模拟器 / 真机 | 未运行，不由 Linux/Android 结果替代 |
 | 真实登录、个人数据、校园接口 | 未运行；仍明确未接入 |
 
 Android runner 生成 `build/app/outputs/flutter-apk/app-debug.apk`。只上传
-[构建 checksum](https://github.com/iHelix0/bjut-flutter/actions/runs/40446494590/artifacts/12707899677)，
+[构建 checksum](https://github.com/iHelix0/bjut-flutter/actions/runs/40458129415/artifacts/12713428381)，
 没有把 APK 二进制放进仓库、CI 产物或 Release。该产物是本项目离线 debug 构建，
 不是用于静态分析的用户 APK。
 
 ## 修复和验证过程
+
+最新一轮发现并修正的是现有首页文案缺陷：工程没有登录/同步实现，却写着
+“登录后即可同步”；没有点击行为的卡片标成“快捷入口”。现在明确离线演示、
+虚构课表、待接入通知/校园卡和静态信息，卡片改称功能概览；原有壳测试更新
+对应断言，未为了这次文案修正新增镜像测试。没有增添功能、插件或真实请求。
 
 | Run | 源版本及结果 |
 |---|---|
@@ -34,6 +39,7 @@ Android runner 生成 `build/app/outputs/flutter-apk/app-debug.apk`。只上传
 | [40445478045](https://github.com/iHelix0/bjut-flutter/actions/runs/40445478045) | 修复同步状态更新后的不同版本 c3967729；在 asset/Widget 异步测试停留，被后续修订按并发规则取消，不能写为测试通过 |
 | [40446177228](https://github.com/iHelix0/bjut-flutter/actions/runs/40446177228) | 不同版本 52c4dd39；64 tests 通过、分析无问题，剩 1 个格式差异，Android 跳过 |
 | [40446494590](https://github.com/iHelix0/bjut-flutter/actions/runs/40446494590) | 56499cb0；全部 quality 和 Android 成功 |
+| [40458129415](https://github.com/iHelix0/bjut-flutter/actions/runs/40458129415) | bfdfdff6；修正首页登录/同步承诺及功能概览标签，64 Flutter、6 Python、format/analyze、Android 全通过 |
 
 修复包括：避免刷新赋值箭头闭包向 `setState` 返回 Future（课表及同模式信息页）；
 移除冗余 import；滚动后等待布局并检查按钮可点击；导航/刷新通过可注入 Repository

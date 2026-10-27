@@ -3,14 +3,14 @@
   "repository": "iHelix0/bjut-flutter",
   "branch": "codex/offline-schedule-ci-20261027",
   "baseline": "85c13af15d1b09c250dc340bef5341fbe8422285",
-  "tested_remote_commit": "56499cb090f900e97448f0b6e7047d7f6c8e7e84",
-  "tested_local_commit": "802ea4be49cc4238c2d075db65cec28520e87cc0",
-  "tested_tree": "2b54489049cc634aed96673245c315cdc653079a",
-  "run_id": 40446494590,
-  "run_url": "https://github.com/iHelix0/bjut-flutter/actions/runs/40446494590",
+  "tested_remote_commit": "bfdfdff67206d3514ac1456592fe8455f9aee672",
+  "tested_local_commit": "cf564727fb5ba47fee021a5c51bd8ef7287f927a",
+  "tested_tree": "4de98fabe6624d2d1974ea3a97d56e9e7cf4a3b3",
+  "run_id": 40458129415,
+  "run_url": "https://github.com/iHelix0/bjut-flutter/actions/runs/40458129415",
   "conclusion": "success",
   "quality": {
-    "job_id": 121998923811,
+    "job_id": 122036125255,
     "format": {
       "files": 18,
       "changed": 0,
@@ -30,14 +30,14 @@
     }
   },
   "android": {
-    "job_id": 121999216460,
+    "job_id": 122036424281,
     "result": "success",
     "command": "flutter build apk --debug",
     "gradle_task": "assembleDebug",
-    "gradle_seconds": 133.8,
+    "gradle_seconds": 111.1,
     "artifact_path": "build/app/outputs/flutter-apk/app-debug.apk",
     "apk_binary_uploaded": false,
-    "checksum_artifact_url": "https://github.com/iHelix0/bjut-flutter/actions/runs/40446494590/artifacts/12707899677"
+    "checksum_artifact_url": "https://github.com/iHelix0/bjut-flutter/actions/runs/40458129415/artifacts/12713428381"
   },
   "toolchain": {
     "flutter": "3.47.8",
@@ -67,6 +67,11 @@
       "run_id": 40446494590,
       "result": "success",
       "notes": "quality and Android passed"
+    },
+    {
+      "run_id": 40458129415,
+      "result": "success",
+      "notes": "Home offline/pending-state copy corrected; existing shell assertions updated; format/analyze/64 Flutter/6 Python/Android passed"
     }
   ],
   "unverified": [
@@ -84,5 +89,6 @@
     "verified_runtime_apis": 0,
     "source": "source-attributed parent static report; not local APK execution"
   },
-  "release_published": false
+  "release_published": false,
+  "latest_change": "Correct unsupported login/sync claims and passive overview labels only; no entry, authentication, dependency, WebView or protocol implementation added"
 }

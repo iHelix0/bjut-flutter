@@ -8,6 +8,11 @@
 
 ## 2026-10-27 自动验证完成（最新）
 
+只读复核现有资产与父侧 APK 报告仍未恢复邮箱/校园卡固定入口。独立修正了
+首页不准确的“登录后即可同步”文案：明确离线演示、虚构课表与待接入服务，
+无点击行为的卡片改称功能概览。未新增登录、导航、WebView、依赖或网络。
+本次不同代码版本已重新通过下列 CI；入口/认证依赖工作停止，等待正常导航线索。
+
 新增用户证据：邮箱/一卡通在原 App 内打开页面；WebKit 是猜测。用户描述原
 App 不是 Flutter，目标是用 Flutter 重构；上传 APK 的 Flutter/`oneness`/bridge
 事实不能被表述为原 App 整体架构结论。[网页适配候选](engineering/EMBEDDED_PAGE_ADAPTER.md)
@@ -19,9 +24,9 @@ App 不是 Flutter，目标是用 Flutter 重构；上传 APK 的 Flutter/`onene
 源码检索无命中，未恢复新字段或绑定。[最小补证清单](evidence/PUBLIC_ENTRY_FOLLOWUP.md)
 仅需要脱敏界面/字段/调用元信息，不索要凭据或原始 HAR；现有代码与通过的 CI 不变。
 
-- [Actions 40446494590](https://github.com/iHelix0/bjut-flutter/actions/runs/40446494590)
+- [Actions 40458129415](https://github.com/iHelix0/bjut-flutter/actions/runs/40458129415)
   completed/success：format 18 文件 0 差异，analyze 无问题，Flutter 64 项及 Python
-  6 项测试通过，Android debug 构建成功。被验证代码 SHA 为 `56499cb090f900e97448f0b6e7047d7f6c8e7e84`。
+  6 项测试通过，Android debug 构建成功。被验证代码 SHA 为 `bfdfdff67206d3514ac1456592fe8455f9aee672`。
 - 后续仅补 README/docs 结果记录，不重复运行相同代码；准确原始/远端映射见
   [发布记录](engineering/PUBLICATION.md)。main 未改，未发 Release。
 - iOS/设备、真实登录、校园卡/邮箱等业务接口仍未验收；静态目录与合成示例不

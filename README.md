@@ -26,7 +26,7 @@ MVP 必须同时具备：
 
 新增 [全应用接入矩阵](docs/evidence/APP_INTEGRATION_CATALOG.md)（优先校园卡与邮箱，
 有证据的入口与未知协议分开记录）及 [测试分支与 CI 状态](docs/engineering/CI_VALIDATION.md)。
-测试分支已通过有权连接发布并完成真实 CI：[40446494590](https://github.com/iHelix0/bjut-flutter/actions/runs/40446494590)。
+测试分支已通过有权连接发布并完成真实 CI：[40458129415](https://github.com/iHelix0/bjut-flutter/actions/runs/40458129415)。
 通过的是离线代码与 Android 构建，不代表真实登录、校园业务或 iOS 已验收。
 
 当前建议采用“只读核心 MVP + 充值专项”的路线：

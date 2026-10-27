@@ -19,10 +19,12 @@ main 保持 `85c13af15d1b09c250dc340bef5341fbe8422285`，未发布 Release。
 | `ce36223e402cb1ca2494bb12c555dff12d26f98f` | `c39677294e2eed5f5080bb3405ad7dd8d0b0c8e4` | 是 |
 | `7b586bd17e5d893d2b97ac2501e8c6f0e44674fe` | `52c4dd39c996a521226befe41b6797afcb93bf12` | 是 |
 | `802ea4be49cc4238c2d075db65cec28520e87cc0` | `56499cb090f900e97448f0b6e7047d7f6c8e7e84` | 是 |
+| `cf564727fb5ba47fee021a5c51bd8ef7287f927a` | `bfdfdff67206d3514ac1456592fe8455f9aee672` | 是 |
 
-已验证代码：`56499cb090f900e97448f0b6e7047d7f6c8e7e84`，对应本地 `802ea4be49cc4238c2d075db65cec28520e87cc0`。
-[最终 CI 40446494590](https://github.com/iHelix0/bjut-flutter/actions/runs/40446494590) 的 quality、Android 均通过。
+已验证代码：`bfdfdff67206d3514ac1456592fe8455f9aee672`，对应本地 `cf564727fb5ba47fee021a5c51bd8ef7287f927a`。
+[最新 CI 40458129415](https://github.com/iHelix0/bjut-flutter/actions/runs/40458129415) 的 quality、Android 均通过。
 
-后续结果记录提交只修改 README/docs，不修改已验证源代码；使用 `[skip ci]`
+表中首次通过后有文档提交及本次首页文案修正；新代码已重新通过上述最新 CI。
+本次后续结果记录提交只修改 README/docs，不修改已验证源代码；使用 `[skip ci]`
 避免同一代码重复运行。其准确 SHA 映射保存在最终交付的 publication-mapping.json，
 不将文档 tip 的 SHA 冒称为被构建代码 SHA。未合并 main。

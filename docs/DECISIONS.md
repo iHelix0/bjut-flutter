@@ -69,8 +69,8 @@ WebKit 猜测或上传 APK 的 Flutter 组成线索扩写为原 App 整体架构
 内嵌网页为[候选设计](engineering/EMBEDDED_PAGE_ADAPTER.md)，非最终依赖/认证决定：
 无确切入口和会话/副作用边界前，不加插件、不加载个人页面、不复制 SSO。
 
-最新验证：测试分支 Actions `40446494590` 已通过 quality 和 Android debug，
-实际代码 SHA 为 `56499cb090f900e97448f0b6e7047d7f6c8e7e84`。iOS、真实认证与
+最新验证：测试分支 Actions `40458129415` 已通过 quality 和 Android debug，
+实际代码 SHA 为 `bfdfdff67206d3514ac1456592fe8455f9aee672`。iOS、真实认证与
 校园卡/邮箱协议仍未验收；不扩展为 main 合并、Release 或私人接口调用授权。
 
 2026-10-27 后续已明确唯一发布方及有权连接：通过正式 Git 数据接口发布测试
