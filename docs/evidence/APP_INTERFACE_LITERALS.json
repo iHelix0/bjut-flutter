@@ -15,7 +15,9 @@
       "apk_membership": "BJUT card model/generated/notifier URI and symbols plus JS navigation wrappers evidenced",
       "endpoint": "consumption-code is name-only clue, not a balance/recharge endpoint",
       "schema": null,
-      "implementation": "not connected"
+      "implementation": "not connected",
+      "user_reported_presentation": "page opens within original app; engine and exact entry/authentication unconfirmed",
+      "target_candidate": "Flutter embedded-page adaptation; not implemented/configured"
     },
     {
       "module": "mail",
@@ -23,7 +25,9 @@
       "apk_membership": "BjutHomeFixedDFixedAppEmail symbols evidenced",
       "endpoint": "public web link only, absent as literal in reported APK scan",
       "schema": null,
-      "implementation": "not connected; dynamic entry/unread count are research questions only"
+      "implementation": "not connected; dynamic entry/unread count are research questions only",
+      "user_reported_presentation": "page opens within original app; engine and exact entry/authentication unconfirmed",
+      "target_candidate": "Flutter embedded-page adaptation; not implemented/configured"
     },
     {
       "module": "authentication_home_schedule_bridge",
@@ -1479,5 +1483,8 @@
     "versionCode": 260801,
     "source": "parent parsed binary Manifest; not proof of publisher"
   },
-  "dependency_work_status": "Stopped: no new card/mail JSON fields or factory/request binding; minimal public/sanitized evidence required"
+  "dependency_work_status": "Unknown schema/native API implementation remains stopped. User-confirmed in-app presentation permits documentation-only embedded-page design; exact entry/authentication/side-effect boundaries remain unknown.",
+  "user_page_observation_file": "USER_PAGE_OBSERVATIONS.json",
+  "embedded_page_design_file": "../engineering/EMBEDDED_PAGE_ADAPTER.md",
+  "architecture_attribution": "User describes original app as not Flutter and wants a Flutter rebuild. Uploaded APK Flutter assets/oneness/bridge concern that analysis object only; no claim that original app overall is Flutter or version-identical."
 }

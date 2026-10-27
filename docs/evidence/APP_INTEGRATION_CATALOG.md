@@ -18,11 +18,19 @@
 也没有新增卡/邮箱字段或请求绑定。依赖未知字段的工作已停止；最小补证清单
 不再要求关于页、APK 或凭据，见 [公开入口补证](PUBLIC_ENTRY_FOLLOWUP.md)。
 
+后续[用户观察与架构纠正](USER_PAGE_OBSERVATIONS.json)已确认邮箱和一卡通都在
+原 App 内打开页面，WebKit 仍是用户猜测。用户描述原 App 不是 Flutter，目标是
+用 Flutter 重构。上传 APK 的 Flutter/`oneness`/bridge 证据仅属于该分析对象，
+不证明用户原 App 整体架构/版本相同或排除混合组成；本仓库 `bjut_campus` 才是
+目标 Flutter 实现。新增[内嵌页面候选设计](../engineering/EMBEDDED_PAGE_ADAPTER.md)，
+优先评估网页承载，无新依赖/路由/真实请求，入口、认证和副作用边界仍未确认。
+
 | 等级 | 意义 | 不能推出什么 |
 |---|---|---|
 | P：公开资料 | 本轮读取的学校公开页面/文档，或其中明确的超链接 | 不证明 APK 内存在该模块，不等于 JSON API、当前可登录或允许第三方接入 |
 | S：静态字面量 | 父侧摘要核对后的 APK 成员、偏移/行号报告 | 不证明调用关系、HTTP 方法、鉴权、schema 或服务可用 |
 | H：历史描述 | 交接给定请求/响应形状，本轮未重放 | 不是本轮响应、稳定协议或 APK 复核结论 |
+| O：用户观察 | 用户直接描述的原 App 内页面行为/架构说明 | 不识别具体引擎、确切 URL、SSO、API 或上传 APK 与原 App 的版本对应 |
 | U：未知 | 当前材料不足 | 不补猜 host、路径、协议、端口、参数或错误码 |
 
 所有 JSON 字典中的 `null` 明确表示未知，不是接口允许传 null。读写属性未验证
@@ -38,7 +46,7 @@
 
 | 能力 | 接入类型与入口 | SSO / 凭据依赖 | 读写与 schema | 证据 / 可实现程度 / 未决问题 |
 |---|---|---|---|---|
-| 余额与卡状态 | BJUT school-card model/generated/notifier 源 URI 和 `getHomeSchoolCard` 等符号存在，实际 API/WebView 接入仍未确定 | 未确定；不假定复用统一认证 Cookie/token | 私人财务信息，目标只读；method、余额单位/币种/时间/状态字段均未恢复 | S/P/U；模型名字不能恢复 schema，继续明确未接入 |
+| 余额与卡状态 | 用户确认校园卡在原 App 内打开页面；目标候选为 Flutter 内嵌网页，确切入口未知。APK 另有 card 模型/符号，未绑定页面 | 未确定；不假定复用统一认证 Cookie/token | 私人财务信息，目标只读；method、余额单位/币种/时间/状态字段均未恢复，整页不保证只读 | O/S/P/U；网页展示未必需要原生 schema，但缺入口/认证/副作用边界，继续未接入 |
 | 消费账单 | 接入类型与入口未知，不从“校园卡余额”扩展出猜测路径 | 未确定；不读取真实账单 | 目标只读；分页、时间范围、金额正负、退款/冲正、时区均未知 | U；没有 DTO 或请求实现依据 |
 | 充值、支付、转账、挂失等 | `cardRecharge`、`cardReportLoss`、`goToPayCode` JS 发送/导航包装存在，不是 HTTP 实现 | 接收端、交易验证、支付渠道、幂等均未知 | 写操作相关名称；不调用消息或真实交易 | S/P/U；发送端不能照搬成交易协议 |
 | 消费码/个人码 | `consumption-code` 路径仅名字线索，另有 `goToUserInfoCode` / `goToPayCode` JS 包装 | 私人码、会话与权限未知 | 无响应字段，接收端未恢复，不生成真实码 | S/U；不能当余额/充值接口或绑定 `getHomeSchoolCard` |
@@ -61,7 +69,7 @@
 
 | 能力 | 接入类型与入口 | SSO / 凭据依赖 | 读写与 schema | 证据 / 可实现程度 / 未决问题 |
 |---|---|---|---|---|
-| 邮箱入口 | 学校公开 Web 链接及 Coremail 品牌/登录文案可见；APK Email 模型符号未绑定到该入口。网页 URL **不是 API** | 登录 UI 不还原 SSO/凭据机制；客户端认证与端口未知 | 模型字段未恢复，不能断言 `fixed-appv1` 返回邮箱 URL/未读数 | S/P；公开帮助 header 未给配置，继续未接入 |
+| 邮箱入口 | 用户确认原 App 内打开页面；目标候选为 Flutter 内嵌网页。公开邮箱根页并未绑定到原 App 实际入口，APK Email 模型也无绑定。网页 URL **不是 API** | 登录 UI 不还原 SSO/凭据机制；是否原生 bridge/独立登录未知 | 模型字段未恢复，不能断言 `fixed-appv1` 返回邮箱 URL/未读数；邮件页可能自动标已读 | O/S/P/U；先补确切入口/导航/认证；通用邮件配置不作为网页方案必需条件，继续未接入 |
 | 列表、正文、附件 | 自定义 HTTP API、通用邮件协议、第三方服务均未证实 | 不知道是否支持 IMAP/POP、OAuth 或专用授权码；不指定服务器或端口 | 私人邮件信息；没有分页、MIME/附件、未读、会话失效契约 | U；不能实现真实收件客户端。先取得学校允许的客户端配置与脱敏协议样本 |
 | 已读状态、删除、发邮件 | 未确定；不猜 SMTP 配置或发送 API | 权限与凭据机制未知 | 写操作；不执行发送、删除、移动、已读回写；还需确认所谓“读取”不会自动修改状态 | U；本轮没有发送/同步实现 |
 
@@ -84,7 +92,7 @@
 | 历史课表 JSON / HTML | `itsapp.bjut.edu.cn` 下三个历史入口，见下表 | 前置会话、过期码、网络范围未知 | 历史描述的只读用途未重放；编码未知 | H；现有严格 parser/fixtures 仅候选契约，不生成真实请求 |
 | JS bridge：有打包脚本 | in-process 包装，不是远端 API；`bridgeHandler`、`getToken`、`tokenError`、`tokenExpired` | Flutter handler 函数体未恢复，没有实际 token | envelope 字段 `handlerName/arguments/callbackId`；值/回调处理仅限脚本可见逻辑 | S；可写文档和本地模拟，不能据此接入认证 |
 | shared standard 课表线索 | `/schedule/frontend/default/appdaylist`，归属为共享模块线索 | 未知 | method/参数/响应未知 | S；不能归为 BJUT 已确认课表或与历史接口合并 |
-| 公共校内信息 | 本仓库版本化信息内容包；学校公开网页是候选来源 | 公开文档本次无凭据读取；不推断个人系统会话 | 已有 asset schema 是本项目格式，不是学校 API | 本项目可运行性仍待 Flutter 验证；不自动抓取或扩展至私人数据 |
+| 公共校内信息 | 本仓库版本化信息内容包；学校公开网页是候选来源 | 公开文档本次无凭据读取；不推断个人系统会话 | 已有 asset schema 是本项目格式，不是学校 API | 本地内容/页面已通过既有 Flutter CI；不自动抓取或扩展至私人数据 |
 | 新闻/通知/未读 | `news/top-list`、`news/news-list`、`news/lists-tag`、`tzgg/index`、`msg/unread` 相对字面量 | 私人/公开边界、会话未知 | method/分页/未读类型/已读回执未知 | S；名称不证明个人通知，不执行已读回写 |
 | 用户/收藏/反馈 | `user/app-info`、`collect/my-collect`、`collect/index`、`feed-back/save`，另有反馈历史网页 | 会话/归属/副作用未知 | method/schema 未恢复，收藏/反馈可能写入，不调用 | S；不能从 `index` 名称断言只读 |
 | 上传/材料/搜索/热点/二维码 | 一个上传候选和八个网页 URL，见扩展证据 | 上传权限、材料内容、二维码敏感性未知 | query 常量只是字面量，响应未取得 | S；网页不冒充 API，不调用上传/私人码 |

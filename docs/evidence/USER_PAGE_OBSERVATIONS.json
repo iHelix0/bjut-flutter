@@ -1,0 +1,45 @@
+{
+  "updated": "2026-10-27",
+  "source": "User clarification relayed by parent task; direct user observation, not a new network or APK test",
+  "user_report": "在原 app 内是直接打开页面的，我想应该是打开了内置的 WebKit 吧",
+  "modules": [
+    {
+      "module": "mail",
+      "reported_presentation": "page opens within the original app",
+      "observed_exact_entry_uri": null,
+      "authentication_flow": null,
+      "required_js_handlers": null
+    },
+    {
+      "module": "campus_card",
+      "reported_presentation": "page opens within the original app",
+      "observed_exact_entry_uri": null,
+      "authentication_flow": null,
+      "required_js_handlers": null
+    }
+  ],
+  "engine": {
+    "user_speculation": "WebKit",
+    "confirmed_engine": null,
+    "reason": "User expressed a guess; in-app presentation alone does not identify the platform view or rendering engine"
+  },
+  "observed_app_version": null,
+  "relationship_to_apk": "Analyzed APK is known as 2.8.8/260801; the version/platform in this user observation was not provided and is not assumed to match",
+  "static_bridge_cross_reference": {
+    "document": "APK_EXPANDED_FINDINGS.md",
+    "member": "assets/flutter_assets/assets/bridge.js",
+    "lines": "45-55",
+    "observed_sender": "window.flutter_inappwebview.callHandler('bridgeHandler', JSON.stringify({handlerName, arguments: args, callbackId}))",
+    "limits": "Static JS sender only. Does not prove either reported page uses this sender or requires native token/transaction handlers; receiver implementation is unknown"
+  },
+  "implementation_effect": "Prioritize evaluating an embedded-page adapter. No entry configured, dependency added, login attempted or private page loaded",
+  "design_document": "../engineering/EMBEDDED_PAGE_ADAPTER.md",
+  "verified_runtime_api_count_added": 0,
+  "architecture_clarification": {
+    "source": "Later direct user correction relayed by parent",
+    "user_statement": "原 app 不是 Flutter 呀，我打算通过Flutter 重构一下",
+    "user_described_original_app": "not Flutter; user statement, not an independent reverse-engineering conclusion",
+    "target_implementation": "Rebuild using Flutter in bjut_campus",
+    "uploaded_apk_scope": "Flutter assets, package:oneness URIs and JS bridge are facts about the uploaded analysis object only; not proof of the user original app overall architecture, matching version, or absence of mixed/native components"
+  }
+}

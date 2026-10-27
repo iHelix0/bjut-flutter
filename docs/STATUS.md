@@ -8,6 +8,12 @@
 
 ## 2026-10-27 自动验证完成（最新）
 
+新增用户证据：邮箱/一卡通在原 App 内打开页面；WebKit 是猜测。用户描述原
+App 不是 Flutter，目标是用 Flutter 重构；上传 APK 的 Flutter/`oneness`/bridge
+事实不能被表述为原 App 整体架构结论。[网页适配候选](engineering/EMBEDDED_PAGE_ADAPTER.md)
+已审查当前依赖/路由并列出导航、会话、bridge 与验收边界；无新依赖/代码/请求。
+实际入口/SSO 和页面副作用未知，保持未接入，不创建无配置依据的空骨架。
+
 后续接口发现只修改证据文档：itsapp 公开根页返回指定来源 IP 的访问提示后
 停止；邮箱页面可见 Coremail 品牌/登录文案，帮助 header 未提供配置。四项精确
 源码检索无命中，未恢复新字段或绑定。[最小补证清单](evidence/PUBLIC_ENTRY_FOLLOWUP.md)

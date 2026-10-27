@@ -63,6 +63,12 @@
 
 ## 决策模板
 
+2026-10-27 后续用户已明确原 App 内打开邮箱/一卡通，并纠正原 App 不是 Flutter、
+目标为 Flutter 重构。记录 [用户观察](evidence/USER_PAGE_OBSERVATIONS.json)，不将
+WebKit 猜测或上传 APK 的 Flutter 组成线索扩写为原 App 整体架构。目标 Flutter
+内嵌网页为[候选设计](engineering/EMBEDDED_PAGE_ADAPTER.md)，非最终依赖/认证决定：
+无确切入口和会话/副作用边界前，不加插件、不加载个人页面、不复制 SSO。
+
 最新验证：测试分支 Actions `40446494590` 已通过 quality 和 Android debug，
 实际代码 SHA 为 `56499cb090f900e97448f0b6e7047d7f6c8e7e84`。iOS、真实认证与
 校园卡/邮箱协议仍未验收；不扩展为 main 合并、Release 或私人接口调用授权。
