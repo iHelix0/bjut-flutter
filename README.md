@@ -20,7 +20,13 @@ MVP 必须同时具备：
 
 ## 当前状态
 
-项目已创建 Android+iOS 基础 Flutter 工程：首页、课表、通知、校园卡、信息五个入口已经可启动，信息页可读取版本化静态内容包。真实接口、登录会话和正式包名仍待接口取证与后续确认。
+项目已创建 Android+iOS 基础 Flutter 工程：首页、课表、通知、校园卡、信息五个入口，信息页可读取版本化静态内容包。本地候选改动将课表入口替换为明确标注的完全虚构离线示例，尚未通过本轮 Flutter 验证；真实接口、登录会话和正式包名仍待接口取证与后续确认。
+
+本轮独立候选补丁、历史样本契约、测试范围与工具阻塞见 [课表离线候选记录](docs/engineering/SCHEDULE_OFFLINE_CANDIDATE.md)，APK 取回状态见 [只读 APK 证据记录](docs/evidence/APK_STATIC_REVIEW.md)。
+
+新增 [全应用接入矩阵](docs/evidence/APP_INTEGRATION_CATALOG.md)（优先校园卡与邮箱，
+有证据的入口与未知协议分开记录）及 [测试分支与 CI 状态](docs/engineering/CI_VALIDATION.md)。
+当前远端写权限拒绝，CI 尚未运行；不能把准备好的 workflow 视为验证通过。
 
 当前建议采用“只读核心 MVP + 充值专项”的路线：
 

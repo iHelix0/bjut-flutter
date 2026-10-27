@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "updated": "2026-10-27",
+  "scope": "All current supplied evidence, NOT a whole-APK scan or exhaustive runtime API inventory",
+  "apk_scan_completed_here": false,
+  "verified_campus_api_count": 0,
+  "runtime_call_graph_recovered": false,
+  "unknown_value_semantics": "null means not evidenced; never a request value or nullable API contract",
+  "source_apk_sha256": "33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784",
+  "apk_provenance": "Unverified publisher and relationship to bjut_campus; source URIs use package:oneness",
+  "module_coverage": [
+    {
+      "module": "campus_card",
+      "priority": 1,
+      "apk_membership": "not evidenced in available report",
+      "endpoint": null,
+      "schema": null,
+      "implementation": "not connected"
+    },
+    {
+      "module": "mail",
+      "priority": 2,
+      "apk_membership": "not evidenced in available report",
+      "endpoint": "public web link only",
+      "schema": null,
+      "implementation": "not connected"
+    },
+    {
+      "module": "authentication_home_schedule_bridge",
+      "apk_membership": "literal/source/JS clues only",
+      "implementation": "offline fictional schedule only; authentication not implemented"
+    },
+    {
+      "module": "personal_notifications_external_apps_third_party_services_and_other_APK_modules",
+      "apk_membership": "not enumerated without local bytes",
+      "endpoint": null,
+      "implementation": "not connected"
+    }
+  ],
+  "hosts": [
+    {
+      "host": "itsapp.bjut.edu.cn",
+      "evidence": "parent libapp.so offset 0x405c6; API associations unverified"
+    },
+    {
+      "host": "webvpn.bjut.edu.cn",
+      "evidence": "parent libapp.so offset 0x820a6; URL clue only"
+    },
+    {
+      "host": "mail.bjut.edu.cn",
+      "evidence": "public school news footer link; page read timed out"
+    },
+    {
+      "host": "lgn.bjut.edu.cn",
+      "evidence": "same public footer link; not fetched; APK usage unknown"
+    },
+    {
+      "host": "my.bjut.edu.cn",
+      "evidence": "same public footer link; not fetched; APK usage unknown"
+    }
+  ],
+  "records": [
+    {
+      "id": "AUTH-LOGIN",
+      "module": "authentication",
+      "integration_kind": "native_api_candidate",
+      "host": null,
+      "path": "/bjutapp/wap/app-login/login",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "host_path_association_verified": false,
+      "evidence": {
+        "source": "parent_static_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x9a480"
+      },
+      "notes": "Host literal coexists; no call graph or request recovered."
+    },
+    {
+      "id": "AUTH-LOCAL-LOGIN",
+      "module": "authentication",
+      "integration_kind": "native_api_candidate",
+      "host": null,
+      "path": "/bjutapp/wap/app-login/local-login",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "host_path_association_verified": false,
+      "evidence": {
+        "source": "parent_static_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x660ac"
+      },
+      "notes": ""
+    },
+    {
+      "id": "HOME-FIXED-CONTENT",
+      "module": "home",
+      "integration_kind": "native_api_candidate",
+      "host": null,
+      "path": "/bjutapp/wap/index/fixed-content",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "host_path_association_verified": false,
+      "evidence": {
+        "source": "parent_static_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x494b4"
+      },
+      "notes": "has_timetable and timetable_url are field-name literals; types unknown."
+    },
+    {
+      "id": "SCHEDULE-WEBVPN",
+      "module": "schedule",
+      "integration_kind": "web_page_candidate",
+      "host": "webvpn.bjut.edu.cn",
+      "path": null,
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "host_path_association_verified": false,
+      "evidence": {
+        "source": "parent_static_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x820a6"
+      },
+      "notes": "Only path suffix /page/msite/mySchedule recorded. Do not reconstruct complete URL or assume HTTP method.",
+      "path_suffix": "/page/msite/mySchedule"
+    },
+    {
+      "id": "SHARED-APPDAYLIST",
+      "module": "shared_standard",
+      "integration_kind": "unassigned_path",
+      "host": null,
+      "path": "/schedule/frontend/default/appdaylist",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "host_path_association_verified": false,
+      "evidence": {
+        "source": "parent_static_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xb76e5"
+      },
+      "notes": "Not confirmed as a BJUT endpoint."
+    },
+    {
+      "id": "H-SCHEDULE-DATA",
+      "module": "schedule",
+      "integration_kind": "historical_candidate",
+      "host": "itsapp.bjut.edu.cn",
+      "path": "/timetable/wap/default/get-data",
+      "http_method": "POST",
+      "request_schema": {
+        "encoding": "FORM",
+        "field_names": [
+          "year",
+          "term",
+          "week",
+          "type"
+        ],
+        "value_encodings": "unknown"
+      },
+      "response_schema": {
+        "envelope": {
+          "e": "number",
+          "m": "string",
+          "d": "object on success",
+          "business_success": "numeric e == 0"
+        },
+        "classes": "array of course objects",
+        "course_fields": {
+          "course_id": "string",
+          "course_name": "string",
+          "location": "string",
+          "weekday": "string",
+          "lessons": "string",
+          "teacher": "string",
+          "week": "string"
+        },
+        "weekdays": "string array"
+      },
+      "authentication": "unknown",
+      "operation": "historical read-only purpose, not replayed",
+      "confidence": "H_report_not_replayed",
+      "evidence": {
+        "source": "historical_handoff",
+        "local_replay": false
+      },
+      "notes": "Parent APK literal search did not confirm this contract. No encoding or session error codes inferred."
+    },
+    {
+      "id": "H-SCHEDULE-INDEX",
+      "module": "schedule",
+      "integration_kind": "historical_candidate",
+      "host": "itsapp.bjut.edu.cn",
+      "path": "/timetable/wap/default/get-index",
+      "http_method": "GET",
+      "request_schema": null,
+      "response_schema": {
+        "envelope": {
+          "e": "number",
+          "m": "string",
+          "d": "object on success",
+          "business_success": "numeric e == 0"
+        },
+        "params_and_termInfo": {
+          "id": "string",
+          "year": "string",
+          "term": "string",
+          "startday": "string",
+          "countweek": "string",
+          "week": "number"
+        },
+        "weekday": "string"
+      },
+      "authentication": "unknown",
+      "operation": "historical read-only purpose, not replayed",
+      "confidence": "H_report_not_replayed",
+      "evidence": {
+        "source": "historical_handoff",
+        "local_replay": false
+      },
+      "notes": "Parent APK literal search did not confirm this contract. No encoding or session error codes inferred."
+    },
+    {
+      "id": "H-SCHEDULE-PAGE",
+      "module": "schedule",
+      "integration_kind": "historical_candidate",
+      "host": "itsapp.bjut.edu.cn",
+      "path": "/site/schedule/index",
+      "http_method": "GET",
+      "request_schema": null,
+      "response_schema": {
+        "media_type": "HTML per historical description",
+        "content_retrieved_here": false
+      },
+      "authentication": "unknown",
+      "operation": "historical read-only purpose, not replayed",
+      "confidence": "H_report_not_replayed",
+      "evidence": {
+        "source": "historical_handoff",
+        "local_replay": false
+      },
+      "notes": "Parent APK literal search did not confirm this contract. No encoding or session error codes inferred."
+    },
+    {
+      "id": "MAIL-WEB-ENTRY",
+      "module": "mail",
+      "integration_kind": "public_web_link",
+      "host": "mail.bjut.edu.cn",
+      "path": "/",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "P_link_only",
+      "apk_membership_confirmed": false,
+      "evidence": {
+        "source_url": "https://news.bjut.edu.cn/rwjj/2.htm",
+        "location": "footer: campus mail link"
+      },
+      "read_attempt": {
+        "url": "https://mail.bjut.edu.cn/",
+        "result": "web tool timeout, no page obtained"
+      },
+      "notes": "Not an API. IMAP/POP/SMTP/OAuth/provider/ports and SSO unverified."
+    },
+    {
+      "id": "BRIDGE-getToken",
+      "module": "bridge",
+      "integration_kind": "in_process_js_message",
+      "host": null,
+      "path": null,
+      "http_method": null,
+      "request_schema": {
+        "handlerName": "getToken",
+        "arguments": "null in this wrapper",
+        "callbackId": "generated or callback metadata; not a remote auth schema"
+      },
+      "response_schema": null,
+      "authentication": "Flutter handler implementation unknown",
+      "operation": "JS wrapper only; no invocation performed",
+      "confidence": "S_script_wrapper",
+      "evidence": {
+        "source": "parent_static_report",
+        "member": "assets/flutter_assets/assets/bridge.js",
+        "lines": "250-256"
+      },
+      "notes": "getToken_app -> android.getToken; no real token obtained; not authorization or complete authentication flow."
+    },
+    {
+      "id": "BRIDGE-tokenError",
+      "module": "bridge",
+      "integration_kind": "in_process_js_message",
+      "host": null,
+      "path": null,
+      "http_method": null,
+      "request_schema": {
+        "handlerName": "tokenError",
+        "arguments": "null in this wrapper",
+        "callbackId": "generated or callback metadata; not a remote auth schema"
+      },
+      "response_schema": null,
+      "authentication": "Flutter handler implementation unknown",
+      "operation": "JS wrapper only; no invocation performed",
+      "confidence": "S_script_wrapper",
+      "evidence": {
+        "source": "parent_static_report",
+        "member": "assets/flutter_assets/assets/bridge.js",
+        "lines": "264-268"
+      },
+      "notes": "tokenError_app -> android.tokenError_inner; no real token obtained; not authorization or complete authentication flow."
+    },
+    {
+      "id": "BRIDGE-tokenExpired",
+      "module": "bridge",
+      "integration_kind": "in_process_js_message",
+      "host": null,
+      "path": null,
+      "http_method": null,
+      "request_schema": {
+        "handlerName": "tokenExpired",
+        "arguments": "null in this wrapper",
+        "callbackId": "generated or callback metadata; not a remote auth schema"
+      },
+      "response_schema": null,
+      "authentication": "Flutter handler implementation unknown",
+      "operation": "JS wrapper only; no invocation performed",
+      "confidence": "S_script_wrapper",
+      "evidence": {
+        "source": "parent_static_report",
+        "member": "assets/flutter_assets/assets/bridge.js",
+        "lines": "272-276"
+      },
+      "notes": "tokenExpired_app -> android.tokenExpired; no real token obtained; not authorization or complete authentication flow."
+    }
+  ],
+  "gaps": [
+    "Campus-card balance/ledger/payment schemas and allowed authentication",
+    "Mail supported access method, provider, protocols and SSO",
+    "Whole-APK offline inventory and actual module attribution",
+    "Methods, response schemas and call relationships for literal-only entries",
+    "Android+iOS functional and session verification"
+  ],
+  "safety_boundary": "No private data, login, payment, mail sending/read-state writes, bypass, endpoint guessing or path scanning performed."
+}

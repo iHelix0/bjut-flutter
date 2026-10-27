@@ -1,0 +1,27 @@
+{
+  "e": 0,
+  "m": "操作成功",
+  "d": {
+    "classes": [
+      {
+        "course_id": "fictional-course-a",
+        "course_name": "示例课程 A（虚构）",
+        "location": "虚构教学楼 A",
+        "weekday": "fictional-day-a",
+        "lessons": "fictional-slots-a",
+        "teacher": "虚构教师甲",
+        "week": "fictional-weeks-a"
+      },
+      {
+        "course_id": "fictional-course-b",
+        "course_name": "示例课程 B（虚构）",
+        "location": "虚构教学楼 B",
+        "weekday": "unknown-day-code",
+        "lessons": "unknown-slot-code",
+        "teacher": "虚构教师乙",
+        "week": "unknown-week-code"
+      }
+    ],
+    "weekdays": ["fictional-day-a", "unknown-day-code"]
+  }
+}

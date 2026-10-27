@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../information/presentation/information_page.dart';
+import '../../schedule/presentation/schedule_page.dart';
 
 class HomeShellPage extends StatefulWidget {
   const HomeShellPage({super.key});
@@ -27,6 +28,7 @@ class _HomeShellPageState extends State<HomeShellPage> {
             label: '首页',
           ),
           NavigationDestination(
+            key: Key('nav-schedule'),
             icon: Icon(Icons.calendar_month_outlined),
             selectedIcon: Icon(Icons.calendar_month),
             label: '课表',
@@ -55,11 +57,7 @@ class _HomeShellPageState extends State<HomeShellPage> {
   Widget _pageForIndex() {
     return switch (_selectedIndex) {
       0 => const _OverviewPage(),
-      1 => const _ComingSoonPage(
-        icon: Icons.calendar_month_outlined,
-        title: '我的课表',
-        detail: '接口接入后，这里会显示周视图课程。',
-      ),
+      1 => const SchedulePage(),
       2 => const _ComingSoonPage(
         icon: Icons.notifications_none,
         title: '个人通知',

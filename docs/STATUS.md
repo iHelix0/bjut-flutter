@@ -2,9 +2,30 @@
 
 记录日期：2026-09-01
 
-更新日期：2026-09-01
+更新日期：2026-10-27
 
-状态：基础工程已完成，接口取证中
+状态：基础工程已完成；新增独立课表离线候选与父侧 APK 扫描记录，Flutter 验证受阻
+
+## 2026-10-27 扩展进展
+
+- 已确认新增公开测试分支与 CI 授权；本地分支及 workflow 已准备，未修改 main。
+  仓库连接无写权限，指定分支 dry-run 被远端 HTTP 403 拒绝；无远端分支或 run。
+- 已整理 [全应用接入矩阵](evidence/APP_INTEGRATION_CATALOG.md)，优先校园卡、
+  邮箱。邮箱只确认学校公开网页的入口链接，未取得页面或邮件协议；校园卡没有
+  可实施的余额/账单 schema。未执行私人数据访问或任何业务写操作。
+- 标准库离线字面量工具及 6 个合成 ZIP 测试已通过；真实 APK 在新授权下的
+  消费端下载重试仍失败，故未实际枚举全 APK。官方 Flutter 下载重试仍 403。
+- format/analyze/Flutter tests、Android/iOS 构建均未运行。见 [CI 记录](engineering/CI_VALIDATION.md)。
+
+## 2026-10-26 本地候选进展
+
+- 已确认：独立克隆并核对基线 `85c13af15d1b09c250dc340bef5341fbe8422285`，开始时工作区干净。未修改预载 VeilSpire 仓库。
+- 已确认：先前 Work 的未提交补丁不在本环境；本轮独立重建，未继承、覆盖或比对其成果，后续可能需要人工合并同名改动。
+- 候选实现：`schedule/` DataSource → Repository → Page、两个完全虚构成功内容包、五个边界 fixture，以及解析/数据源/Repository/Widget 测试代码。课表入口始终标明虚构、未登录、未同步；无真实 HTTP、认证或缓存实现。
+- 已执行：合成 JSON 语法检查（畸形样本按预期不合法）与文本补丁检查；详细证据及交付位置见 [候选记录](engineering/SCHEDULE_OFFLINE_CANDIDATE.md)。
+- 待验证：环境没有 Flutter/Dart/Android SDK；官方 Flutter 下载返回 HTTP 403。format/analyze/test/Android 构建本轮均未运行；iOS 构建和真机验收未运行。下文基础工程构建通过是 2026-09-01 的历史记录，不代表本轮结果。
+- 已收到父侧静态证据：父侧对已有用户上传 APK 核对摘要、ZIP/Manifest 并扫描字面量和 bridge.js；本消费环境仍下载失败、无 APK 字节，不能声称独立复核。`package:oneness` 源 URI、课表相关 URL 和桥接符号不足以确认官方出处、与本仓库关系、真实编码或完整认证协议。见 [分级证据记录](evidence/APK_STATIC_REVIEW.md)。
+- 候选测试追加：加载/刷新中导航销毁页面后晚到成功/失败，以及同一 Repository 新旧重载乱序完成的 8 个 Widget 回归用例；实际 Flutter 测试仍未运行。
 
 ## 已确认
 

@@ -1,0 +1,25 @@
+{
+  "e": 0,
+  "m": "操作成功",
+  "d": {
+    "params": {
+      "id": "fictional-term-a",
+      "year": "虚构示例学年",
+      "term": "虚构示例学期",
+      "startday": "fictional-start-day",
+      "countweek": "fictional-week-count",
+      "week": 1
+    },
+    "termInfo": [
+      {
+        "id": "fictional-term-a",
+        "year": "虚构示例学年",
+        "term": "虚构示例学期",
+        "startday": "fictional-start-day",
+        "countweek": "fictional-week-count",
+        "week": 1
+      }
+    ],
+    "weekday": "fictional-day-a"
+  }
+}

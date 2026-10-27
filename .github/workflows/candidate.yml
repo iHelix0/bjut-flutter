@@ -1,0 +1,96 @@
+name: Offline candidate validation
+
+on:
+  push:
+    branches: [codex/offline-schedule-ci-20261027]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: offline-candidate-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CI: 'true'
+  FLUTTER_SUPPRESS_ANALYTICS: 'true'
+  DART_SUPPRESS_ANALYTICS: 'true'
+
+jobs:
+  quality:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Set up pinned official Flutter
+        run: bash tools/setup_flutter_ci.sh
+      - name: Resolve packages
+        run: flutter pub get
+      - name: Test offline inventory utility with synthetic ZIPs
+        run: python3 -m unittest discover -s tools/tests -v
+      - name: Check Dart format and record reviewable changes
+        id: format
+        continue-on-error: true
+        run: |
+          dart format lib test
+          git diff --binary -- lib test > "$RUNNER_TEMP/format.patch"
+          git diff --exit-code -- lib test
+      - name: Analyze
+        id: analyze
+        continue-on-error: true
+        run: flutter analyze
+      - name: Run all Flutter tests
+        id: tests
+        continue-on-error: true
+        run: flutter test --reporter expanded
+      - name: Upload formatter patch
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: formatter-patch
+          path: ${{ runner.temp }}/format.patch
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Require formatting, analysis and tests to pass
+        if: always()
+        env:
+          FORMAT_RESULT: ${{ steps.format.outcome }}
+          ANALYZE_RESULT: ${{ steps.analyze.outcome }}
+          TEST_RESULT: ${{ steps.tests.outcome }}
+        run: |
+          test "$FORMAT_RESULT" = success
+          test "$ANALYZE_RESULT" = success
+          test "$TEST_RESULT" = success
+
+  android:
+    needs: quality
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Set up pinned official Flutter
+        run: bash tools/setup_flutter_ci.sh
+      - name: Install Android build prerequisites
+        run: |
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" \
+            'platforms;android-36' 'build-tools;36.0.0' 'ndk;28.2.13676358'
+      - name: Build offline Android debug candidate
+        run: |
+          flutter pub get
+          flutter build apk --debug
+          sha256sum build/app/outputs/flutter-apk/app-debug.apk > "$RUNNER_TEMP/android-build.sha256"
+      - name: Upload build checksum only
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: android-debug-checksum
+          path: ${{ runner.temp }}/android-build.sha256
+          retention-days: 7
