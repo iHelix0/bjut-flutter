@@ -63,6 +63,10 @@
 
 ## 决策模板
 
+最新验证：测试分支 Actions `40446494590` 已通过 quality 和 Android debug，
+实际代码 SHA 为 `56499cb090f900e97448f0b6e7047d7f6c8e7e84`。iOS、真实认证与
+校园卡/邮箱协议仍未验收；不扩展为 main 合并、Release 或私人接口调用授权。
+
 2026-10-27 后续已明确唯一发布方及有权连接：通过正式 Git 数据接口发布测试
 分支，main/Release 边界不变；SHA 对应关系见 [发布记录](engineering/PUBLICATION.md)。
 首轮 CI 已实际执行并失败，按日志修复；这不扩展校园接口/凭据或私人数据授权。

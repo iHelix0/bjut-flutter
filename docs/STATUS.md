@@ -4,7 +4,17 @@
 
 更新日期：2026-10-27
 
-状态：独立课表离线候选与扩展 APK 证据已发布测试分支，首轮 CI 已执行并进入修复
+状态：离线候选和扩展证据已发布测试分支，quality 与 Android debug CI 通过；真实接入未完成
+
+## 2026-10-27 自动验证完成（最新）
+
+- [Actions 40446494590](https://github.com/iHelix0/bjut-flutter/actions/runs/40446494590)
+  completed/success：format 18 文件 0 差异，analyze 无问题，Flutter 64 项及 Python
+  6 项测试通过，Android debug 构建成功。被验证代码 SHA 为 `56499cb090f900e97448f0b6e7047d7f6c8e7e84`。
+- 后续仅补 README/docs 结果记录，不重复运行相同代码；准确原始/远端映射见
+  [发布记录](engineering/PUBLICATION.md)。main 未改，未发 Release。
+- iOS/设备、真实登录、校园卡/邮箱等业务接口仍未验收；静态目录与合成示例不
+  作为真实协议或稳定接口。以下条目是早期过程记录，最新结果以 [CI 记录](engineering/CI_VALIDATION.md) 为准。
 
 ## 2026-10-27 测试分支发布与首轮 CI
 

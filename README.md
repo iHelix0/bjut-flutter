@@ -20,14 +20,14 @@ MVP 必须同时具备：
 
 ## 当前状态
 
-项目已创建 Android+iOS 基础 Flutter 工程：首页、课表、通知、校园卡、信息五个入口，信息页可读取版本化静态内容包。本地候选改动将课表入口替换为明确标注的完全虚构离线示例，尚未通过本轮 Flutter 验证；真实接口、登录会话和正式包名仍待接口取证与后续确认。
+项目已创建 Android+iOS 基础 Flutter 工程：首页、课表、通知、校园卡、信息五个入口，信息页读取版本化静态内容包，课表为明确标注的完全虚构离线示例。测试分支已通过 format、analyze、64 项 Flutter 测试和 Android debug 构建；iOS 本轮未验证，真实接口、登录会话和正式包名仍待确认。
 
 本轮独立候选补丁、历史样本契约、测试范围与工具阻塞见 [课表离线候选记录](docs/engineering/SCHEDULE_OFFLINE_CANDIDATE.md)，APK 取回状态见 [只读 APK 证据记录](docs/evidence/APK_STATIC_REVIEW.md)。
 
 新增 [全应用接入矩阵](docs/evidence/APP_INTEGRATION_CATALOG.md)（优先校园卡与邮箱，
 有证据的入口与未知协议分开记录）及 [测试分支与 CI 状态](docs/engineering/CI_VALIDATION.md)。
-测试分支已通过用户配置的有权连接发布并触发 Actions；首次运行发现格式、
-分析和异步页面回归问题，正在修复。实际结果以 CI 记录为准，尚不宣称最终通过。
+测试分支已通过有权连接发布并完成真实 CI：[40446494590](https://github.com/iHelix0/bjut-flutter/actions/runs/40446494590)。
+通过的是离线代码与 Android 构建，不代表真实登录、校园业务或 iOS 已验收。
 
 当前建议采用“只读核心 MVP + 充值专项”的路线：
 
