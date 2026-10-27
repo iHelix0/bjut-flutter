@@ -8,6 +8,11 @@
 
 ## 2026-10-27 自动验证完成（最新）
 
+后续接口发现只修改证据文档：itsapp 公开根页返回指定来源 IP 的访问提示后
+停止；邮箱页面可见 Coremail 品牌/登录文案，帮助 header 未提供配置。四项精确
+源码检索无命中，未恢复新字段或绑定。[最小补证清单](evidence/PUBLIC_ENTRY_FOLLOWUP.md)
+仅需要脱敏界面/字段/调用元信息，不索要凭据或原始 HAR；现有代码与通过的 CI 不变。
+
 - [Actions 40446494590](https://github.com/iHelix0/bjut-flutter/actions/runs/40446494590)
   completed/success：format 18 文件 0 差异，analyze 无问题，Flutter 64 项及 Python
   6 项测试通过，Android debug 构建成功。被验证代码 SHA 为 `56499cb090f900e97448f0b6e7047d7f6c8e7e84`。

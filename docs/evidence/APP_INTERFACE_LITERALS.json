@@ -686,7 +686,10 @@
       },
       "implementation": "not connected; no invocation performed",
       "literal": "https://itsapp.bjut.edu.cn",
-      "notes": "Host literal only; no relative-path association or service behavior proved."
+      "notes": "Host literal only; no relative-path association or service behavior proved.",
+      "public_observation_refs": [
+        "P-ITSAPP-IP-BOUNDARY"
+      ]
     },
     {
       "id": "BJUT-HOST-oat",
@@ -1163,9 +1166,17 @@
       },
       "read_attempt": {
         "url": "https://mail.bjut.edu.cn/",
+        "result": "public branding/login text retrieved; no authenticated content accessed"
+      },
+      "notes": "Public Coremail-branded login entrance, not an API. No form schema, tenant client protocol, SSO or APK model binding recovered.",
+      "historical_read_attempt": {
+        "url": "https://mail.bjut.edu.cn/",
         "result": "web tool timeout, no page obtained"
       },
-      "notes": "Not an API. IMAP/POP/SMTP/OAuth/provider/ports and SSO unverified."
+      "public_observation_refs": [
+        "P-MAIL-BRANDING",
+        "P-MAIL-HELP-HEADER"
+      ]
     },
     {
       "id": "BRIDGE-getToken",
@@ -1453,5 +1464,13 @@
       "observed": "generic get:weekday only",
       "protocol_evidence": false
     }
-  ]
+  ],
+  "public_followup": {
+    "date": "2026-10-27",
+    "observations_file": "PUBLIC_ENTRY_OBSERVATIONS.json",
+    "new_fields_recovered": 0,
+    "new_request_bindings_recovered": 0,
+    "verified_runtime_apis_added": 0,
+    "notes": "Public itsapp page returns designated-IP restriction text; mail page shows Coremail branding/login UI. Neither recovers app request schema or SSO protocol."
+  }
 }

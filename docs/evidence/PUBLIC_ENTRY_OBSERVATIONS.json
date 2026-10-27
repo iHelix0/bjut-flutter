@@ -1,0 +1,109 @@
+{
+  "updated": "2026-10-27",
+  "scope": "bounded unauthenticated public-document retrieval and indexed source search; no campus API/session tests",
+  "school_entry_reads": [
+    {
+      "id": "P-ITSAPP-IP-BOUNDARY",
+      "url": "https://itsapp.bjut.edu.cn/",
+      "tool_result": "public page text requires designated source IP",
+      "short_visible_text": "仅限指定IP访问",
+      "crawler_freshness": "web tool marked last week",
+      "origin_http_status": null,
+      "conclusions": [
+        "Access restriction is visible in returned page text",
+        "No card/fixed-app/SSO response schema obtained"
+      ],
+      "limits": [
+        "Not a live origin HTTP-status or IP-policy test",
+        "Not proof of a particular SSO protocol or API failure code"
+      ],
+      "followup": "Stopped this host path; no relative-path probes, alternate IP, VPN, headers or credentials used"
+    },
+    {
+      "id": "P-MAIL-BRANDING",
+      "url": "https://mail.bjut.edu.cn/",
+      "tool_result": "page shows Coremail / Corpease brand links; official-domain search result includes login labels",
+      "crawler_freshness": "today",
+      "visible_login_labels": [
+        "username",
+        "password",
+        "language",
+        "login"
+      ],
+      "origin_http_status": null,
+      "conclusions": [
+        "Public webmail entrance/brand and authentication UI text are evidenced"
+      ],
+      "limits": [
+        "No product version, form field attributes, API, IMAP/POP/SMTP server, ports or SSO protocol recovered",
+        "Brand/footer text does not recover mailbox model fields"
+      ],
+      "followup": "No login form submission, inbox access, authentication path or private mail reads"
+    },
+    {
+      "id": "P-MAIL-HELP-HEADER",
+      "url": "https://mail.bjut.edu.cn/coremail/help/header_zh_CN.jsp",
+      "discovery": "Exact public help-header URL appeared in search results, not guessed",
+      "tool_result": "header contains only mailbox-home link in retrieved text",
+      "origin_http_status": null,
+      "conclusions": [
+        "A public help-header page exists in retrieved content"
+      ],
+      "limits": [
+        "No client settings, protocol configuration or SSO details obtained"
+      ],
+      "followup": "Did not construct additional Coremail help/API paths"
+    }
+  ],
+  "source_searches": [
+    {
+      "source": "connected GitHub file-search index",
+      "query": "BjutHomeSchoolCardD",
+      "maximum_results": 5,
+      "returned_results": 0,
+      "limit": "Search covers indexed/default-branch content; zero hits is not proof that source is unavailable everywhere"
+    },
+    {
+      "source": "connected GitHub file-search index",
+      "query": "bjut_home_fixed_content_entity",
+      "maximum_results": 5,
+      "returned_results": 0,
+      "limit": "Search covers indexed/default-branch content; zero hits is not proof that source is unavailable everywhere"
+    },
+    {
+      "source": "connected GitHub file-search index",
+      "query": "getHomeSchoolCard",
+      "maximum_results": 5,
+      "returned_results": 0,
+      "limit": "Search covers indexed/default-branch content; zero hits is not proof that source is unavailable everywhere"
+    },
+    {
+      "source": "connected GitHub file-search index",
+      "query": "BjutHomeFixedDFixedAppEmail",
+      "maximum_results": 5,
+      "returned_results": 0,
+      "limit": "Search covers indexed/default-branch content; zero hits is not proof that source is unavailable everywhere"
+    }
+  ],
+  "public_help_searches": [
+    {
+      "query": "site:mail.bjut.edu.cn/coremail/help 客户端 IMAP",
+      "returned_results": 0
+    },
+    {
+      "query": "site:mail.bjut.edu.cn SMTP 服务器",
+      "returned_results": 0
+    }
+  ],
+  "excluded_results": [
+    "password-reset/authentication flow",
+    "personal/shared-download results",
+    "outdated third-party repost as current configuration evidence"
+  ],
+  "data_minimization": "Excluded URLs/identifiers, raw HTML, anonymous session values, account data and credential defaults are not retained",
+  "new_fields_recovered": [],
+  "new_request_bindings_recovered": [],
+  "verified_runtime_apis_added": 0,
+  "stop_reason": "Available public evidence stops at IP/login boundary; generated AOT model/call bodies still unrecovered in consumer. This does not claim AOT recovery is permanently impossible.",
+  "next_required_evidence": "Minimal sanitized field/call/UI plan in PUBLIC_ENTRY_FOLLOWUP.md; no password/token/cookie or raw HAR requested"
+}
