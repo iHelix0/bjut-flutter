@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "updated": "2026-10-27",
-  "scope": "All current supplied evidence, NOT a whole-APK scan or exhaustive runtime API inventory",
+  "scope": "Parent expanded whole-ZIP offline literal scan plus separately labelled historical/public evidence; not exhaustive runtime APIs",
   "apk_scan_completed_here": false,
   "verified_campus_api_count": 0,
   "runtime_call_graph_recovered": false,
@@ -12,18 +12,18 @@
     {
       "module": "campus_card",
       "priority": 1,
-      "apk_membership": "not evidenced in available report",
-      "endpoint": null,
+      "apk_membership": "BJUT card model/generated/notifier URI and symbols plus JS navigation wrappers evidenced",
+      "endpoint": "consumption-code is name-only clue, not a balance/recharge endpoint",
       "schema": null,
       "implementation": "not connected"
     },
     {
       "module": "mail",
       "priority": 2,
-      "apk_membership": "not evidenced in available report",
-      "endpoint": "public web link only",
+      "apk_membership": "BjutHomeFixedDFixedAppEmail symbols evidenced",
+      "endpoint": "public web link only, absent as literal in reported APK scan",
       "schema": null,
-      "implementation": "not connected"
+      "implementation": "not connected; dynamic entry/unread count are research questions only"
     },
     {
       "module": "authentication_home_schedule_bridge",
@@ -31,20 +31,48 @@
       "implementation": "offline fictional schedule only; authentication not implemented"
     },
     {
-      "module": "personal_notifications_external_apps_third_party_services_and_other_APK_modules",
-      "apk_membership": "not enumerated without local bytes",
-      "endpoint": null,
+      "module": "news_notifications_appsquare_services_collect_feedback_upload_userinfo",
+      "apk_membership": "BJUT-named paths / URLs evidenced; module grouping by names only",
+      "schema": null,
       "implementation": "not connected"
+    },
+    {
+      "module": "external_apps_third_party_and_other_schools",
+      "apk_membership": "muc/xidian/sdu shared-code presence reported; not BJUT contracts",
+      "endpoint": null,
+      "implementation": "excluded from BJUT API mapping"
     }
   ],
   "hosts": [
     {
       "host": "itsapp.bjut.edu.cn",
-      "evidence": "parent libapp.so offset 0x405c6; API associations unverified"
+      "scope": "S_parent_APK_host_literal",
+      "member_byte_offset_hex": "0x405c6",
+      "association": "No arbitrary host/path pairing"
+    },
+    {
+      "host": "oat.bjut.edu.cn",
+      "scope": "S_parent_APK_host_literal",
+      "member_byte_offset_hex": "0x735b1",
+      "association": "No arbitrary host/path pairing"
     },
     {
       "host": "webvpn.bjut.edu.cn",
-      "evidence": "parent libapp.so offset 0x820a6; URL clue only"
+      "scope": "S_parent_APK_host_literal",
+      "member_byte_offset_hex": "0x99b7e",
+      "association": "No arbitrary host/path pairing"
+    },
+    {
+      "host": "cas.bjut.edu.cn",
+      "scope": "S_parent_APK_host_literal",
+      "member_byte_offset_hex": "0xb901c",
+      "association": "No arbitrary host/path pairing"
+    },
+    {
+      "host": "ydapp.bjut.edu.cn",
+      "scope": "S_parent_APK_host_literal",
+      "member_byte_offset_hex": "0xe8db3",
+      "association": "No arbitrary host/path pairing"
     },
     {
       "host": "mail.bjut.edu.cn",
@@ -61,49 +89,58 @@
   ],
   "records": [
     {
-      "id": "AUTH-LOGIN",
-      "module": "authentication",
-      "integration_kind": "native_api_candidate",
+      "id": "BJUT-REL-01",
+      "integration_kind": "relative_path_literal",
       "host": null,
-      "path": "/bjutapp/wap/app-login/login",
+      "path": "/bjutapp/wap/index/carouse",
       "http_method": null,
       "request_schema": null,
       "response_schema": null,
       "authentication": "unknown",
       "operation": "unknown",
       "confidence": "S_literal_only",
-      "host_path_association_verified": false,
+      "runtime_host_path_binding_verified": false,
       "evidence": {
-        "source": "parent_static_report",
+        "source": "parent_expanded_offline_report",
         "member": "lib/arm64-v8a/libapp.so",
-        "member_byte_offset_hex": "0x9a480"
+        "member_byte_offset_hex": "0x41541"
       },
-      "notes": "Host literal coexists; no call graph or request recovered."
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/index/carouse",
+      "literal_query": null,
+      "module_by_name": "index",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
     },
     {
-      "id": "AUTH-LOCAL-LOGIN",
-      "module": "authentication",
-      "integration_kind": "native_api_candidate",
+      "id": "BJUT-REL-02",
+      "integration_kind": "relative_path_literal",
       "host": null,
-      "path": "/bjutapp/wap/app-login/local-login",
+      "path": "/bjutapp/wap/appsquare/tip",
       "http_method": null,
       "request_schema": null,
       "response_schema": null,
       "authentication": "unknown",
       "operation": "unknown",
       "confidence": "S_literal_only",
-      "host_path_association_verified": false,
+      "runtime_host_path_binding_verified": false,
       "evidence": {
-        "source": "parent_static_report",
+        "source": "parent_expanded_offline_report",
         "member": "lib/arm64-v8a/libapp.so",
-        "member_byte_offset_hex": "0x660ac"
+        "member_byte_offset_hex": "0x43a00"
       },
-      "notes": ""
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/appsquare/tip",
+      "literal_query": null,
+      "module_by_name": "appsquare",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
     },
     {
       "id": "HOME-FIXED-CONTENT",
-      "module": "home",
-      "integration_kind": "native_api_candidate",
+      "integration_kind": "relative_path_literal",
       "host": null,
       "path": "/bjutapp/wap/index/fixed-content",
       "http_method": null,
@@ -112,18 +149,569 @@
       "authentication": "unknown",
       "operation": "unknown",
       "confidence": "S_literal_only",
-      "host_path_association_verified": false,
+      "runtime_host_path_binding_verified": false,
       "evidence": {
-        "source": "parent_static_report",
+        "source": "parent_expanded_offline_report",
         "member": "lib/arm64-v8a/libapp.so",
         "member_byte_offset_hex": "0x494b4"
       },
-      "notes": "has_timetable and timetable_url are field-name literals; types unknown."
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/index/fixed-content",
+      "literal_query": null,
+      "module_by_name": "index",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
     },
     {
-      "id": "SCHEDULE-WEBVPN",
-      "module": "schedule",
-      "integration_kind": "web_page_candidate",
+      "id": "BJUT-REL-04",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/news/top-list",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x58a86"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/news/top-list",
+      "literal_query": null,
+      "module_by_name": "news",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-REL-05",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/user/app-info",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x5a10f"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/user/app-info",
+      "literal_query": null,
+      "module_by_name": "user",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "AUTH-LOCAL-LOGIN",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/app-login/local-login",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x660ac"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/app-login/local-login",
+      "literal_query": null,
+      "module_by_name": "app-login",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-REL-07",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/appsquare/wlist",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x70682"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/appsquare/wlist",
+      "literal_query": null,
+      "module_by_name": "appsquare",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-REL-08",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/feed-back/save",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x77dd0"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/feed-back/save",
+      "literal_query": null,
+      "module_by_name": "feed-back",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name.",
+      "write_risk_by_name": "possible; unverified; do not invoke"
+    },
+    {
+      "id": "BJUT-REL-09",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/tzgg/index",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x79546"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/tzgg/index",
+      "literal_query": null,
+      "module_by_name": "tzgg",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-REL-10",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/news/news-list",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x91352"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/news/news-list",
+      "literal_query": null,
+      "module_by_name": "news",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-REL-11",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/a_bjut/api/sso/index",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x96444"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/a_bjut/api/sso/index",
+      "literal_query": null,
+      "module_by_name": "sso_name_candidate",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "AUTH-LOGIN",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/app-login/login",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x9a480"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/app-login/login",
+      "literal_query": null,
+      "module_by_name": "app-login",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-REL-13",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/app-login/check",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x9ba75"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/app-login/check",
+      "literal_query": null,
+      "module_by_name": "app-login",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-REL-14",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/collect/my-collect",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xaf746"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/collect/my-collect",
+      "literal_query": null,
+      "module_by_name": "collect",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name.",
+      "write_risk_by_name": "possible; unverified; do not invoke"
+    },
+    {
+      "id": "BJUT-REL-15",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/collect/index",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xb1ae7"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/collect/index",
+      "literal_query": null,
+      "module_by_name": "collect",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name.",
+      "write_risk_by_name": "possible; unverified; do not invoke"
+    },
+    {
+      "id": "BJUT-REL-16",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/a_bjut/api/sso/index",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xc89b8"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/a_bjut/api/sso/index?redirect=/bjutapp/wap/app-login/local-login&amp;from=wap",
+      "literal_query": "redirect=/bjutapp/wap/app-login/local-login&amp;from=wap",
+      "module_by_name": "sso_name_candidate",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name. Raw literal contains HTML &amp;; not normalized into an actual request."
+    },
+    {
+      "id": "BJUT-REL-17",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/default/info-service",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xcadfe"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/default/info-service",
+      "literal_query": null,
+      "module_by_name": "default",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-REL-18",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/index/fixed-appv1",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xcf9fd"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/index/fixed-appv1",
+      "literal_query": null,
+      "module_by_name": "index",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-REL-19",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/default/consumption-code",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xd336e"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/default/consumption-code",
+      "literal_query": null,
+      "module_by_name": "default",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name.",
+      "write_risk_by_name": "possible; unverified; do not invoke"
+    },
+    {
+      "id": "BJUT-REL-20",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/service/hot-service",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xd9e93"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/service/hot-service",
+      "literal_query": null,
+      "module_by_name": "service",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-REL-21",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/msg/unread",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xdd23d"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/msg/unread",
+      "literal_query": null,
+      "module_by_name": "msg",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-REL-22",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/index/onestop-carouse",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xe6c40"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/index/onestop-carouse",
+      "literal_query": null,
+      "module_by_name": "index",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-REL-23",
+      "integration_kind": "relative_path_literal",
+      "host": null,
+      "path": "/bjutapp/wap/news/lists-tag",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xe87fc"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "/bjutapp/wap/news/lists-tag",
+      "literal_query": null,
+      "module_by_name": "news",
+      "module_attribution": "name grouping only; function/call graph not recovered",
+      "host_path_association_verified": false,
+      "notes": "Do not bind to any coexisting host or infer method/body/response from path name."
+    },
+    {
+      "id": "BJUT-HOST-itsapp",
+      "integration_kind": "host_literal",
+      "host": "itsapp.bjut.edu.cn",
+      "path": null,
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x405c6"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://itsapp.bjut.edu.cn",
+      "notes": "Host literal only; no relative-path association or service behavior proved."
+    },
+    {
+      "id": "BJUT-HOST-oat",
+      "integration_kind": "host_literal",
+      "host": "oat.bjut.edu.cn",
+      "path": null,
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x735b1"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://oat.bjut.edu.cn",
+      "notes": "Host literal only; no relative-path association or service behavior proved."
+    },
+    {
+      "id": "BJUT-HOST-webvpn",
+      "integration_kind": "host_literal",
       "host": "webvpn.bjut.edu.cn",
       "path": null,
       "http_method": null,
@@ -132,14 +720,309 @@
       "authentication": "unknown",
       "operation": "unknown",
       "confidence": "S_literal_only",
-      "host_path_association_verified": false,
+      "runtime_host_path_binding_verified": false,
       "evidence": {
-        "source": "parent_static_report",
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x99b7e"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://webvpn.bjut.edu.cn",
+      "notes": "Host literal only; no relative-path association or service behavior proved."
+    },
+    {
+      "id": "BJUT-HOST-cas",
+      "integration_kind": "host_literal",
+      "host": "cas.bjut.edu.cn",
+      "path": null,
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xb901c"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://cas.bjut.edu.cn",
+      "notes": "Host literal only; no relative-path association or service behavior proved."
+    },
+    {
+      "id": "BJUT-HOST-ydapp",
+      "integration_kind": "host_literal",
+      "host": "ydapp.bjut.edu.cn",
+      "path": null,
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xe8db3"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://ydapp.bjut.edu.cn",
+      "notes": "Host literal only; no relative-path association or service behavior proved."
+    },
+    {
+      "id": "BJUT-URL-01",
+      "integration_kind": "upload_url_candidate",
+      "host": "itsapp.bjut.edu.cn",
+      "path": "/api/upload/azupload",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x68b25"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://itsapp.bjut.edu.cn/api/upload/azupload",
+      "literal_query": null,
+      "literal_host_path_pair": true,
+      "notes": "Complete literal URL, not an observed HTTP request or verified runtime binding. Query constants are literal evidence, not an API schema.",
+      "write_risk_by_name": "upload candidate; never invoked"
+    },
+    {
+      "id": "BJUT-URL-02",
+      "integration_kind": "web_page_url_literal",
+      "host": "itsapp.bjut.edu.cn",
+      "path": "/site/bjutPage/feedbackHistory",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x5196d"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://itsapp.bjut.edu.cn/site/bjutPage/feedbackHistory",
+      "literal_query": null,
+      "literal_host_path_pair": true,
+      "notes": "Complete literal URL, not an observed HTTP request or verified runtime binding. Query constants are literal evidence, not an API schema."
+    },
+    {
+      "id": "BJUT-URL-03",
+      "integration_kind": "web_page_url_literal",
+      "host": "itsapp.bjut.edu.cn",
+      "path": "/site/bjutPage/bjutInformation",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xa59d0"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://itsapp.bjut.edu.cn/site/bjutPage/bjutInformation",
+      "literal_query": null,
+      "literal_host_path_pair": true,
+      "notes": "Complete literal URL, not an observed HTTP request or verified runtime binding. Query constants are literal evidence, not an API schema."
+    },
+    {
+      "id": "BJUT-URL-04",
+      "integration_kind": "web_page_url_literal",
+      "host": "itsapp.bjut.edu.cn",
+      "path": "/site/material/blankdetail",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xaa555"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://itsapp.bjut.edu.cn/site/material/blankdetail?id=6",
+      "literal_query": "id=6",
+      "literal_host_path_pair": true,
+      "notes": "Complete literal URL, not an observed HTTP request or verified runtime binding. Query constants are literal evidence, not an API schema."
+    },
+    {
+      "id": "BJUT-URL-05",
+      "integration_kind": "web_page_url_literal",
+      "host": "itsapp.bjut.edu.cn",
+      "path": "/wap/material",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xc031e"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://itsapp.bjut.edu.cn/wap/material?id=23",
+      "literal_query": "id=23",
+      "literal_host_path_pair": true,
+      "notes": "Complete literal URL, not an observed HTTP request or verified runtime binding. Query constants are literal evidence, not an API schema."
+    },
+    {
+      "id": "BJUT-URL-06",
+      "integration_kind": "web_page_url_literal",
+      "host": "itsapp.bjut.edu.cn",
+      "path": "/site/bjutSearch/bjutSearch",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xd607c"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://itsapp.bjut.edu.cn/site/bjutSearch/bjutSearch?type=1",
+      "literal_query": "type=1",
+      "literal_host_path_pair": true,
+      "notes": "Complete literal URL, not an observed HTTP request or verified runtime binding. Query constants are literal evidence, not an API schema."
+    },
+    {
+      "id": "BJUT-URL-07",
+      "integration_kind": "web_page_url_literal",
+      "host": "itsapp.bjut.edu.cn",
+      "path": "/site/hotissue/index",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xec2f5"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://itsapp.bjut.edu.cn/site/hotissue/index?id=1",
+      "literal_query": "id=1",
+      "literal_host_path_pair": true,
+      "notes": "Complete literal URL, not an observed HTTP request or verified runtime binding. Query constants are literal evidence, not an API schema."
+    },
+    {
+      "id": "BJUT-URL-08",
+      "integration_kind": "web_page_url_literal",
+      "host": "itsapp.bjut.edu.cn",
+      "path": "/site/center/qrcode",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xed4f1"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://itsapp.bjut.edu.cn/site/center/qrcode",
+      "literal_query": null,
+      "literal_host_path_pair": true,
+      "notes": "Complete literal URL, not an observed HTTP request or verified runtime binding. Query constants are literal evidence, not an API schema."
+    },
+    {
+      "id": "BJUT-URL-09",
+      "integration_kind": "web_page_url_literal",
+      "host": "itsapp.bjut.edu.cn",
+      "path": "/site/material/blankdetail",
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0xf5781"
+      },
+      "implementation": "not connected; no invocation performed",
+      "literal": "https://itsapp.bjut.edu.cn/site/material/blankdetail?id=5",
+      "literal_query": "id=5",
+      "literal_host_path_pair": true,
+      "notes": "Complete literal URL, not an observed HTTP request or verified runtime binding. Query constants are literal evidence, not an API schema."
+    },
+    {
+      "id": "BJUT-WEBVPN-INFO",
+      "integration_kind": "encoded_webvpn_url_suffix",
+      "host": "webvpn.bjut.edu.cn",
+      "path": null,
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "lib/arm64-v8a/libapp.so",
+        "member_byte_offset_hex": "0x7a8ea"
+      },
+      "implementation": "not connected; no invocation performed",
+      "path_suffix": "/page/site/m_info",
+      "encoded_route_omitted": true,
+      "notes": "Encoded WebVPN route omitted from supplied text. Do not construct a request from host plus suffix."
+    },
+    {
+      "id": "SCHEDULE-WEBVPN",
+      "integration_kind": "encoded_webvpn_url_suffix",
+      "host": "webvpn.bjut.edu.cn",
+      "path": null,
+      "http_method": null,
+      "request_schema": null,
+      "response_schema": null,
+      "authentication": "unknown",
+      "operation": "unknown",
+      "confidence": "S_literal_only",
+      "runtime_host_path_binding_verified": false,
+      "evidence": {
+        "source": "parent_expanded_offline_report",
         "member": "lib/arm64-v8a/libapp.so",
         "member_byte_offset_hex": "0x820a6"
       },
-      "notes": "Only path suffix /page/msite/mySchedule recorded. Do not reconstruct complete URL or assume HTTP method.",
-      "path_suffix": "/page/msite/mySchedule"
+      "implementation": "not connected; no invocation performed",
+      "path_suffix": "/page/msite/mySchedule",
+      "encoded_route_omitted": true,
+      "notes": "Encoded WebVPN route omitted from supplied text. Do not construct a request from host plus suffix."
     },
     {
       "id": "SHARED-APPDAYLIST",
@@ -352,14 +1235,114 @@
         "lines": "272-276"
       },
       "notes": "tokenExpired_app -> android.tokenExpired; no real token obtained; not authorization or complete authentication flow."
+    },
+    {
+      "id": "BRIDGE-cardRecharge",
+      "module": "campus_card_name_or_code_navigation",
+      "integration_kind": "in_process_js_message",
+      "host": null,
+      "path": null,
+      "http_method": null,
+      "request_schema": {
+        "handlerName": "cardRecharge",
+        "arguments": "null in sender",
+        "callbackId": "not a remote authentication schema"
+      },
+      "response_schema": null,
+      "authentication": "Flutter receiver implementation unknown",
+      "operation": "JS sending/navigation wrapper only; no actual operation performed",
+      "write_risk_by_name": "recharge/loss/payment-related names; do not invoke",
+      "confidence": "S_script_wrapper",
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "assets/flutter_assets/assets/bridge.js",
+        "sender_lines": "159-160",
+        "wrapper_lines": "171-174"
+      },
+      "notes": "cardRecharge_app -> android.openWindow('cardRecharge'); no HTTP receiver, balance/recharge schema or authorization recovered."
+    },
+    {
+      "id": "BRIDGE-cardReportLoss",
+      "module": "campus_card_name_or_code_navigation",
+      "integration_kind": "in_process_js_message",
+      "host": null,
+      "path": null,
+      "http_method": null,
+      "request_schema": {
+        "handlerName": "cardReportLoss",
+        "arguments": "null in sender",
+        "callbackId": "not a remote authentication schema"
+      },
+      "response_schema": null,
+      "authentication": "Flutter receiver implementation unknown",
+      "operation": "JS sending/navigation wrapper only; no actual operation performed",
+      "write_risk_by_name": "recharge/loss/payment-related names; do not invoke",
+      "confidence": "S_script_wrapper",
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "assets/flutter_assets/assets/bridge.js",
+        "sender_lines": "161-162",
+        "wrapper_lines": "177-179"
+      },
+      "notes": "cardReportLoss_app -> android.openWindow('cardReportLoss'); no HTTP receiver, balance/recharge schema or authorization recovered."
+    },
+    {
+      "id": "BRIDGE-goToUserInfoCode",
+      "module": "campus_card_name_or_code_navigation",
+      "integration_kind": "in_process_js_message",
+      "host": null,
+      "path": null,
+      "http_method": null,
+      "request_schema": {
+        "handlerName": "goToUserInfoCode",
+        "arguments": "forwarded param; wrapper default Option=null; type unknown",
+        "callbackId": "not a remote authentication schema"
+      },
+      "response_schema": null,
+      "authentication": "Flutter receiver implementation unknown",
+      "operation": "JS sending/navigation wrapper only; no actual operation performed",
+      "write_risk_by_name": "recharge/loss/payment-related names; do not invoke",
+      "confidence": "S_script_wrapper",
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "assets/flutter_assets/assets/bridge.js",
+        "sender_lines": "208-209",
+        "wrapper_lines": "211-212"
+      },
+      "notes": "goToUserInfoCode_app(Option=null); no HTTP receiver, balance/recharge schema or authorization recovered."
+    },
+    {
+      "id": "BRIDGE-goToPayCode",
+      "module": "campus_card_name_or_code_navigation",
+      "integration_kind": "in_process_js_message",
+      "host": null,
+      "path": null,
+      "http_method": null,
+      "request_schema": {
+        "handlerName": "goToPayCode",
+        "arguments": "forwarded param; schema unknown",
+        "callbackId": "not a remote authentication schema"
+      },
+      "response_schema": null,
+      "authentication": "Flutter receiver implementation unknown",
+      "operation": "JS sending/navigation wrapper only; no actual operation performed",
+      "write_risk_by_name": "recharge/loss/payment-related names; do not invoke",
+      "confidence": "S_script_wrapper",
+      "evidence": {
+        "source": "parent_expanded_offline_report",
+        "member": "assets/flutter_assets/assets/bridge.js",
+        "sender_lines": "215-216",
+        "wrapper_lines": "218-219"
+      },
+      "notes": "goToPayCode_app; no HTTP receiver, balance/recharge schema or authorization recovered."
     }
   ],
   "gaps": [
-    "Campus-card balance/ledger/payment schemas and allowed authentication",
-    "Mail supported access method, provider, protocols and SSO",
-    "Whole-APK offline inventory and actual module attribution",
-    "Methods, response schemas and call relationships for literal-only entries",
-    "Android+iOS functional and session verification"
+    "HTTP methods, body/response schemas and relative-path host bindings",
+    "Card balance/ledger/recharge fields and authentication",
+    "Mailbox model fields, dynamic entry possibilities and permitted access protocol",
+    "Flutter bridge receivers and authentication implementation",
+    "Full runtime/dynamic endpoint coverage and Android+iOS functional verification"
   ],
   "safety_boundary": "No private data, login, payment, mail sending/read-state writes, bypass, endpoint guessing or path scanning performed.",
   "public_documents": [
@@ -378,6 +1361,97 @@
     {
       "url": "https://cas.bjut.edu.cn/cas/omg/handbook.pdf",
       "role": "2022 SSO user manual, not proof of individual module integration"
+    }
+  ],
+  "parent_scan_completed": true,
+  "expanded_report": {
+    "date": "2026-10-27",
+    "source": "parent verified text; evidence ZIP could not be materialized by consumer",
+    "source_sha256_matches_prior": true,
+    "total_url_path_candidates": 101,
+    "bjut_relative_paths": 23,
+    "bjut_host_urls": 16,
+    "remaining_shared_or_other_school_candidates": 62,
+    "js_call_sites": 47,
+    "unique_js_handlers": 46,
+    "related_aot_symbols": 40,
+    "represented_bjut_relative_paths": 23,
+    "represented_bjut_host_urls": 16,
+    "represented_named_js_handlers": 7,
+    "notes": "Remaining non-BJUT candidate strings and all handler names are not supplied in text and are not reconstructed."
+  },
+  "aot_evidence": {
+    "card_source_uris": [
+      {
+        "offset_hex": "0xd288b",
+        "uri": "package:oneness/model/bjut/bjut_home_school_card_entity.dart"
+      },
+      {
+        "offset_hex": "0xd21f7",
+        "uri": "package:oneness/generated/json/bjut_home_school_card_entity.g.dart"
+      },
+      {
+        "offset_hex": "0xe65a2",
+        "uri": "package:oneness/notifier/bjut/bjut_home_school_card_notifier.dart"
+      }
+    ],
+    "card_symbol_names": [
+      "BjutHomeSchoolCardD",
+      "BjutHomeSchoolCardEntity",
+      "getHomeSchoolCard",
+      "_buildSchoolCardData"
+    ],
+    "card_symbol_offsets": null,
+    "email_symbols": [
+      {
+        "offset_hex": "0x77289",
+        "symbol": "BjutHomeFixedDFixedAppEmail.fromJson"
+      },
+      {
+        "offset_hex": "0xc909e",
+        "symbol": "_$BjutHomeFixedDFixedAppEmailFromJson@1294298318"
+      },
+      {
+        "offset_hex": "0xe8f36",
+        "symbol": "BjutHomeFixedDFixedAppEmail"
+      },
+      {
+        "offset_hex": "0xf71e1",
+        "symbol": "_$BjutHomeFixedDFixedAppEmailToJson@1294298318"
+      }
+    ],
+    "offset_reference": "lib/arm64-v8a/libapp.so uncompressed member byte offsets, not APK offsets/virtual addresses",
+    "limits": "Names do not recover fields, balance units, endpoint binding, request method or server-side behavior."
+  },
+  "negative_searches": [
+    {
+      "scope": "all ZIP members UTF-8/UTF-16LE, parent report",
+      "terms": [
+        "mail.bjut.edu.cn",
+        "email.bjut.edu.cn",
+        "imap.bjut.edu.cn",
+        "smtp.bjut.edu.cn"
+      ],
+      "matches": 0,
+      "limit": "Does not prove mailbox feature or runtime-downloaded entry absent; protocols unknown."
+    },
+    {
+      "scope": "all ZIP members UTF-8/UTF-16LE, parent report",
+      "terms": [
+        "timetable/get-data",
+        "timetable/get-index",
+        "site/schedule",
+        "get-data",
+        "get-index",
+        "lessons"
+      ],
+      "matches": 0,
+      "limit": "Historical endpoints not confirmed by APK; runtime existence untested."
+    },
+    {
+      "term": "weekday",
+      "observed": "generic get:weekday only",
+      "protocol_evidence": false
     }
   ]
 }
