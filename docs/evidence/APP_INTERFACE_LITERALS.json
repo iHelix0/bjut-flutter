@@ -361,5 +361,23 @@
     "Methods, response schemas and call relationships for literal-only entries",
     "Android+iOS functional and session verification"
   ],
-  "safety_boundary": "No private data, login, payment, mail sending/read-state writes, bypass, endpoint guessing or path scanning performed."
+  "safety_boundary": "No private data, login, payment, mail sending/read-state writes, bypass, endpoint guessing or path scanning performed.",
+  "public_documents": [
+    {
+      "url": "https://isa.bjut.edu.cn/info/1041/4365.htm",
+      "role": "2020 card usage guide, not API documentation"
+    },
+    {
+      "url": "https://www.bjut.edu.cn/info/1352/7336.htm",
+      "role": "2025 school-hosted overview, not a request contract"
+    },
+    {
+      "url": "https://news.bjut.edu.cn/rwjj/2.htm",
+      "role": "footer provides mail/gateway/portal hyperlinks, not API schemas"
+    },
+    {
+      "url": "https://cas.bjut.edu.cn/cas/omg/handbook.pdf",
+      "role": "2022 SSO user manual, not proof of individual module integration"
+    }
+  ]
 }

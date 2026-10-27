@@ -32,6 +32,7 @@ class InventoryTests(unittest.TestCase):
         value = MODULE.safe_url('http://10.0.0.1/account/123456789/balance')
         self.assertEqual(value['host'], '<private-address>')
         self.assertEqual(value['path'], '/account/<redacted-segment>/balance')
+        self.assertEqual(MODULE.safe_url('http://[::1]')['host'], '<private-address>')
 
     def test_utf8_and_utf16_offsets_point_to_member_bytes(self):
         for encoding, prefix in [('utf-8', b'\x00\x01'), ('utf-16le', b'\x01')]:

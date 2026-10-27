@@ -44,7 +44,7 @@ def safe_path(path):
 
 def safe_url(literal):
     try:
-        parsed = urlsplit(literal.rstrip(').,;]}'))
+        parsed = urlsplit(literal.rstrip(').,;}'))
         host = parsed.hostname
         if not host:
             return None
