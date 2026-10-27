@@ -110,7 +110,7 @@ class _OverviewPage extends StatelessWidget {
                 Icon(Icons.waving_hand_outlined, color: colors.onPrimary),
                 const SizedBox(height: 12),
                 Text(
-                  '欢迎回来',
+                  '离线演示',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     color: colors.onPrimary,
                     fontWeight: FontWeight.w800,
@@ -118,7 +118,7 @@ class _OverviewPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  '登录后即可同步你的课表、通知和校园卡信息。',
+                  '尚未接入登录或同步。课表为虚构示例，通知与校园卡待接入。',
                   style: TextStyle(
                     color: colors.onPrimary.withValues(alpha: .82),
                   ),
@@ -128,16 +128,19 @@ class _OverviewPage extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 20),
-        Text('快捷入口', style: Theme.of(context).textTheme.titleLarge),
+        Text('功能概览', style: Theme.of(context).textTheme.titleLarge),
         const SizedBox(height: 12),
         const Row(
           children: [
             Expanded(
-              child: _QuickEntry(icon: Icons.calendar_month, label: '今日课表'),
+              child: _QuickEntry(icon: Icons.calendar_month, label: '课表示例'),
             ),
             SizedBox(width: 12),
             Expanded(
-              child: _QuickEntry(icon: Icons.notifications_none, label: '个人通知'),
+              child: _QuickEntry(
+                icon: Icons.notifications_none,
+                label: '通知待接入',
+              ),
             ),
           ],
         ),
@@ -147,12 +150,12 @@ class _OverviewPage extends StatelessWidget {
             Expanded(
               child: _QuickEntry(
                 icon: Icons.account_balance_wallet_outlined,
-                label: '校园卡余额',
+                label: '校园卡待接入',
               ),
             ),
             SizedBox(width: 12),
             Expanded(
-              child: _QuickEntry(icon: Icons.info_outline, label: '校内信息'),
+              child: _QuickEntry(icon: Icons.info_outline, label: '静态信息'),
             ),
           ],
         ),
@@ -161,7 +164,7 @@ class _OverviewPage extends StatelessWidget {
           child: ListTile(
             leading: Icon(Icons.construction_outlined, color: colors.secondary),
             title: const Text('基础壳已就绪'),
-            subtitle: const Text('下一步接入真实数据源，先从接口取证开始。'),
+            subtitle: const Text('使用底部导航查看示例与静态信息；真实服务尚未接入。'),
           ),
         ),
       ],

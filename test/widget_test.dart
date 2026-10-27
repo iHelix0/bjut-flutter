@@ -30,8 +30,9 @@ void main() {
     await tester.pumpWidget(const BjutCampusApp());
 
     expect(find.text('日新工大'), findsOneWidget);
-    expect(find.text('快捷入口'), findsOneWidget);
-    expect(find.text('欢迎回来'), findsOneWidget);
+    expect(find.text('功能概览'), findsOneWidget);
+    expect(find.text('离线演示'), findsOneWidget);
+    expect(find.text('尚未接入登录或同步。课表为虚构示例，通知与校园卡待接入。'), findsOneWidget);
     expect(find.text('课表'), findsOneWidget);
     expect(find.text('通知'), findsOneWidget);
     expect(find.text('校园卡'), findsOneWidget);
