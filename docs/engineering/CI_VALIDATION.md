@@ -34,6 +34,11 @@
 等待布局的测试，并将真实 asset 测试的 I/O 放入实际异步区。信息页追加同类
 刷新回归。源码修复是否通过必须由下一次 run 确认，不根据静态阅读推断。
 
+第二轮 `40445478045` 在 Flutter tests 阶段长时间停留，尚未取得完整日志。
+为隔离真实资源 I/O 与 Widget 虚拟时钟，导航/刷新测试改用注入的 Repository，
+真实打包 asset 另用新 AssetBundle 的普通异步测试验证，并限定该 I/O 测试 30 秒。
+这保留两类覆盖，不通过放宽超时、关闭断言或跳过测试来处理。
+
 ## 工作流与版本来源
 
 `.github/workflows/candidate.yml` 在指定测试分支 push 时运行；仅 `contents: read`，

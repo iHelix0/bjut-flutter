@@ -1,7 +1,6 @@
 import 'dart:async';
 
-import 'package:bjut_campus/app/app.dart';
-import 'package:bjut_campus/features/schedule/data/local_schedule_data_source.dart';
+import 'package:bjut_campus/features/home/presentation/home_shell_page.dart';
 import 'package:bjut_campus/features/schedule/data/schedule_repository.dart';
 import 'package:bjut_campus/features/schedule/data/schedule_response_decoder.dart';
 import 'package:bjut_campus/features/schedule/domain/schedule.dart';
@@ -291,20 +290,21 @@ void main() {
     expect(source.calls, 2);
   });
 
-  testWidgets('bottom navigation opens the actual bundled example', (
-    tester,
-  ) async {
-    // Read the real asset bundle, so a missing pubspec registration is caught.
-    await tester.runAsync(() async {
-      await tester.pumpWidget(const BjutCampusApp());
-      await tester.tap(find.byKey(const Key('nav-schedule')));
-      await tester.pump();
-      await LocalScheduleDataSource().load();
-    });
+  testWidgets('bottom navigation opens the repository example', (tester) async {
+    final source = CallbackScheduleDataSource(() async => examplePayload());
+    await tester.pumpWidget(
+      MaterialApp(
+        home: HomeShellPage(
+          scheduleRepository: ScheduleRepository(dataSource: source),
+        ),
+      ),
+    );
+    await tester.tap(find.byKey(const Key('nav-schedule')));
     await tester.pumpAndSettle();
     expect(find.text('课表离线示例'), findsOneWidget);
     expect(find.text('示例课程 A（虚构）'), findsOneWidget);
     expect(find.textContaining('完全虚构 · 未登录 · 未同步'), findsOneWidget);
+    expect(source.calls, 1);
     expect(tester.takeException(), isNull);
   });
 }

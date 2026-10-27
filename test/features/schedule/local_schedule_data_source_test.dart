@@ -24,6 +24,22 @@ class _MemoryBundle extends CachingAssetBundle {
 }
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
+  test(
+    'actual packaged schedule assets are registered and decode',
+    () async {
+      // Run real platform I/O outside testWidgets' virtual clock, with a fresh
+      // bundle so no Future cached in another test zone is reused.
+      final payload = await LocalScheduleDataSource(
+        bundle: PlatformAssetBundle(),
+      ).load();
+      expect(payload.data.classes, hasLength(2));
+      expect(payload.index.params.id, 'fictional-term-a');
+    },
+    timeout: const Timeout(Duration(seconds: 30)),
+  );
+
   test(
     'source loads both bundled synthetic responses through the decoder',
     () async {

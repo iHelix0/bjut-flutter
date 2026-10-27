@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../../information/presentation/information_page.dart';
+import '../../schedule/data/schedule_repository.dart';
 import '../../schedule/presentation/schedule_page.dart';
 
 class HomeShellPage extends StatefulWidget {
-  const HomeShellPage({super.key});
+  const HomeShellPage({super.key, this.scheduleRepository});
+
+  final ScheduleRepository? scheduleRepository;
 
   @override
   State<HomeShellPage> createState() => _HomeShellPageState();
@@ -57,7 +60,7 @@ class _HomeShellPageState extends State<HomeShellPage> {
   Widget _pageForIndex() {
     return switch (_selectedIndex) {
       0 => const _OverviewPage(),
-      1 => const SchedulePage(),
+      1 => SchedulePage(repository: widget.scheduleRepository),
       2 => const _ComingSoonPage(
         icon: Icons.notifications_none,
         title: '个人通知',

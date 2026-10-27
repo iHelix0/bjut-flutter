@@ -4,20 +4,32 @@ import '../data/information_repository.dart';
 import '../domain/information_item.dart';
 
 class InformationPage extends StatefulWidget {
-  const InformationPage({super.key});
+  const InformationPage({super.key, this.repository});
+
+  final InformationRepository? repository;
 
   @override
   State<InformationPage> createState() => _InformationPageState();
 }
 
 class _InformationPageState extends State<InformationPage> {
-  final InformationRepository _repository = InformationRepository();
+  late InformationRepository _repository;
   late Future<List<InformationItem>> _itemsFuture;
 
   @override
   void initState() {
     super.initState();
+    _repository = widget.repository ?? InformationRepository();
     _itemsFuture = _repository.getItems();
+  }
+
+  @override
+  void didUpdateWidget(covariant InformationPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.repository != widget.repository) {
+      _repository = widget.repository ?? InformationRepository();
+      _itemsFuture = _repository.getItems();
+    }
   }
 
   Future<void> _refresh() async {
