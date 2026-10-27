@@ -26,7 +26,8 @@ MVP 必须同时具备：
 
 新增 [全应用接入矩阵](docs/evidence/APP_INTEGRATION_CATALOG.md)（优先校园卡与邮箱，
 有证据的入口与未知协议分开记录）及 [测试分支与 CI 状态](docs/engineering/CI_VALIDATION.md)。
-当前远端写权限拒绝，CI 尚未运行；不能把准备好的 workflow 视为验证通过。
+新连接的写权限已核实，但执行器 Git 仍使用旧只读身份而被拒绝，CI 尚未运行；
+不能把准备好的 workflow 或连接 `push:true` 视为推送/验证成功。
 
 当前建议采用“只读核心 MVP + 充值专项”的路线：
 
