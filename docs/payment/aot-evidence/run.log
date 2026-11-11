@@ -1,0 +1,7 @@
+Blutter offline analysis exit_code=0
+Analyzing the application
+Dumping Object Pool
+Generating application assemblies
+Generating Frida script
+Dart version: 3.4.0, Snapshot: d20a1be77c3d3c41b2a5accaee1ce549, Target: android arm64
+flags: product no-code_comments no-dwarf_stack_traces_mode no-lazy_dispatchers dedup_instructions no-tsan no-asserts arm64 android compressed-pointers null-safety

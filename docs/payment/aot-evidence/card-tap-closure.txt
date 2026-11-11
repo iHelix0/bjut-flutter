@@ -1,0 +1,73 @@
+Source: asm/oneness/ui/page/home_page/bjut_home_page.dart
+Source lines: 4917-4985
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+4917:   [closure] void <anonymous closure>(dynamic) {
+4918:     // ** addr: 0x7fdd84, size: 0xb0
+4919:     // 0x7fdd84: EnterFrame
+4920:     //     0x7fdd84: stp             fp, lr, [SP, #-0x10]!
+4921:     //     0x7fdd88: mov             fp, SP
+4922:     // 0x7fdd8c: AllocStack(0x10)
+4923:     //     0x7fdd8c: sub             SP, SP, #0x10
+4924:     // 0x7fdd90: SetupParameters([dynamic _ /* r0 */])
+4925:     //     0x7fdd90: ldr             x0, [fp, #0x10]
+4926:     //     0x7fdd94: ldur            w1, [x0, #0x17]
+4927:     //     0x7fdd98: add             x1, x1, HEAP, lsl #32
+4928:     // 0x7fdd9c: CheckStackOverflow
+4929:     //     0x7fdd9c: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+4930:     //     0x7fdda0: cmp             SP, x16
+4931:     //     0x7fdda4: b.ls            #0x7fde2c
+4932:     // 0x7fdda8: LoadField: r0 = r1->field_f
+4933:     //     0x7fdda8: ldur            w0, [x1, #0xf]
+4934:     // 0x7fddac: DecompressPointer r0
+4935:     //     0x7fddac: add             x0, x0, HEAP, lsl #32
+4936:     // 0x7fddb0: ArrayLoad: r2 = r0[0]  ; List_4
+4937:     //     0x7fddb0: ldur            w2, [x0, #0x17]
+4938:     // 0x7fddb4: DecompressPointer r2
+4939:     //     0x7fddb4: add             x2, x2, HEAP, lsl #32
+4940:     // 0x7fddb8: LoadField: r3 = r2->field_7
+4941:     //     0x7fddb8: ldur            w3, [x2, #7]
+4942:     // 0x7fddbc: DecompressPointer r3
+4943:     //     0x7fddbc: add             x3, x3, HEAP, lsl #32
+4944:     // 0x7fddc0: cbz             w3, #0x7fdde4
+4945:     // 0x7fddc4: LoadField: r3 = r1->field_b
+4946:     //     0x7fddc4: ldur            w3, [x1, #0xb]
+4947:     // 0x7fddc8: DecompressPointer r3
+4948:     //     0x7fddc8: add             x3, x3, HEAP, lsl #32
+4949:     // 0x7fddcc: LoadField: r1 = r3->field_f
+4950:     //     0x7fddcc: ldur            w1, [x3, #0xf]
+4951:     // 0x7fddd0: DecompressPointer r1
+4952:     //     0x7fddd0: add             x1, x1, HEAP, lsl #32
+4953:     // 0x7fddd4: LoadField: r3 = r0->field_1b
+4954:     //     0x7fddd4: ldur            w3, [x0, #0x1b]
+4955:     // 0x7fddd8: DecompressPointer r3
+4956:     //     0x7fddd8: add             x3, x3, HEAP, lsl #32
+4957:     // 0x7fdddc: r0 = _handleTap()
+4958:     //     0x7fdddc: bl              #0x7fc440  ; [package:oneness/ui/page/home_page/bjut_home_page.dart] BjutHomePageState::_handleTap
+4959:     // 0x7fdde0: b               #0x7fde1c
+4960:     // 0x7fdde4: LoadField: r3 = r0->field_f
+4961:     //     0x7fdde4: ldur            w3, [x0, #0xf]
+4962:     // 0x7fdde8: DecompressPointer r3
+4963:     //     0x7fdde8: add             x3, x3, HEAP, lsl #32
+4964:     // 0x7fddec: stur            x3, [fp, #-8]
+4965:     // 0x7fddf0: r1 = Null
+4966:     //     0x7fddf0: mov             x1, NULL
+4967:     // 0x7fddf4: r2 = 4
+4968:     //     0x7fddf4: mov             x2, #4
+4969:     // 0x7fddf8: r0 = AllocateArray()
+4970:     //     0x7fddf8: bl              #0xb1fc60  ; AllocateArrayStub
+4971:     // 0x7fddfc: mov             x1, x0
+4972:     // 0x7fde00: ldur            x0, [fp, #-8]
+4973:     // 0x7fde04: StoreField: r1->field_f = r0
+4974:     //     0x7fde04: stur            w0, [x1, #0xf]
+4975:     // 0x7fde08: r17 = "链接为空"
+4976:     //     0x7fde08: add             x17, PP, #0x38, lsl #12  ; [pp+0x38568] "链接为空"
+4977:     //     0x7fde0c: ldr             x17, [x17, #0x568]
+4978:     // 0x7fde10: StoreField: r1->field_13 = r17
+4979:     //     0x7fde10: stur            w17, [x1, #0x13]
+4980:     // 0x7fde14: str             x1, [SP]
+4981:     // 0x7fde18: r0 = _interpolate()
+4982:     //     0x7fde18: bl              #0x43c8e8  ; [dart:core] _StringBase::_interpolate
+4983:     // 0x7fde1c: r0 = Null
+4984:     //     0x7fde1c: mov             x0, NULL
+4985:     // 0x7fde20: LeaveFrame

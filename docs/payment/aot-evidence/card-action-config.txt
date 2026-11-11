@@ -1,0 +1,120 @@
+Source: asm/oneness/ui/page/home_page/bjut_home_action_cards.dart
+Source lines: 1-116
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+1: // lib: , url: package:oneness/ui/page/home_page/bjut_home_action_cards.dart
+2: 
+3: // class id: 1049935, size: 0x8
+4: class :: {
+5: 
+6:   static _ buildBjutHomeActionCards(/* No info */) {
+7:     // ** addr: 0x7fcbd8, size: 0x2cc
+8:     // 0x7fcbd8: EnterFrame
+9:     //     0x7fcbd8: stp             fp, lr, [SP, #-0x10]!
+10:     //     0x7fcbdc: mov             fp, SP
+11:     // 0x7fcbe0: AllocStack(0x40)
+12:     //     0x7fcbe0: sub             SP, SP, #0x40
+13:     // 0x7fcbe4: SetupParameters(dynamic _ /* r1 => r1, fp-0x28 */, dynamic _ /* r2 => r2, fp-0x30 */)
+14:     //     0x7fcbe4: stur            x1, [fp, #-0x28]
+15:     //     0x7fcbe8: stur            x2, [fp, #-0x30]
+16:     // 0x7fcbec: cmp             w2, NULL
+17:     // 0x7fcbf0: b.ne            #0x7fcbfc
+18:     // 0x7fcbf4: r0 = Null
+19:     //     0x7fcbf4: mov             x0, NULL
+20:     // 0x7fcbf8: b               #0x7fcc04
+21:     // 0x7fcbfc: LoadField: r0 = r2->field_13
+22:     //     0x7fcbfc: ldur            w0, [x2, #0x13]
+23:     // 0x7fcc00: DecompressPointer r0
+24:     //     0x7fcc00: add             x0, x0, HEAP, lsl #32
+25:     // 0x7fcc04: cmp             w0, NULL
+26:     // 0x7fcc08: b.ne            #0x7fcc10
+27:     // 0x7fcc0c: r0 = ""
+28:     //     0x7fcc0c: ldr             x0, [PP, #0x368]  ; [pp+0x368] ""
+29:     // 0x7fcc10: stur            x0, [fp, #-0x20]
+30:     // 0x7fcc14: cmp             w2, NULL
+31:     // 0x7fcc18: b.ne            #0x7fcc24
+32:     // 0x7fcc1c: r3 = Null
+33:     //     0x7fcc1c: mov             x3, NULL
+34:     // 0x7fcc20: b               #0x7fcc2c
+35:     // 0x7fcc24: LoadField: r3 = r2->field_f
+36:     //     0x7fcc24: ldur            w3, [x2, #0xf]
+37:     // 0x7fcc28: DecompressPointer r3
+38:     //     0x7fcc28: add             x3, x3, HEAP, lsl #32
+39:     // 0x7fcc2c: cmp             w3, NULL
+40:     // 0x7fcc30: b.ne            #0x7fcc38
+41:     // 0x7fcc34: r3 = ""
+42:     //     0x7fcc34: ldr             x3, [PP, #0x368]  ; [pp+0x368] ""
+43:     // 0x7fcc38: stur            x3, [fp, #-0x18]
+44:     // 0x7fcc3c: cmp             w2, NULL
+45:     // 0x7fcc40: b.ne            #0x7fcc4c
+46:     // 0x7fcc44: r4 = Null
+47:     //     0x7fcc44: mov             x4, NULL
+48:     // 0x7fcc48: b               #0x7fcc54
+49:     // 0x7fcc4c: ArrayLoad: r4 = r2[0]  ; List_4
+50:     //     0x7fcc4c: ldur            w4, [x2, #0x17]
+51:     // 0x7fcc50: DecompressPointer r4
+52:     //     0x7fcc50: add             x4, x4, HEAP, lsl #32
+53:     // 0x7fcc54: cmp             w4, NULL
+54:     // 0x7fcc58: b.ne            #0x7fcc60
+55:     // 0x7fcc5c: r4 = ""
+56:     //     0x7fcc5c: ldr             x4, [PP, #0x368]  ; [pp+0x368] ""
+57:     // 0x7fcc60: stur            x4, [fp, #-0x10]
+58:     // 0x7fcc64: cmp             w2, NULL
+59:     // 0x7fcc68: b.ne            #0x7fcc74
+60:     // 0x7fcc6c: r5 = Null
+61:     //     0x7fcc6c: mov             x5, NULL
+62:     // 0x7fcc70: b               #0x7fcc7c
+63:     // 0x7fcc74: LoadField: r5 = r2->field_7
+64:     //     0x7fcc74: ldur            w5, [x2, #7]
+65:     // 0x7fcc78: DecompressPointer r5
+66:     //     0x7fcc78: add             x5, x5, HEAP, lsl #32
+67:     // 0x7fcc7c: cmp             w5, NULL
+68:     // 0x7fcc80: b.ne            #0x7fcc8c
+69:     // 0x7fcc84: r5 = "校园卡"
+70:     //     0x7fcc84: add             x5, PP, #0x38, lsl #12  ; [pp+0x38598] "校园卡"
+71:     //     0x7fcc88: ldr             x5, [x5, #0x598]
+72:     // 0x7fcc8c: stur            x5, [fp, #-8]
+73:     // 0x7fcc90: r0 = BjutHomeActionCardData()
+74:     //     0x7fcc90: bl              #0x7fcea4  ; AllocateBjutHomeActionCardDataStub -> BjutHomeActionCardData (size=0x20)
+75:     // 0x7fcc94: mov             x1, x0
+76:     // 0x7fcc98: ldur            x0, [fp, #-0x20]
+77:     // 0x7fcc9c: stur            x1, [fp, #-0x40]
+78:     // 0x7fcca0: StoreField: r1->field_7 = r0
+79:     //     0x7fcca0: stur            w0, [x1, #7]
+80:     // 0x7fcca4: ldur            x0, [fp, #-0x18]
+81:     // 0x7fcca8: StoreField: r1->field_b = r0
+82:     //     0x7fcca8: stur            w0, [x1, #0xb]
+83:     // 0x7fccac: r0 = "一卡通消费码"
+84:     //     0x7fccac: add             x0, PP, #0x38, lsl #12  ; [pp+0x385a0] "一卡通消费码"
+85:     //     0x7fccb0: ldr             x0, [x0, #0x5a0]
+86:     // 0x7fccb4: StoreField: r1->field_f = r0
+87:     //     0x7fccb4: stur            w0, [x1, #0xf]
+88:     // 0x7fccb8: r0 = "消费码一键显示"
+89:     //     0x7fccb8: add             x0, PP, #0x38, lsl #12  ; [pp+0x385a8] "消费码一键显示"
+90:     //     0x7fccbc: ldr             x0, [x0, #0x5a8]
+91:     // 0x7fccc0: StoreField: r1->field_13 = r0
+92:     //     0x7fccc0: stur            w0, [x1, #0x13]
+93:     // 0x7fccc4: ldur            x0, [fp, #-0x10]
+94:     // 0x7fccc8: ArrayStore: r1[0] = r0  ; List_4
+95:     //     0x7fccc8: stur            w0, [x1, #0x17]
+96:     // 0x7fcccc: ldur            x0, [fp, #-8]
+97:     // 0x7fccd0: StoreField: r1->field_1b = r0
+98:     //     0x7fccd0: stur            w0, [x1, #0x1b]
+99:     // 0x7fccd4: ldur            x0, [fp, #-0x28]
+100:     // 0x7fccd8: cmp             w0, NULL
+101:     // 0x7fccdc: b.ne            #0x7fcce8
+102:     // 0x7fcce0: r2 = Null
+103:     //     0x7fcce0: mov             x2, NULL
+104:     // 0x7fcce4: b               #0x7fccf0
+105:     // 0x7fcce8: LoadField: r2 = r0->field_13
+106:     //     0x7fcce8: ldur            w2, [x0, #0x13]
+107:     // 0x7fccec: DecompressPointer r2
+108:     //     0x7fccec: add             x2, x2, HEAP, lsl #32
+109:     // 0x7fccf0: cmp             w2, NULL
+110:     // 0x7fccf4: b.ne            #0x7fcd18
+111:     // 0x7fccf8: ldur            x2, [fp, #-0x30]
+112:     // 0x7fccfc: cmp             w2, NULL
+113:     // 0x7fcd00: b.ne            #0x7fcd0c
+114:     // 0x7fcd04: r2 = Null
+115:     //     0x7fcd04: mov             x2, NULL
+116:     // 0x7fcd08: b               #0x7fcd18

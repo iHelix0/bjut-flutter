@@ -1,0 +1,63 @@
+Source: asm/oneness/app_environment/app_environment.dart
+Source lines: 74-132
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+74:   _ configNetWork(/* No info */) async {
+75:     // ** addr: 0x6d6408, size: 0x37c
+76:     // 0x6d6408: EnterFrame
+77:     //     0x6d6408: stp             fp, lr, [SP, #-0x10]!
+78:     //     0x6d640c: mov             fp, SP
+79:     // 0x6d6410: AllocStack(0x38)
+80:     //     0x6d6410: sub             SP, SP, #0x38
+81:     // 0x6d6414: SetupParameters(AppEnvironment this /* r1 => r1, fp-0x10 */)
+82:     //     0x6d6414: stur            NULL, [fp, #-8]
+83:     //     0x6d6418: stur            x1, [fp, #-0x10]
+84:     // 0x6d641c: CheckStackOverflow
+85:     //     0x6d641c: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+86:     //     0x6d6420: cmp             SP, x16
+87:     //     0x6d6424: b.ls            #0x6d6764
+88:     // 0x6d6428: InitAsync() -> Future<void?>
+89:     //     0x6d6428: ldr             x0, [PP, #0x18f0]  ; [pp+0x18f0] TypeArguments: <void?>
+90:     //     0x6d642c: bl              #0x499c28  ; InitAsyncStub
+91:     // 0x6d6430: ldur            x0, [fp, #-0x10]
+92:     // 0x6d6434: LoadField: r1 = r0->field_7
+93:     //     0x6d6434: ldur            w1, [x0, #7]
+94:     // 0x6d6438: DecompressPointer r1
+95:     //     0x6d6438: add             x1, x1, HEAP, lsl #32
+96:     // 0x6d643c: LoadField: r0 = r1->field_7
+97:     //     0x6d643c: ldur            x0, [x1, #7]
+98:     // 0x6d6440: stur            x0, [fp, #-0x20]
+99:     // 0x6d6444: cmp             x0, #1
+100:     // 0x6d6448: r16 = true
+101:     //     0x6d6448: add             x16, NULL, #0x20  ; true
+102:     // 0x6d644c: r17 = false
+103:     //     0x6d644c: add             x17, NULL, #0x30  ; false
+104:     // 0x6d6450: csel            x1, x16, x17, le
+105:     // 0x6d6454: stur            x1, [fp, #-0x18]
+106:     // 0x6d6458: tbnz            w1, #4, #0x6d647c
+107:     // 0x6d645c: cmp             x0, #0
+108:     // 0x6d6460: b.gt            #0x6d6470
+109:     // 0x6d6464: r2 = "https://itsapp.bjut.edu.cn"
+110:     //     0x6d6464: add             x2, PP, #0x1c, lsl #12  ; [pp+0x1c3f0] "https://itsapp.bjut.edu.cn"
+111:     //     0x6d6468: ldr             x2, [x2, #0x3f0]
+112:     // 0x6d646c: b               #0x6d6498
+113:     // 0x6d6470: r2 = "https://mdt.muc.edu.cn"
+114:     //     0x6d6470: add             x2, PP, #0x1d, lsl #12  ; [pp+0x1da38] "https://mdt.muc.edu.cn"
+115:     //     0x6d6474: ldr             x2, [x2, #0xa38]
+116:     // 0x6d6478: b               #0x6d6498
+117:     // 0x6d647c: cmp             x0, #2
+118:     // 0x6d6480: b.gt            #0x6d6490
+119:     // 0x6d6484: r2 = "https://xxcapp.xidian.edu.cn"
+120:     //     0x6d6484: add             x2, PP, #0x1d, lsl #12  ; [pp+0x1da40] "https://xxcapp.xidian.edu.cn"
+121:     //     0x6d6488: ldr             x2, [x2, #0xa40]
+122:     // 0x6d648c: b               #0x6d6498
+123:     // 0x6d6490: r2 = "https://aiassist.sdu.edu.cn"
+124:     //     0x6d6490: add             x2, PP, #0x1d, lsl #12  ; [pp+0x1da48] "https://aiassist.sdu.edu.cn"
+125:     //     0x6d6494: ldr             x2, [x2, #0xa48]
+126:     // 0x6d6498: stur            x2, [fp, #-0x10]
+127:     // 0x6d649c: r0 = ZhilinFlutterNetwork()
+128:     //     0x6d649c: bl              #0x56e004  ; AllocateZhilinFlutterNetworkStub -> ZhilinFlutterNetwork (size=0x8)
+129:     // 0x6d64a0: mov             x1, x0
+130:     // 0x6d64a4: ldur            x2, [fp, #-0x10]
+131:     // 0x6d64a8: r0 = initBaseUrl()
+132:     //     0x6d64a8: bl              #0x6d68dc  ; [package:zhilin_flutter_network/zhilin_network_lib.dart] ZhilinFlutterNetwork::initBaseUrl

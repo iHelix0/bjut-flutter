@@ -18,3 +18,16 @@
 | PAY-010 | 原生自定义路由插件排除项 | DEX LQ5/a;.onMethodCall | 仅 getPlatformVersion，其余 notImplemented | Dart 侧路由实现 | Android 方法体证实，不是已恢复支付路由 |
 
 全部支付端点的 HTTP 方法、请求/响应契约和授权依赖尚未确认。本轮未请求任何校园业务端点。消费账单、订单状态、充值金额预填及入账核验没有已验证协议，不应猜造 URL 或填入 Real 实现。
+
+
+## 第二轮 AOT 升级（以下覆盖前表中对应的“未知”状态）
+
+| ID | 最新证据 | 仍未确认 |
+|---|---|---|
+| PAY-002/003 | getHomeSchoolCard@0x6ed084 → rsaPost('/bjutapp/wap/default/consumption-code', data:{}, allEncrypt:true) → CardEntityFromJson；BJUT 初始化分支 baseUrl= https://itsapp.bjut.edu.cn | 当前服务响应、完整会话与加密初始化、第三方接入允许方式 |
+| PAY-004 | factory@0x521118 解析 e:int、m:String、d:CardD；CardD factory@0x520d20 解析 title/desc/icon/backend_img/url:String | 服务器可空约束/错误语义；没有余额字段，不作为余额协议 |
+| PAY-011 | d.url → buildBjutHomeActionCards@0x7fcbd8 → 点击闭包@0x7fdd84 → _handleTap@0x7fc440 → BjutWebPage 路由，参数 urlStr/title | 返回 URL 的实际值、网页付款码签发与刷新、网页余额/充值业务 |
+| PAY-012 | OnlineBusinessWebPageState 回调@0x873524 的 cardRecharge/goToPayCode 匹配分支直接跳到0x875b78返回null | 其他页面/分支是否另有充值实现；该分支不可当可用充值 API |
+| PAY-013 | rsaPost@0x52abb8：JSON encode → RSA helper → content 字段 → ZhilinHttpClient.post | 认证、响应完整解密/失败语义；无请求已执行 |
+
+证据：`aot-evidence/` 中包含源路径、行号、函数地址及 SHA256 索引的审阅片段。完整说明见 APK_PAYMENT_REVIEW.md 第二轮。POST 包装已经确认，但真实付款码、余额、充值订单接口仍未验证。

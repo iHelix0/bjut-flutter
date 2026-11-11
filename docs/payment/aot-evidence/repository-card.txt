@@ -1,0 +1,118 @@
+Source: asm/oneness/net/bjut/bjut_net_repository.dart
+Source lines: 1024-1137
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+1024:     // 0x6ecf30: r0 = $BjutHomeSchoolCardEntityFromJson()
+1025:     //     0x6ecf30: bl              #0x521118  ; [package:oneness/generated/json/bjut_home_school_card_entity.g.dart] ::$BjutHomeSchoolCardEntityFromJson
+1026:     // 0x6ecf34: r0 = ReturnAsyncNotFuture()
+1027:     //     0x6ecf34: b               #0x499834  ; ReturnAsyncNotFutureStub
+1028:     // 0x6ecf38: r0 = StackOverflowSharedWithoutFPURegs()
+1029:     //     0x6ecf38: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+1030:     // 0x6ecf3c: b               #0x6ece40
+1031:   }
+1032:   _ getHomeSchoolCard(/* No info */) async {
+1033:     // ** addr: 0x6ed084, size: 0x120
+1034:     // 0x6ed084: EnterFrame
+1035:     //     0x6ed084: stp             fp, lr, [SP, #-0x10]!
+1036:     //     0x6ed088: mov             fp, SP
+1037:     // 0x6ed08c: AllocStack(0x28)
+1038:     //     0x6ed08c: sub             SP, SP, #0x28
+1039:     // 0x6ed090: SetupParameters(BjutNetRepository this /* r1 => r1, fp-0x10 */)
+1040:     //     0x6ed090: stur            NULL, [fp, #-8]
+1041:     //     0x6ed094: stur            x1, [fp, #-0x10]
+1042:     // 0x6ed098: CheckStackOverflow
+1043:     //     0x6ed098: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+1044:     //     0x6ed09c: cmp             SP, x16
+1045:     //     0x6ed0a0: b.ls            #0x6ed19c
+1046:     // 0x6ed0a4: InitAsync() -> Future<BjutHomeSchoolCardEntity>
+1047:     //     0x6ed0a4: add             x0, PP, #0x38, lsl #12  ; [pp+0x38460] TypeArguments: <BjutHomeSchoolCardEntity>
+1048:     //     0x6ed0a8: ldr             x0, [x0, #0x460]
+1049:     //     0x6ed0ac: bl              #0x499c28  ; InitAsyncStub
+1050:     // 0x6ed0b0: ldr             x16, [THR, #0x88]  ; THR::empty_array
+1051:     // 0x6ed0b4: stp             x16, NULL, [SP]
+1052:     // 0x6ed0b8: r0 = Map._fromLiteral()
+1053:     //     0x6ed0b8: bl              #0x44a58c  ; [dart:core] Map::Map._fromLiteral
+1054:     // 0x6ed0bc: stur            x0, [fp, #-0x18]
+1055:     // 0x6ed0c0: r0 = ZhilinFlutterNetwork()
+1056:     //     0x6ed0c0: bl              #0x56e004  ; AllocateZhilinFlutterNetworkStub -> ZhilinFlutterNetwork (size=0x8)
+1057:     // 0x6ed0c4: ldur            x16, [fp, #-0x18]
+1058:     // 0x6ed0c8: r30 = true
+1059:     //     0x6ed0c8: add             lr, NULL, #0x20  ; true
+1060:     // 0x6ed0cc: stp             lr, x16, [SP]
+1061:     // 0x6ed0d0: mov             x1, x0
+1062:     // 0x6ed0d4: r2 = "/bjutapp/wap/default/consumption-code"
+1063:     //     0x6ed0d4: add             x2, PP, #0x38, lsl #12  ; [pp+0x38478] "/bjutapp/wap/default/consumption-code"
+1064:     //     0x6ed0d8: ldr             x2, [x2, #0x478]
+1065:     // 0x6ed0dc: r4 = const [0, 0x4, 0x2, 0x2, allEncrypt, 0x3, data, 0x2, null]
+1066:     //     0x6ed0dc: add             x4, PP, #0x27, lsl #12  ; [pp+0x273f8] List(9) [0, 0x4, 0x2, 0x2, "allEncrypt", 0x3, "data", 0x2, Null]
+1067:     //     0x6ed0e0: ldr             x4, [x4, #0x3f8]
+1068:     // 0x6ed0e4: r0 = rsaPost()
+1069:     //     0x6ed0e4: bl              #0x52abb8  ; [package:zhilin_flutter_network/zhilin_network_lib.dart] ZhilinFlutterNetwork::rsaPost
+1070:     // 0x6ed0e8: mov             x1, x0
+1071:     // 0x6ed0ec: stur            x1, [fp, #-0x18]
+1072:     // 0x6ed0f0: r0 = Await()
+1073:     //     0x6ed0f0: bl              #0x4999e8  ; AwaitStub
+1074:     // 0x6ed0f4: cmp             w0, NULL
+1075:     // 0x6ed0f8: b.ne            #0x6ed10c
+1076:     // 0x6ed0fc: r16 = <String, dynamic>
+1077:     //     0x6ed0fc: ldr             x16, [PP, #0xd50]  ; [pp+0xd50] TypeArguments: <String, dynamic>
+1078:     // 0x6ed100: ldr             lr, [THR, #0x88]  ; THR::empty_array
+1079:     // 0x6ed104: stp             lr, x16, [SP]
+1080:     // 0x6ed108: r0 = Map._fromLiteral()
+1081:     //     0x6ed108: bl              #0x44a58c  ; [dart:core] Map::Map._fromLiteral
+1082:     // 0x6ed10c: stur            x0, [fp, #-0x10]
+1083:     // 0x6ed110: r1 = Null
+1084:     //     0x6ed110: mov             x1, NULL
+1085:     // 0x6ed114: r2 = 4
+1086:     //     0x6ed114: mov             x2, #4
+1087:     // 0x6ed118: r0 = AllocateArray()
+1088:     //     0x6ed118: bl              #0xb1fc60  ; AllocateArrayStub
+1089:     // 0x6ed11c: mov             x1, x0
+1090:     // 0x6ed120: stur            x1, [fp, #-0x18]
+1091:     // 0x6ed124: r17 = "getHomeSchoolCard: "
+1092:     //     0x6ed124: add             x17, PP, #0x38, lsl #12  ; [pp+0x38480] "getHomeSchoolCard: "
+1093:     //     0x6ed128: ldr             x17, [x17, #0x480]
+1094:     // 0x6ed12c: StoreField: r1->field_f = r17
+1095:     //     0x6ed12c: stur            w17, [x1, #0xf]
+1096:     // 0x6ed130: ldur            x2, [fp, #-0x10]
+1097:     // 0x6ed134: r0 = 59
+1098:     //     0x6ed134: mov             x0, #0x3b
+1099:     // 0x6ed138: branchIfSmi(r2, 0x6ed144)
+1100:     //     0x6ed138: tbz             w2, #0, #0x6ed144
+1101:     // 0x6ed13c: r0 = LoadClassIdInstr(r2)
+1102:     //     0x6ed13c: ldur            x0, [x2, #-1]
+1103:     //     0x6ed140: ubfx            x0, x0, #0xc, #0x14
+1104:     // 0x6ed144: str             x2, [SP]
+1105:     // 0x6ed148: r4 = const [0, 0x1, 0x1, 0x1, null]
+1106:     //     0x6ed148: ldr             x4, [PP, #0x430]  ; [pp+0x430] List(5) [0, 0x1, 0x1, 0x1, Null]
+1107:     // 0x6ed14c: r0 = GDT[cid_x0 + 0x24fd]()
+1108:     //     0x6ed14c: mov             x17, #0x24fd
+1109:     //     0x6ed150: add             lr, x0, x17
+1110:     //     0x6ed154: ldr             lr, [x21, lr, lsl #3]
+1111:     //     0x6ed158: blr             lr
+1112:     // 0x6ed15c: ldur            x1, [fp, #-0x18]
+1113:     // 0x6ed160: ArrayStore: r1[1] = r0  ; List_4
+1114:     //     0x6ed160: add             x25, x1, #0x13
+1115:     //     0x6ed164: str             w0, [x25]
+1116:     //     0x6ed168: tbz             w0, #0, #0x6ed184
+1117:     //     0x6ed16c: ldurb           w16, [x1, #-1]
+1118:     //     0x6ed170: ldurb           w17, [x0, #-1]
+1119:     //     0x6ed174: and             x16, x17, x16, lsr #2
+1120:     //     0x6ed178: tst             x16, HEAP, lsr #32
+1121:     //     0x6ed17c: b.eq            #0x6ed184
+1122:     //     0x6ed180: bl              #0xb1df68  ; ArrayWriteBarrierStub
+1123:     // 0x6ed184: ldur            x16, [fp, #-0x18]
+1124:     // 0x6ed188: str             x16, [SP]
+1125:     // 0x6ed18c: r0 = _interpolate()
+1126:     //     0x6ed18c: bl              #0x43c8e8  ; [dart:core] _StringBase::_interpolate
+1127:     // 0x6ed190: ldur            x1, [fp, #-0x10]
+1128:     // 0x6ed194: r0 = $BjutHomeSchoolCardEntityFromJson()
+1129:     //     0x6ed194: bl              #0x521118  ; [package:oneness/generated/json/bjut_home_school_card_entity.g.dart] ::$BjutHomeSchoolCardEntityFromJson
+1130:     // 0x6ed198: r0 = ReturnAsyncNotFuture()
+1131:     //     0x6ed198: b               #0x499834  ; ReturnAsyncNotFutureStub
+1132:     // 0x6ed19c: r0 = StackOverflowSharedWithoutFPURegs()
+1133:     //     0x6ed19c: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+1134:     // 0x6ed1a0: b               #0x6ed0a4
+1135:   }
+1136:   _ getHomeFixedTask(/* No info */) async {
+1137:     // ** addr: 0x6ed3ac, size: 0x128

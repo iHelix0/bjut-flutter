@@ -1,0 +1,135 @@
+Source: asm/zhilin_flutter_network/zhilin_network_lib.dart
+Source lines: 10-140
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+10:   _ rsaPost(/* No info */) async {
+11:     // ** addr: 0x52abb8, size: 0x634
+12:     // 0x52abb8: EnterFrame
+13:     //     0x52abb8: stp             fp, lr, [SP, #-0x10]!
+14:     //     0x52abbc: mov             fp, SP
+15:     // 0x52abc0: AllocStack(0x120)
+16:     //     0x52abc0: sub             SP, SP, #0x120
+17:     // 0x52abc4: SetupParameters(ZhilinFlutterNetwork this /* r1 => r1, fp-0xd0 */, dynamic _ /* r2 => r2, fp-0xd8 */, {dynamic allEncrypt = true /* r5, fp-0xc8 */, dynamic data = Null /* r3, fp-0xc0 */})
+18:     //     0x52abc4: stur            NULL, [fp, #-8]
+19:     //     0x52abc8: stur            x1, [fp, #-0xd0]
+20:     //     0x52abcc: stur            x2, [fp, #-0xd8]
+21:     //     0x52abd0: stur            x4, [fp, #-0xe0]
+22:     //     0x52abd4: ldur            w0, [x4, #0x13]
+23:     //     0x52abd8: add             x0, x0, HEAP, lsl #32
+24:     //     0x52abdc: ldur            w3, [x4, #0x1f]
+25:     //     0x52abe0: add             x3, x3, HEAP, lsl #32
+26:     //     0x52abe4: add             x16, PP, #0x1c, lsl #12  ; [pp+0x1c788] "allEncrypt"
+27:     //     0x52abe8: ldr             x16, [x16, #0x788]
+28:     //     0x52abec: cmp             w3, w16
+29:     //     0x52abf0: b.ne            #0x52ac14
+30:     //     0x52abf4: ldur            w3, [x4, #0x23]
+31:     //     0x52abf8: add             x3, x3, HEAP, lsl #32
+32:     //     0x52abfc: sub             w5, w0, w3
+33:     //     0x52ac00: add             x3, fp, w5, sxtw #2
+34:     //     0x52ac04: ldr             x3, [x3, #8]
+35:     //     0x52ac08: mov             x5, x3
+36:     //     0x52ac0c: mov             x3, #1
+37:     //     0x52ac10: b               #0x52ac1c
+38:     //     0x52ac14: add             x5, NULL, #0x20  ; true
+39:     //     0x52ac18: mov             x3, #0
+40:     //     0x52ac1c: stur            x5, [fp, #-0xc8]
+41:     //     0x52ac20: lsl             x6, x3, #1
+42:     //     0x52ac24: lsl             w3, w6, #1
+43:     //     0x52ac28: add             w6, w3, #8
+44:     //     0x52ac2c: add             x16, x4, w6, sxtw #1
+45:     //     0x52ac30: ldur            w7, [x16, #0xf]
+46:     //     0x52ac34: add             x7, x7, HEAP, lsl #32
+47:     //     0x52ac38: ldr             x16, [PP, #0x1538]  ; [pp+0x1538] "data"
+48:     //     0x52ac3c: cmp             w7, w16
+49:     //     0x52ac40: b.ne            #0x52ac68
+50:     //     0x52ac44: add             w6, w3, #0xa
+51:     //     0x52ac48: add             x16, x4, w6, sxtw #1
+52:     //     0x52ac4c: ldur            w3, [x16, #0xf]
+53:     //     0x52ac50: add             x3, x3, HEAP, lsl #32
+54:     //     0x52ac54: sub             w6, w0, w3
+55:     //     0x52ac58: add             x0, fp, w6, sxtw #2
+56:     //     0x52ac5c: ldr             x0, [x0, #8]
+57:     //     0x52ac60: mov             x3, x0
+58:     //     0x52ac64: b               #0x52ac6c
+59:     //     0x52ac68: mov             x3, NULL
+60:     //     0x52ac6c: stur            x3, [fp, #-0xc0]
+61:     // 0x52ac70: CheckStackOverflow
+62:     //     0x52ac70: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+63:     //     0x52ac74: cmp             SP, x16
+64:     //     0x52ac78: b.ls            #0x52b1d8
+65:     // 0x52ac7c: InitAsync() -> Future<Map<String, dynamic>?>
+66:     //     0x52ac7c: ldr             x0, [PP, #0x30f8]  ; [pp+0x30f8] TypeArguments: <Map<String, dynamic>?>
+67:     //     0x52ac80: bl              #0x499c28  ; InitAsyncStub
+68:     // 0x52ac84: ldur            x0, [fp, #-0xc0]
+69:     // 0x52ac88: cmp             w0, NULL
+70:     // 0x52ac8c: b.ne            #0x52aca0
+71:     // 0x52ac90: ldr             x16, [THR, #0x88]  ; THR::empty_array
+72:     // 0x52ac94: stp             x16, NULL, [SP]
+73:     // 0x52ac98: r0 = Map._fromLiteral()
+74:     //     0x52ac98: bl              #0x44a58c  ; [dart:core] Map::Map._fromLiteral
+75:     // 0x52ac9c: b               #0x52aca4
+76:     // 0x52aca0: ldur            x0, [fp, #-0xc0]
+77:     // 0x52aca4: mov             x2, x0
+78:     // 0x52aca8: stur            x0, [fp, #-0xe8]
+79:     // 0x52acac: r1 = Instance_JsonCodec
+80:     //     0x52acac: ldr             x1, [PP, #0xb28]  ; [pp+0xb28] Obj!JsonCodec@a77a01
+81:     // 0x52acb0: r4 = const [0, 0x2, 0, 0x2, null]
+82:     //     0x52acb0: ldr             x4, [PP, #0x2f8]  ; [pp+0x2f8] List(5) [0, 0x2, 0, 0x2, Null]
+83:     // 0x52acb4: r0 = encode()
+84:     //     0x52acb4: bl              #0x9bd008  ; [dart:convert] JsonCodec::encode
+85:     // 0x52acb8: stur            x0, [fp, #-0xf0]
+86:     // 0x52acbc: r0 = InitLateStaticField(0x1220) // [package:zhilin_flutter_network/zhilin_network_lib.dart] ZhilinHttpClient::_instance
+87:     //     0x52acbc: ldr             x0, [THR, #0x68]  ; THR::field_table_values
+88:     //     0x52acc0: ldr             x0, [x0, #0x2440]
+89:     //     0x52acc4: ldr             x16, [PP, #0x40]  ; [pp+0x40] Sentinel
+90:     //     0x52acc8: cmp             w0, w16
+91:     //     0x52accc: b.ne            #0x52acd8
+92:     //     0x52acd0: ldr             x2, [PP, #0x3100]  ; [pp+0x3100] Field <ZhilinHttpClient._instance@1270055783>: static late final (offset: 0x1220)
+93:     //     0x52acd4: bl              #0xb1dde8  ; InitLateFinalStaticFieldStub
+94:     // 0x52acd8: stur            x0, [fp, #-0xf8]
+95:     // 0x52acdc: LoadField: r2 = r0->field_f
+96:     //     0x52acdc: ldur            w2, [x0, #0xf]
+97:     // 0x52ace0: DecompressPointer r2
+98:     //     0x52ace0: add             x2, x2, HEAP, lsl #32
+99:     // 0x52ace4: cmp             w2, NULL
+100:     // 0x52ace8: b.eq            #0x52b1e0
+101:     // 0x52acec: ldur            x1, [fp, #-0xf0]
+102:     // 0x52acf0: r0 = encrypt()
+103:     //     0x52acf0: bl              #0x56c350  ; [package:zhilin_flutter_network/zhilin_network_lib.dart] ZhilinRsaHelper::encrypt
+104:     // 0x52acf4: stur            x0, [fp, #-0x100]
+105:     // 0x52acf8: r16 = <String, String>
+106:     //     0x52acf8: ldr             x16, [PP, #0x3090]  ; [pp+0x3090] TypeArguments: <String, String>
+107:     // 0x52acfc: ldr             lr, [THR, #0x88]  ; THR::empty_array
+108:     // 0x52ad00: stp             lr, x16, [SP]
+109:     // 0x52ad04: r0 = Map._fromLiteral()
+110:     //     0x52ad04: bl              #0x44a58c  ; [dart:core] Map::Map._fromLiteral
+111:     // 0x52ad08: mov             x1, x0
+112:     // 0x52ad0c: ldur            x3, [fp, #-0x100]
+113:     // 0x52ad10: r2 = "content"
+114:     //     0x52ad10: ldr             x2, [PP, #0x7e48]  ; [pp+0x7e48] "content"
+115:     // 0x52ad14: r17 = -264
+116:     //     0x52ad14: mov             x17, #-0x108
+117:     // 0x52ad18: str             x0, [fp, x17]
+118:     // 0x52ad1c: r0 = []=()
+119:     //     0x52ad1c: bl              #0xa5ccf8  ; [dart:collection] __Map&_HashVMBase&MapMixin&_HashBase&_OperatorEqualsAndHashCode&_LinkedHashMapMixin::[]=
+120:     // 0x52ad20: ldur            x1, [fp, #-0xf8]
+121:     // 0x52ad24: ldur            x2, [fp, #-0xd8]
+122:     // 0x52ad28: r17 = -264
+123:     //     0x52ad28: mov             x17, #-0x108
+124:     // 0x52ad2c: ldr             x3, [fp, x17]
+125:     // 0x52ad30: r5 = Null
+126:     //     0x52ad30: mov             x5, NULL
+127:     // 0x52ad34: r0 = post()
+128:     //     0x52ad34: bl              #0x5413c8  ; [package:zhilin_flutter_network/zhilin_network_lib.dart] ZhilinHttpClient::post
+129:     // 0x52ad38: mov             x1, x0
+130:     // 0x52ad3c: r17 = -272
+131:     //     0x52ad3c: mov             x17, #-0x110
+132:     // 0x52ad40: str             x1, [fp, x17]
+133:     // 0x52ad44: r0 = Await()
+134:     //     0x52ad44: bl              #0x4999e8  ; AwaitStub
+135:     // 0x52ad48: mov             x1, x0
+136:     // 0x52ad4c: stur            x1, [fp, #-0xd0]
+137:     // 0x52ad50: cmp             w1, NULL
+138:     // 0x52ad54: b.eq            #0x52ad6c
+139:     // 0x52ad58: LoadField: r2 = r1->field_b
+140:     //     0x52ad58: ldur            w2, [x1, #0xb]

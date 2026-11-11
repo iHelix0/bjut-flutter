@@ -1,0 +1,25 @@
+Source: asm/oneness/ui/page/web_page/online_business_web_page.dart
+Source lines: 23840-23860
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+23840:     //     0x875b64: stur            w17, [x0, #0xf]
+23841:     // 0x875b68: ldur            x1, [fp, #-0x98]
+23842:     // 0x875b6c: StoreField: r0->field_13 = r1
+23843:     //     0x875b6c: stur            w1, [x0, #0x13]
+23844:     // 0x875b70: str             x0, [SP]
+23845:     // 0x875b74: r0 = _interpolate()
+23846:     //     0x875b74: bl              #0x43c8e8  ; [dart:core] _StringBase::_interpolate
+23847:     // 0x875b78: r0 = Null
+23848:     //     0x875b78: mov             x0, NULL
+23849:     // 0x875b7c: r0 = ReturnAsyncNotFuture()
+23850:     //     0x875b7c: b               #0x499834  ; ReturnAsyncNotFutureStub
+23851:     // 0x875b80: r0 = StackOverflowSharedWithoutFPURegs()
+23852:     //     0x875b80: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+23853:     // 0x875b84: b               #0x873568
+23854:     // 0x875b88: r9 = _controller
+23855:     //     0x875b88: add             x9, PP, #0x22, lsl #12  ; [pp+0x22fa0] Field <OnlineBusinessWebPageState._controller@1515029329>: late (offset: 0x24)
+23856:     //     0x875b8c: ldr             x9, [x9, #0xfa0]
+23857:     // 0x875b90: r0 = LateInitializationErrorSharedWithoutFPURegs()
+23858:     //     0x875b90: bl              #0xb20598  ; LateInitializationErrorSharedWithoutFPURegsStub
+23859:     // 0x875b94: SaveReg d2
+23860:     //     0x875b94: str             q2, [SP, #-0x10]!

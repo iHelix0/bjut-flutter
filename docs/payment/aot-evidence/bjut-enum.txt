@@ -1,0 +1,7 @@
+Obj!AppEnv@a787d1 : {
+  Super!_Enum : {
+    off_8: int(0x0),
+    off_10: "bjut"
+  },
+  off_14: "Bjut"
+}

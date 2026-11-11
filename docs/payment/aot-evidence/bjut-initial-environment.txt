@@ -1,0 +1,36 @@
+Source: asm/oneness/app_environment/app_environment.dart
+Source lines: 1047-1078
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+1047:   static void initialize() {
+1048:     // ** addr: 0xb2d5f4, size: 0x38
+1049:     // 0xb2d5f4: EnterFrame
+1050:     //     0xb2d5f4: stp             fp, lr, [SP, #-0x10]!
+1051:     //     0xb2d5f8: mov             fp, SP
+1052:     // 0xb2d5fc: r0 = AppEnvironment()
+1053:     //     0xb2d5fc: bl              #0xb2d62c  ; AllocateAppEnvironmentStub -> AppEnvironment (size=0x10)
+1054:     // 0xb2d600: r1 = true
+1055:     //     0xb2d600: add             x1, NULL, #0x20  ; true
+1056:     // 0xb2d604: StoreField: r0->field_b = r1
+1057:     //     0xb2d604: stur            w1, [x0, #0xb]
+1058:     // 0xb2d608: r1 = Instance_AppEnv
+1059:     //     0xb2d608: add             x1, PP, #0xe, lsl #12  ; [pp+0xec80] Obj!AppEnv@a787d1
+1060:     //     0xb2d60c: ldr             x1, [x1, #0xc80]
+1061:     // 0xb2d610: StoreField: r0->field_7 = r1
+1062:     //     0xb2d610: stur            w1, [x0, #7]
+1063:     // 0xb2d614: StoreStaticField(0x1218, r0)
+1064:     //     0xb2d614: ldr             x1, [THR, #0x68]  ; THR::field_table_values
+1065:     //     0xb2d618: str             x0, [x1, #0x2430]
+1066:     // 0xb2d61c: r0 = Null
+1067:     //     0xb2d61c: mov             x0, NULL
+1068:     // 0xb2d620: LeaveFrame
+1069:     //     0xb2d620: mov             SP, fp
+1070:     //     0xb2d624: ldp             fp, lr, [SP], #0x10
+1071:     // 0xb2d628: ret
+1072:     //     0xb2d628: ret             
+1073:   }
+1074: }
+1075: 
+1076: // class id: 5268, size: 0x18, field offset: 0x14
+1077: enum AppEnv extends _Enum {
+1078: 

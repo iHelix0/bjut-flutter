@@ -1,3 +1,17 @@
+# BJUT Pay（当前开发方向）
+
+当前范围已收敛为校园付款码、余额查询、半自动补款。课表、邮箱、通知等历史成果保留，但暂停新增开发。
+
+本分支提供明确标记的 **离线 Mock Demo**：`flutter run -t lib/main_pay.dart`。
+付款码和真实充值均未接入，不可用于消费或真实资金操作。
+
+- [Demo 使用与接口边界](docs/payment/DEMO.md)
+- [实际测试日志与构建限制](docs/payment/VALIDATION.md)
+- [APK 专项分析](docs/payment/APK_PAYMENT_REVIEW.md)
+- [付款专项接口清单](docs/payment/payment-api-inventory.md)
+
+以下为保留的历史项目说明，不代表当前开发范围。
+
 # 日新工大第三方客户端（工作名）
 
 这是一个处于早期实现阶段的 Flutter 项目，目标是为北京工业大学师生探索一个轻量、清晰、可验证的“日新工大”第三方客户端。

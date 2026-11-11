@@ -1,0 +1,92 @@
+[
+  {
+    "file": "repository-card.txt",
+    "source": "oneness/net/bjut/bjut_net_repository.dart",
+    "lines": [
+      1024,
+      1137
+    ],
+    "sha256": "4e8be9c9f38a65f5e8f5fe6e27c0d30657343f8c61ccfdc2f6904ee84f78f5f4"
+  },
+  {
+    "file": "card-model-json.txt",
+    "source": "oneness/generated/json/bjut_home_school_card_entity.g.dart",
+    "lines": [
+      1,
+      520
+    ],
+    "sha256": "73037bcaf902ddd033924d31c47fa37eb6a40fb65c27eff48b9e51c4cf8d9d76"
+  },
+  {
+    "file": "card-action-config.txt",
+    "source": "oneness/ui/page/home_page/bjut_home_action_cards.dart",
+    "lines": [
+      1,
+      116
+    ],
+    "sha256": "3ce47487a019fedfbfa74bc2e21617324a10ec089fe858d3d8bb44070602319f"
+  },
+  {
+    "file": "card-tap-route.txt",
+    "source": "oneness/ui/page/home_page/bjut_home_page.dart",
+    "lines": [
+      3132,
+      3220
+    ],
+    "sha256": "2abf45245acfcc4b3fb55cd8d5b65da079f5b89d40c6d5b406687f0904eb70e9"
+  },
+  {
+    "file": "card-tap-closure.txt",
+    "source": "oneness/ui/page/home_page/bjut_home_page.dart",
+    "lines": [
+      4917,
+      4985
+    ],
+    "sha256": "b33d48bd2af621b34728363bf4ab2f184ea8a7c23bcce4b58358f4de865a5aa0"
+  },
+  {
+    "file": "bridge-noop-branches.txt",
+    "source": "oneness/ui/page/web_page/online_business_web_page.dart",
+    "lines": [
+      22830,
+      22904
+    ],
+    "sha256": "52504cc8e242acd662f8b4d0922ae5f2f4584b6543334d915a76731e73dc73ca"
+  },
+  {
+    "file": "bridge-return.txt",
+    "source": "oneness/ui/page/web_page/online_business_web_page.dart",
+    "lines": [
+      23840,
+      23860
+    ],
+    "sha256": "ca6ca7626f2384d32799d39edec3ca843f6b3a2a9781193ab7bccdb1cc8851c4"
+  },
+  {
+    "file": "network-rsa-post.txt",
+    "source": "zhilin_flutter_network/zhilin_network_lib.dart",
+    "lines": [
+      10,
+      140
+    ],
+    "sha256": "0738d33d2ec45e63980eaa647d201c7280aa7c83aceb8917a395c93889b59dae"
+  },
+  {
+    "file": "bjut-base-url.txt",
+    "source": "oneness/app_environment/app_environment.dart",
+    "lines": [
+      74,
+      132
+    ],
+    "sha256": "506f883f6af5359fd35fb2825066c4a35ccb1859badd7e8b991e371ddee319cc"
+  },
+  {
+    "file": "bjut-initial-environment.txt",
+    "source": "oneness/app_environment/app_environment.dart",
+    "lines": [
+      1047,
+      1078
+    ],
+    "sha256": "8c6eeb7591d8cc8e233871cab4570192311f58e5b19fc61625983c5f86079243"
+  }
+]

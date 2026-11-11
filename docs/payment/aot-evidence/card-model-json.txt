@@ -1,0 +1,524 @@
+Source: asm/oneness/generated/json/bjut_home_school_card_entity.g.dart
+Source lines: 1-520
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+1: // lib: , url: package:oneness/generated/json/bjut_home_school_card_entity.g.dart
+2: 
+3: // class id: 1049734, size: 0x8
+4: class :: {
+5: 
+6:   static _ $BjutHomeSchoolCardDFromJson(/* No info */) {
+7:     // ** addr: 0x520d20, size: 0x2ac
+8:     // 0x520d20: EnterFrame
+9:     //     0x520d20: stp             fp, lr, [SP, #-0x10]!
+10:     //     0x520d24: mov             fp, SP
+11:     // 0x520d28: AllocStack(0x30)
+12:     //     0x520d28: sub             SP, SP, #0x30
+13:     // 0x520d2c: SetupParameters(dynamic _ /* r1 => r1, fp-0x8 */)
+14:     //     0x520d2c: stur            x1, [fp, #-8]
+15:     // 0x520d30: CheckStackOverflow
+16:     //     0x520d30: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+17:     //     0x520d34: cmp             SP, x16
+18:     //     0x520d38: b.ls            #0x520fc4
+19:     // 0x520d3c: r0 = BjutHomeSchoolCardD()
+20:     //     0x520d3c: bl              #0x520fcc  ; AllocateBjutHomeSchoolCardDStub -> BjutHomeSchoolCardD (size=0x1c)
+21:     // 0x520d40: stur            x0, [fp, #-0x10]
+22:     // 0x520d44: r0 = InitLateStaticField(0x1248) // [package:oneness/generated/json/base/json_convert_content.dart] ::jsonConvert
+23:     //     0x520d44: ldr             x0, [THR, #0x68]  ; THR::field_table_values
+24:     //     0x520d48: ldr             x0, [x0, #0x2490]
+25:     //     0x520d4c: ldr             x16, [PP, #0x40]  ; [pp+0x40] Sentinel
+26:     //     0x520d50: cmp             w0, w16
+27:     //     0x520d54: b.ne            #0x520d60
+28:     //     0x520d58: ldr             x2, [PP, #0x5e60]  ; [pp+0x5e60] Field <::.jsonConvert>: static late (offset: 0x1248)
+29:     //     0x520d5c: bl              #0xb1de50  ; InitLateStaticFieldStub
+30:     // 0x520d60: mov             x4, x0
+31:     // 0x520d64: ldur            x3, [fp, #-8]
+32:     // 0x520d68: stur            x4, [fp, #-0x18]
+33:     // 0x520d6c: r0 = LoadClassIdInstr(r3)
+34:     //     0x520d6c: ldur            x0, [x3, #-1]
+35:     //     0x520d70: ubfx            x0, x0, #0xc, #0x14
+36:     // 0x520d74: mov             x1, x3
+37:     // 0x520d78: r2 = "title"
+38:     //     0x520d78: ldr             x2, [PP, #0x7d60]  ; [pp+0x7d60] "title"
+39:     // 0x520d7c: r0 = GDT[cid_x0 + -0x11e]()
+40:     //     0x520d7c: sub             lr, x0, #0x11e
+41:     //     0x520d80: ldr             lr, [x21, lr, lsl #3]
+42:     //     0x520d84: blr             lr
+43:     // 0x520d88: r16 = <String>
+44:     //     0x520d88: ldr             x16, [PP, #0x950]  ; [pp+0x950] TypeArguments: <String>
+45:     // 0x520d8c: ldur            lr, [fp, #-0x18]
+46:     // 0x520d90: stp             lr, x16, [SP, #8]
+47:     // 0x520d94: str             x0, [SP]
+48:     // 0x520d98: r4 = const [0x1, 0x2, 0x2, 0x2, null]
+49:     //     0x520d98: ldr             x4, [PP, #0x58]  ; [pp+0x58] List(5) [0x1, 0x2, 0x2, 0x2, Null]
+50:     // 0x520d9c: r0 = convert()
+51:     //     0x520d9c: bl              #0x4be810  ; [package:oneness/generated/json/base/json_convert_content.dart] JsonConvert::convert
+52:     // 0x520da0: cmp             w0, NULL
+53:     // 0x520da4: b.eq            #0x520dd0
+54:     // 0x520da8: ldur            x3, [fp, #-0x10]
+55:     // 0x520dac: StoreField: r3->field_7 = r0
+56:     //     0x520dac: stur            w0, [x3, #7]
+57:     //     0x520db0: tbz             w0, #0, #0x520dcc
+58:     //     0x520db4: ldurb           w16, [x3, #-1]
+59:     //     0x520db8: ldurb           w17, [x0, #-1]
+60:     //     0x520dbc: and             x16, x17, x16, lsr #2
+61:     //     0x520dc0: tst             x16, HEAP, lsr #32
+62:     //     0x520dc4: b.eq            #0x520dcc
+63:     //     0x520dc8: bl              #0xb1e3c4  ; WriteBarrierWrappersStub
+64:     // 0x520dcc: b               #0x520dd4
+65:     // 0x520dd0: ldur            x3, [fp, #-0x10]
+66:     // 0x520dd4: ldur            x4, [fp, #-8]
+67:     // 0x520dd8: r5 = LoadStaticField(0x1248)
+68:     //     0x520dd8: ldr             x5, [THR, #0x68]  ; THR::field_table_values
+69:     //     0x520ddc: ldr             x5, [x5, #0x2490]
+70:     // 0x520de0: stur            x5, [fp, #-0x18]
+71:     // 0x520de4: r0 = LoadClassIdInstr(r4)
+72:     //     0x520de4: ldur            x0, [x4, #-1]
+73:     //     0x520de8: ubfx            x0, x0, #0xc, #0x14
+74:     // 0x520dec: mov             x1, x4
+75:     // 0x520df0: r2 = "desc"
+76:     //     0x520df0: ldr             x2, [PP, #0x7d88]  ; [pp+0x7d88] "desc"
+77:     // 0x520df4: r0 = GDT[cid_x0 + -0x11e]()
+78:     //     0x520df4: sub             lr, x0, #0x11e
+79:     //     0x520df8: ldr             lr, [x21, lr, lsl #3]
+80:     //     0x520dfc: blr             lr
+81:     // 0x520e00: r16 = <String>
+82:     //     0x520e00: ldr             x16, [PP, #0x950]  ; [pp+0x950] TypeArguments: <String>
+83:     // 0x520e04: ldur            lr, [fp, #-0x18]
+84:     // 0x520e08: stp             lr, x16, [SP, #8]
+85:     // 0x520e0c: str             x0, [SP]
+86:     // 0x520e10: r4 = const [0x1, 0x2, 0x2, 0x2, null]
+87:     //     0x520e10: ldr             x4, [PP, #0x58]  ; [pp+0x58] List(5) [0x1, 0x2, 0x2, 0x2, Null]
+88:     // 0x520e14: r0 = convert()
+89:     //     0x520e14: bl              #0x4be810  ; [package:oneness/generated/json/base/json_convert_content.dart] JsonConvert::convert
+90:     // 0x520e18: cmp             w0, NULL
+91:     // 0x520e1c: b.eq            #0x520e48
+92:     // 0x520e20: ldur            x3, [fp, #-0x10]
+93:     // 0x520e24: StoreField: r3->field_b = r0
+94:     //     0x520e24: stur            w0, [x3, #0xb]
+95:     //     0x520e28: tbz             w0, #0, #0x520e44
+96:     //     0x520e2c: ldurb           w16, [x3, #-1]
+97:     //     0x520e30: ldurb           w17, [x0, #-1]
+98:     //     0x520e34: and             x16, x17, x16, lsr #2
+99:     //     0x520e38: tst             x16, HEAP, lsr #32
+100:     //     0x520e3c: b.eq            #0x520e44
+101:     //     0x520e40: bl              #0xb1e3c4  ; WriteBarrierWrappersStub
+102:     // 0x520e44: b               #0x520e4c
+103:     // 0x520e48: ldur            x3, [fp, #-0x10]
+104:     // 0x520e4c: ldur            x4, [fp, #-8]
+105:     // 0x520e50: r5 = LoadStaticField(0x1248)
+106:     //     0x520e50: ldr             x5, [THR, #0x68]  ; THR::field_table_values
+107:     //     0x520e54: ldr             x5, [x5, #0x2490]
+108:     // 0x520e58: stur            x5, [fp, #-0x18]
+109:     // 0x520e5c: r0 = LoadClassIdInstr(r4)
+110:     //     0x520e5c: ldur            x0, [x4, #-1]
+111:     //     0x520e60: ubfx            x0, x0, #0xc, #0x14
+112:     // 0x520e64: mov             x1, x4
+113:     // 0x520e68: r2 = "icon"
+114:     //     0x520e68: ldr             x2, [PP, #0x6f50]  ; [pp+0x6f50] "icon"
+115:     // 0x520e6c: r0 = GDT[cid_x0 + -0x11e]()
+116:     //     0x520e6c: sub             lr, x0, #0x11e
+117:     //     0x520e70: ldr             lr, [x21, lr, lsl #3]
+118:     //     0x520e74: blr             lr
+119:     // 0x520e78: r16 = <String>
+120:     //     0x520e78: ldr             x16, [PP, #0x950]  ; [pp+0x950] TypeArguments: <String>
+121:     // 0x520e7c: ldur            lr, [fp, #-0x18]
+122:     // 0x520e80: stp             lr, x16, [SP, #8]
+123:     // 0x520e84: str             x0, [SP]
+124:     // 0x520e88: r4 = const [0x1, 0x2, 0x2, 0x2, null]
+125:     //     0x520e88: ldr             x4, [PP, #0x58]  ; [pp+0x58] List(5) [0x1, 0x2, 0x2, 0x2, Null]
+126:     // 0x520e8c: r0 = convert()
+127:     //     0x520e8c: bl              #0x4be810  ; [package:oneness/generated/json/base/json_convert_content.dart] JsonConvert::convert
+128:     // 0x520e90: cmp             w0, NULL
+129:     // 0x520e94: b.eq            #0x520ec0
+130:     // 0x520e98: ldur            x3, [fp, #-0x10]
+131:     // 0x520e9c: StoreField: r3->field_f = r0
+132:     //     0x520e9c: stur            w0, [x3, #0xf]
+133:     //     0x520ea0: tbz             w0, #0, #0x520ebc
+134:     //     0x520ea4: ldurb           w16, [x3, #-1]
+135:     //     0x520ea8: ldurb           w17, [x0, #-1]
+136:     //     0x520eac: and             x16, x17, x16, lsr #2
+137:     //     0x520eb0: tst             x16, HEAP, lsr #32
+138:     //     0x520eb4: b.eq            #0x520ebc
+139:     //     0x520eb8: bl              #0xb1e3c4  ; WriteBarrierWrappersStub
+140:     // 0x520ebc: b               #0x520ec4
+141:     // 0x520ec0: ldur            x3, [fp, #-0x10]
+142:     // 0x520ec4: ldur            x4, [fp, #-8]
+143:     // 0x520ec8: r5 = LoadStaticField(0x1248)
+144:     //     0x520ec8: ldr             x5, [THR, #0x68]  ; THR::field_table_values
+145:     //     0x520ecc: ldr             x5, [x5, #0x2490]
+146:     // 0x520ed0: stur            x5, [fp, #-0x18]
+147:     // 0x520ed4: r0 = LoadClassIdInstr(r4)
+148:     //     0x520ed4: ldur            x0, [x4, #-1]
+149:     //     0x520ed8: ubfx            x0, x0, #0xc, #0x14
+150:     // 0x520edc: mov             x1, x4
+151:     // 0x520ee0: r2 = "backend_img"
+152:     //     0x520ee0: add             x2, PP, #9, lsl #12  ; [pp+0x9900] "backend_img"
+153:     //     0x520ee4: ldr             x2, [x2, #0x900]
+154:     // 0x520ee8: r0 = GDT[cid_x0 + -0x11e]()
+155:     //     0x520ee8: sub             lr, x0, #0x11e
+156:     //     0x520eec: ldr             lr, [x21, lr, lsl #3]
+157:     //     0x520ef0: blr             lr
+158:     // 0x520ef4: r16 = <String>
+159:     //     0x520ef4: ldr             x16, [PP, #0x950]  ; [pp+0x950] TypeArguments: <String>
+160:     // 0x520ef8: ldur            lr, [fp, #-0x18]
+161:     // 0x520efc: stp             lr, x16, [SP, #8]
+162:     // 0x520f00: str             x0, [SP]
+163:     // 0x520f04: r4 = const [0x1, 0x2, 0x2, 0x2, null]
+164:     //     0x520f04: ldr             x4, [PP, #0x58]  ; [pp+0x58] List(5) [0x1, 0x2, 0x2, 0x2, Null]
+165:     // 0x520f08: r0 = convert()
+166:     //     0x520f08: bl              #0x4be810  ; [package:oneness/generated/json/base/json_convert_content.dart] JsonConvert::convert
+167:     // 0x520f0c: cmp             w0, NULL
+168:     // 0x520f10: b.eq            #0x520f3c
+169:     // 0x520f14: ldur            x3, [fp, #-0x10]
+170:     // 0x520f18: StoreField: r3->field_13 = r0
+171:     //     0x520f18: stur            w0, [x3, #0x13]
+172:     //     0x520f1c: tbz             w0, #0, #0x520f38
+173:     //     0x520f20: ldurb           w16, [x3, #-1]
+174:     //     0x520f24: ldurb           w17, [x0, #-1]
+175:     //     0x520f28: and             x16, x17, x16, lsr #2
+176:     //     0x520f2c: tst             x16, HEAP, lsr #32
+177:     //     0x520f30: b.eq            #0x520f38
+178:     //     0x520f34: bl              #0xb1e3c4  ; WriteBarrierWrappersStub
+179:     // 0x520f38: b               #0x520f40
+180:     // 0x520f3c: ldur            x3, [fp, #-0x10]
+181:     // 0x520f40: ldur            x1, [fp, #-8]
+182:     // 0x520f44: r4 = LoadStaticField(0x1248)
+183:     //     0x520f44: ldr             x4, [THR, #0x68]  ; THR::field_table_values
+184:     //     0x520f48: ldr             x4, [x4, #0x2490]
+185:     // 0x520f4c: stur            x4, [fp, #-0x18]
+186:     // 0x520f50: r0 = LoadClassIdInstr(r1)
+187:     //     0x520f50: ldur            x0, [x1, #-1]
+188:     //     0x520f54: ubfx            x0, x0, #0xc, #0x14
+189:     // 0x520f58: r2 = "url"
+190:     //     0x520f58: ldr             x2, [PP, #0x6f60]  ; [pp+0x6f60] "url"
+191:     // 0x520f5c: r0 = GDT[cid_x0 + -0x11e]()
+192:     //     0x520f5c: sub             lr, x0, #0x11e
+193:     //     0x520f60: ldr             lr, [x21, lr, lsl #3]
+194:     //     0x520f64: blr             lr
+195:     // 0x520f68: r16 = <String>
+196:     //     0x520f68: ldr             x16, [PP, #0x950]  ; [pp+0x950] TypeArguments: <String>
+197:     // 0x520f6c: ldur            lr, [fp, #-0x18]
+198:     // 0x520f70: stp             lr, x16, [SP, #8]
+199:     // 0x520f74: str             x0, [SP]
+200:     // 0x520f78: r4 = const [0x1, 0x2, 0x2, 0x2, null]
+201:     //     0x520f78: ldr             x4, [PP, #0x58]  ; [pp+0x58] List(5) [0x1, 0x2, 0x2, 0x2, Null]
+202:     // 0x520f7c: r0 = convert()
+203:     //     0x520f7c: bl              #0x4be810  ; [package:oneness/generated/json/base/json_convert_content.dart] JsonConvert::convert
+204:     // 0x520f80: cmp             w0, NULL
+205:     // 0x520f84: b.eq            #0x520fb0
+206:     // 0x520f88: ldur            x1, [fp, #-0x10]
+207:     // 0x520f8c: ArrayStore: r1[0] = r0  ; List_4
+208:     //     0x520f8c: stur            w0, [x1, #0x17]
+209:     //     0x520f90: tbz             w0, #0, #0x520fac
+210:     //     0x520f94: ldurb           w16, [x1, #-1]
+211:     //     0x520f98: ldurb           w17, [x0, #-1]
+212:     //     0x520f9c: and             x16, x17, x16, lsr #2
+213:     //     0x520fa0: tst             x16, HEAP, lsr #32
+214:     //     0x520fa4: b.eq            #0x520fac
+215:     //     0x520fa8: bl              #0xb1e384  ; WriteBarrierWrappersStub
+216:     // 0x520fac: b               #0x520fb4
+217:     // 0x520fb0: ldur            x1, [fp, #-0x10]
+218:     // 0x520fb4: mov             x0, x1
+219:     // 0x520fb8: LeaveFrame
+220:     //     0x520fb8: mov             SP, fp
+221:     //     0x520fbc: ldp             fp, lr, [SP], #0x10
+222:     // 0x520fc0: ret
+223:     //     0x520fc0: ret             
+224:     // 0x520fc4: r0 = StackOverflowSharedWithoutFPURegs()
+225:     //     0x520fc4: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+226:     // 0x520fc8: b               #0x520d3c
+227:   }
+228:   static _ $BjutHomeSchoolCardDToJson(/* No info */) {
+229:     // ** addr: 0x521020, size: 0xc8
+230:     // 0x521020: EnterFrame
+231:     //     0x521020: stp             fp, lr, [SP, #-0x10]!
+232:     //     0x521024: mov             fp, SP
+233:     // 0x521028: AllocStack(0x20)
+234:     //     0x521028: sub             SP, SP, #0x20
+235:     // 0x52102c: SetupParameters(dynamic _ /* r1 => r1, fp-0x8 */)
+236:     //     0x52102c: stur            x1, [fp, #-8]
+237:     // 0x521030: CheckStackOverflow
+238:     //     0x521030: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+239:     //     0x521034: cmp             SP, x16
+240:     //     0x521038: b.ls            #0x5210e0
+241:     // 0x52103c: r16 = <String, dynamic>
+242:     //     0x52103c: ldr             x16, [PP, #0xd50]  ; [pp+0xd50] TypeArguments: <String, dynamic>
+243:     // 0x521040: ldr             lr, [THR, #0x88]  ; THR::empty_array
+244:     // 0x521044: stp             lr, x16, [SP]
+245:     // 0x521048: r0 = Map._fromLiteral()
+246:     //     0x521048: bl              #0x44a58c  ; [dart:core] Map::Map._fromLiteral
+247:     // 0x52104c: mov             x4, x0
+248:     // 0x521050: ldur            x0, [fp, #-8]
+249:     // 0x521054: stur            x4, [fp, #-0x10]
+250:     // 0x521058: LoadField: r3 = r0->field_7
+251:     //     0x521058: ldur            w3, [x0, #7]
+252:     // 0x52105c: DecompressPointer r3
+253:     //     0x52105c: add             x3, x3, HEAP, lsl #32
+254:     // 0x521060: mov             x1, x4
+255:     // 0x521064: r2 = "title"
+256:     //     0x521064: ldr             x2, [PP, #0x7d60]  ; [pp+0x7d60] "title"
+257:     // 0x521068: r0 = []=()
+258:     //     0x521068: bl              #0xa5ccf8  ; [dart:collection] __Map&_HashVMBase&MapMixin&_HashBase&_OperatorEqualsAndHashCode&_LinkedHashMapMixin::[]=
+259:     // 0x52106c: ldur            x0, [fp, #-8]
+260:     // 0x521070: LoadField: r3 = r0->field_b
+261:     //     0x521070: ldur            w3, [x0, #0xb]
+262:     // 0x521074: DecompressPointer r3
+263:     //     0x521074: add             x3, x3, HEAP, lsl #32
+264:     // 0x521078: ldur            x1, [fp, #-0x10]
+265:     // 0x52107c: r2 = "desc"
+266:     //     0x52107c: ldr             x2, [PP, #0x7d88]  ; [pp+0x7d88] "desc"
+267:     // 0x521080: r0 = []=()
+268:     //     0x521080: bl              #0xa5ccf8  ; [dart:collection] __Map&_HashVMBase&MapMixin&_HashBase&_OperatorEqualsAndHashCode&_LinkedHashMapMixin::[]=
+269:     // 0x521084: ldur            x0, [fp, #-8]
+270:     // 0x521088: LoadField: r3 = r0->field_f
+271:     //     0x521088: ldur            w3, [x0, #0xf]
+272:     // 0x52108c: DecompressPointer r3
+273:     //     0x52108c: add             x3, x3, HEAP, lsl #32
+274:     // 0x521090: ldur            x1, [fp, #-0x10]
+275:     // 0x521094: r2 = "icon"
+276:     //     0x521094: ldr             x2, [PP, #0x6f50]  ; [pp+0x6f50] "icon"
+277:     // 0x521098: r0 = []=()
+278:     //     0x521098: bl              #0xa5ccf8  ; [dart:collection] __Map&_HashVMBase&MapMixin&_HashBase&_OperatorEqualsAndHashCode&_LinkedHashMapMixin::[]=
+279:     // 0x52109c: ldur            x0, [fp, #-8]
+280:     // 0x5210a0: LoadField: r3 = r0->field_13
+281:     //     0x5210a0: ldur            w3, [x0, #0x13]
+282:     // 0x5210a4: DecompressPointer r3
+283:     //     0x5210a4: add             x3, x3, HEAP, lsl #32
+284:     // 0x5210a8: ldur            x1, [fp, #-0x10]
+285:     // 0x5210ac: r2 = "backend_img"
+286:     //     0x5210ac: add             x2, PP, #9, lsl #12  ; [pp+0x9900] "backend_img"
+287:     //     0x5210b0: ldr             x2, [x2, #0x900]
+288:     // 0x5210b4: r0 = []=()
+289:     //     0x5210b4: bl              #0xa5ccf8  ; [dart:collection] __Map&_HashVMBase&MapMixin&_HashBase&_OperatorEqualsAndHashCode&_LinkedHashMapMixin::[]=
+290:     // 0x5210b8: ldur            x0, [fp, #-8]
+291:     // 0x5210bc: ArrayLoad: r3 = r0[0]  ; List_4
+292:     //     0x5210bc: ldur            w3, [x0, #0x17]
+293:     // 0x5210c0: DecompressPointer r3
+294:     //     0x5210c0: add             x3, x3, HEAP, lsl #32
+295:     // 0x5210c4: ldur            x1, [fp, #-0x10]
+296:     // 0x5210c8: r2 = "url"
+297:     //     0x5210c8: ldr             x2, [PP, #0x6f60]  ; [pp+0x6f60] "url"
+298:     // 0x5210cc: r0 = []=()
+299:     //     0x5210cc: bl              #0xa5ccf8  ; [dart:collection] __Map&_HashVMBase&MapMixin&_HashBase&_OperatorEqualsAndHashCode&_LinkedHashMapMixin::[]=
+300:     // 0x5210d0: ldur            x0, [fp, #-0x10]
+301:     // 0x5210d4: LeaveFrame
+302:     //     0x5210d4: mov             SP, fp
+303:     //     0x5210d8: ldp             fp, lr, [SP], #0x10
+304:     // 0x5210dc: ret
+305:     //     0x5210dc: ret             
+306:     // 0x5210e0: r0 = StackOverflowSharedWithoutFPURegs()
+307:     //     0x5210e0: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+308:     // 0x5210e4: b               #0x52103c
+309:   }
+310:   static _ $BjutHomeSchoolCardEntityFromJson(/* No info */) {
+311:     // ** addr: 0x521118, size: 0x1b8
+312:     // 0x521118: EnterFrame
+313:     //     0x521118: stp             fp, lr, [SP, #-0x10]!
+314:     //     0x52111c: mov             fp, SP
+315:     // 0x521120: AllocStack(0x30)
+316:     //     0x521120: sub             SP, SP, #0x30
+317:     // 0x521124: SetupParameters(dynamic _ /* r1 => r1, fp-0x8 */)
+318:     //     0x521124: stur            x1, [fp, #-8]
+319:     // 0x521128: CheckStackOverflow
+320:     //     0x521128: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+321:     //     0x52112c: cmp             SP, x16
+322:     //     0x521130: b.ls            #0x5212c8
+323:     // 0x521134: r0 = BjutHomeSchoolCardEntity()
+324:     //     0x521134: bl              #0x5212d0  ; AllocateBjutHomeSchoolCardEntityStub -> BjutHomeSchoolCardEntity (size=0x14)
+325:     // 0x521138: stur            x0, [fp, #-0x10]
+326:     // 0x52113c: r0 = InitLateStaticField(0x1248) // [package:oneness/generated/json/base/json_convert_content.dart] ::jsonConvert
+327:     //     0x52113c: ldr             x0, [THR, #0x68]  ; THR::field_table_values
+328:     //     0x521140: ldr             x0, [x0, #0x2490]
+329:     //     0x521144: ldr             x16, [PP, #0x40]  ; [pp+0x40] Sentinel
+330:     //     0x521148: cmp             w0, w16
+331:     //     0x52114c: b.ne            #0x521158
+332:     //     0x521150: ldr             x2, [PP, #0x5e60]  ; [pp+0x5e60] Field <::.jsonConvert>: static late (offset: 0x1248)
+333:     //     0x521154: bl              #0xb1de50  ; InitLateStaticFieldStub
+334:     // 0x521158: mov             x4, x0
+335:     // 0x52115c: ldur            x3, [fp, #-8]
+336:     // 0x521160: stur            x4, [fp, #-0x18]
+337:     // 0x521164: r0 = LoadClassIdInstr(r3)
+338:     //     0x521164: ldur            x0, [x3, #-1]
+339:     //     0x521168: ubfx            x0, x0, #0xc, #0x14
+340:     // 0x52116c: mov             x1, x3
+341:     // 0x521170: r2 = "e"
+342:     //     0x521170: ldr             x2, [PP, #0x5e68]  ; [pp+0x5e68] "e"
+343:     // 0x521174: r0 = GDT[cid_x0 + -0x11e]()
+344:     //     0x521174: sub             lr, x0, #0x11e
+345:     //     0x521178: ldr             lr, [x21, lr, lsl #3]
+346:     //     0x52117c: blr             lr
+347:     // 0x521180: r16 = <int>
+348:     //     0x521180: ldr             x16, [PP, #0xa00]  ; [pp+0xa00] TypeArguments: <int>
+349:     // 0x521184: ldur            lr, [fp, #-0x18]
+350:     // 0x521188: stp             lr, x16, [SP, #8]
+351:     // 0x52118c: str             x0, [SP]
+352:     // 0x521190: r4 = const [0x1, 0x2, 0x2, 0x2, null]
+353:     //     0x521190: ldr             x4, [PP, #0x58]  ; [pp+0x58] List(5) [0x1, 0x2, 0x2, 0x2, Null]
+354:     // 0x521194: r0 = convert()
+355:     //     0x521194: bl              #0x4be810  ; [package:oneness/generated/json/base/json_convert_content.dart] JsonConvert::convert
+356:     // 0x521198: cmp             w0, NULL
+357:     // 0x52119c: b.eq            #0x5211c8
+358:     // 0x5211a0: ldur            x3, [fp, #-0x10]
+359:     // 0x5211a4: StoreField: r3->field_7 = r0
+360:     //     0x5211a4: stur            w0, [x3, #7]
+361:     //     0x5211a8: tbz             w0, #0, #0x5211c4
+362:     //     0x5211ac: ldurb           w16, [x3, #-1]
+363:     //     0x5211b0: ldurb           w17, [x0, #-1]
+364:     //     0x5211b4: and             x16, x17, x16, lsr #2
+365:     //     0x5211b8: tst             x16, HEAP, lsr #32
+366:     //     0x5211bc: b.eq            #0x5211c4
+367:     //     0x5211c0: bl              #0xb1e3c4  ; WriteBarrierWrappersStub
+368:     // 0x5211c4: b               #0x5211cc
+369:     // 0x5211c8: ldur            x3, [fp, #-0x10]
+370:     // 0x5211cc: ldur            x4, [fp, #-8]
+371:     // 0x5211d0: r5 = LoadStaticField(0x1248)
+372:     //     0x5211d0: ldr             x5, [THR, #0x68]  ; THR::field_table_values
+373:     //     0x5211d4: ldr             x5, [x5, #0x2490]
+374:     // 0x5211d8: stur            x5, [fp, #-0x18]
+375:     // 0x5211dc: r0 = LoadClassIdInstr(r4)
+376:     //     0x5211dc: ldur            x0, [x4, #-1]
+377:     //     0x5211e0: ubfx            x0, x0, #0xc, #0x14
+378:     // 0x5211e4: mov             x1, x4
+379:     // 0x5211e8: r2 = "m"
+380:     //     0x5211e8: ldr             x2, [PP, #0x5e70]  ; [pp+0x5e70] "m"
+381:     // 0x5211ec: r0 = GDT[cid_x0 + -0x11e]()
+382:     //     0x5211ec: sub             lr, x0, #0x11e
+383:     //     0x5211f0: ldr             lr, [x21, lr, lsl #3]
+384:     //     0x5211f4: blr             lr
+385:     // 0x5211f8: r16 = <String>
+386:     //     0x5211f8: ldr             x16, [PP, #0x950]  ; [pp+0x950] TypeArguments: <String>
+387:     // 0x5211fc: ldur            lr, [fp, #-0x18]
+388:     // 0x521200: stp             lr, x16, [SP, #8]
+389:     // 0x521204: str             x0, [SP]
+390:     // 0x521208: r4 = const [0x1, 0x2, 0x2, 0x2, null]
+391:     //     0x521208: ldr             x4, [PP, #0x58]  ; [pp+0x58] List(5) [0x1, 0x2, 0x2, 0x2, Null]
+392:     // 0x52120c: r0 = convert()
+393:     //     0x52120c: bl              #0x4be810  ; [package:oneness/generated/json/base/json_convert_content.dart] JsonConvert::convert
+394:     // 0x521210: cmp             w0, NULL
+395:     // 0x521214: b.eq            #0x521240
+396:     // 0x521218: ldur            x3, [fp, #-0x10]
+397:     // 0x52121c: StoreField: r3->field_b = r0
+398:     //     0x52121c: stur            w0, [x3, #0xb]
+399:     //     0x521220: tbz             w0, #0, #0x52123c
+400:     //     0x521224: ldurb           w16, [x3, #-1]
+401:     //     0x521228: ldurb           w17, [x0, #-1]
+402:     //     0x52122c: and             x16, x17, x16, lsr #2
+403:     //     0x521230: tst             x16, HEAP, lsr #32
+404:     //     0x521234: b.eq            #0x52123c
+405:     //     0x521238: bl              #0xb1e3c4  ; WriteBarrierWrappersStub
+406:     // 0x52123c: b               #0x521244
+407:     // 0x521240: ldur            x3, [fp, #-0x10]
+408:     // 0x521244: ldur            x1, [fp, #-8]
+409:     // 0x521248: r4 = LoadStaticField(0x1248)
+410:     //     0x521248: ldr             x4, [THR, #0x68]  ; THR::field_table_values
+411:     //     0x52124c: ldr             x4, [x4, #0x2490]
+412:     // 0x521250: stur            x4, [fp, #-0x18]
+413:     // 0x521254: r0 = LoadClassIdInstr(r1)
+414:     //     0x521254: ldur            x0, [x1, #-1]
+415:     //     0x521258: ubfx            x0, x0, #0xc, #0x14
+416:     // 0x52125c: r2 = "d"
+417:     //     0x52125c: ldr             x2, [PP, #0x5e78]  ; [pp+0x5e78] "d"
+418:     // 0x521260: r0 = GDT[cid_x0 + -0x11e]()
+419:     //     0x521260: sub             lr, x0, #0x11e
+420:     //     0x521264: ldr             lr, [x21, lr, lsl #3]
+421:     //     0x521268: blr             lr
+422:     // 0x52126c: r16 = <BjutHomeSchoolCardD>
+423:     //     0x52126c: add             x16, PP, #9, lsl #12  ; [pp+0x9908] TypeArguments: <BjutHomeSchoolCardD>
+424:     //     0x521270: ldr             x16, [x16, #0x908]
+425:     // 0x521274: ldur            lr, [fp, #-0x18]
+426:     // 0x521278: stp             lr, x16, [SP, #8]
+427:     // 0x52127c: str             x0, [SP]
+428:     // 0x521280: r4 = const [0x1, 0x2, 0x2, 0x2, null]
+429:     //     0x521280: ldr             x4, [PP, #0x58]  ; [pp+0x58] List(5) [0x1, 0x2, 0x2, 0x2, Null]
+430:     // 0x521284: r0 = convert()
+431:     //     0x521284: bl              #0x4be810  ; [package:oneness/generated/json/base/json_convert_content.dart] JsonConvert::convert
+432:     // 0x521288: cmp             w0, NULL
+433:     // 0x52128c: b.eq            #0x5212b4
+434:     // 0x521290: ldur            x1, [fp, #-0x10]
+435:     // 0x521294: StoreField: r1->field_f = r0
+436:     //     0x521294: stur            w0, [x1, #0xf]
+437:     //     0x521298: ldurb           w16, [x1, #-1]
+438:     //     0x52129c: ldurb           w17, [x0, #-1]
+439:     //     0x5212a0: and             x16, x17, x16, lsr #2
+440:     //     0x5212a4: tst             x16, HEAP, lsr #32
+441:     //     0x5212a8: b.eq            #0x5212b0
+442:     //     0x5212ac: bl              #0xb1e384  ; WriteBarrierWrappersStub
+443:     // 0x5212b0: b               #0x5212b8
+444:     // 0x5212b4: ldur            x1, [fp, #-0x10]
+445:     // 0x5212b8: mov             x0, x1
+446:     // 0x5212bc: LeaveFrame
+447:     //     0x5212bc: mov             SP, fp
+448:     //     0x5212c0: ldp             fp, lr, [SP], #0x10
+449:     // 0x5212c4: ret
+450:     //     0x5212c4: ret             
+451:     // 0x5212c8: r0 = StackOverflowSharedWithoutFPURegs()
+452:     //     0x5212c8: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+453:     // 0x5212cc: b               #0x521134
+454:   }
+455:   static _ $BjutHomeSchoolCardEntityToJson(/* No info */) {
+456:     // ** addr: 0x521324, size: 0xac
+457:     // 0x521324: EnterFrame
+458:     //     0x521324: stp             fp, lr, [SP, #-0x10]!
+459:     //     0x521328: mov             fp, SP
+460:     // 0x52132c: AllocStack(0x20)
+461:     //     0x52132c: sub             SP, SP, #0x20
+462:     // 0x521330: SetupParameters(dynamic _ /* r1 => r1, fp-0x8 */)
+463:     //     0x521330: stur            x1, [fp, #-8]
+464:     // 0x521334: CheckStackOverflow
+465:     //     0x521334: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+466:     //     0x521338: cmp             SP, x16
+467:     //     0x52133c: b.ls            #0x5213c8
+468:     // 0x521340: r16 = <String, dynamic>
+469:     //     0x521340: ldr             x16, [PP, #0xd50]  ; [pp+0xd50] TypeArguments: <String, dynamic>
+470:     // 0x521344: ldr             lr, [THR, #0x88]  ; THR::empty_array
+471:     // 0x521348: stp             lr, x16, [SP]
+472:     // 0x52134c: r0 = Map._fromLiteral()
+473:     //     0x52134c: bl              #0x44a58c  ; [dart:core] Map::Map._fromLiteral
+474:     // 0x521350: mov             x4, x0
+475:     // 0x521354: ldur            x0, [fp, #-8]
+476:     // 0x521358: stur            x4, [fp, #-0x10]
+477:     // 0x52135c: LoadField: r3 = r0->field_7
+478:     //     0x52135c: ldur            w3, [x0, #7]
+479:     // 0x521360: DecompressPointer r3
+480:     //     0x521360: add             x3, x3, HEAP, lsl #32
+481:     // 0x521364: mov             x1, x4
+482:     // 0x521368: r2 = "e"
+483:     //     0x521368: ldr             x2, [PP, #0x5e68]  ; [pp+0x5e68] "e"
+484:     // 0x52136c: r0 = []=()
+485:     //     0x52136c: bl              #0xa5ccf8  ; [dart:collection] __Map&_HashVMBase&MapMixin&_HashBase&_OperatorEqualsAndHashCode&_LinkedHashMapMixin::[]=
+486:     // 0x521370: ldur            x0, [fp, #-8]
+487:     // 0x521374: LoadField: r3 = r0->field_b
+488:     //     0x521374: ldur            w3, [x0, #0xb]
+489:     // 0x521378: DecompressPointer r3
+490:     //     0x521378: add             x3, x3, HEAP, lsl #32
+491:     // 0x52137c: ldur            x1, [fp, #-0x10]
+492:     // 0x521380: r2 = "m"
+493:     //     0x521380: ldr             x2, [PP, #0x5e70]  ; [pp+0x5e70] "m"
+494:     // 0x521384: r0 = []=()
+495:     //     0x521384: bl              #0xa5ccf8  ; [dart:collection] __Map&_HashVMBase&MapMixin&_HashBase&_OperatorEqualsAndHashCode&_LinkedHashMapMixin::[]=
+496:     // 0x521388: ldur            x0, [fp, #-8]
+497:     // 0x52138c: LoadField: r1 = r0->field_f
+498:     //     0x52138c: ldur            w1, [x0, #0xf]
+499:     // 0x521390: DecompressPointer r1
+500:     //     0x521390: add             x1, x1, HEAP, lsl #32
+501:     // 0x521394: cmp             w1, NULL
+502:     // 0x521398: b.ne            #0x5213a4
+503:     // 0x52139c: r3 = Null
+504:     //     0x52139c: mov             x3, NULL
+505:     // 0x5213a0: b               #0x5213ac
+506:     // 0x5213a4: r0 = $BjutHomeSchoolCardDToJson()
+507:     //     0x5213a4: bl              #0x521020  ; [package:oneness/generated/json/bjut_home_school_card_entity.g.dart] ::$BjutHomeSchoolCardDToJson
+508:     // 0x5213a8: mov             x3, x0
+509:     // 0x5213ac: ldur            x1, [fp, #-0x10]
+510:     // 0x5213b0: r2 = "d"
+511:     //     0x5213b0: ldr             x2, [PP, #0x5e78]  ; [pp+0x5e78] "d"
+512:     // 0x5213b4: r0 = []=()
+513:     //     0x5213b4: bl              #0xa5ccf8  ; [dart:collection] __Map&_HashVMBase&MapMixin&_HashBase&_OperatorEqualsAndHashCode&_LinkedHashMapMixin::[]=
+514:     // 0x5213b8: ldur            x0, [fp, #-0x10]
+515:     // 0x5213bc: LeaveFrame
+516:     //     0x5213bc: mov             SP, fp
+517:     //     0x5213c0: ldp             fp, lr, [SP], #0x10
+518:     // 0x5213c4: ret
+519:     //     0x5213c4: ret             
+520:     // 0x5213c8: r0 = StackOverflowSharedWithoutFPURegs()
