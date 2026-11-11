@@ -1,0 +1,154 @@
+[
+  {
+    "offset": "0x3b6a5",
+    "text": "_clearHomeSchoolCardCache@1469147304"
+  },
+  {
+    "offset": "0x40f42",
+    "text": "clearHomeSchoolCard"
+  },
+  {
+    "offset": "0x43efc",
+    "text": "bjutHomeSchoolCardProvider"
+  },
+  {
+    "offset": "0x59883",
+    "text": "homeSchoolCard"
+  },
+  {
+    "offset": "0x5afd6",
+    "text": "WhiteBalance"
+  },
+  {
+    "offset": "0x5d49d",
+    "text": "BjutHomeSchoolCardNotifier"
+  },
+  {
+    "offset": "0x6fd60",
+    "text": "application/vnd.llamagraphics.life-balance.exchange+xml"
+  },
+  {
+    "offset": "0x70fa9",
+    "text": "package:oneness/ui/page/home_page/bjut_home_action_cards.dart"
+  },
+  {
+    "offset": "0x7150f",
+    "text": "saveHomeSchoolCard"
+  },
+  {
+    "offset": "0x77698",
+    "text": "BjutHomeActionCardData"
+  },
+  {
+    "offset": "0x77911",
+    "text": "application/vnd.llamagraphics.life-balance.desktop"
+  },
+  {
+    "offset": "0x77beb",
+    "text": "$BjutHomeSchoolCardEntityToJson"
+  },
+  {
+    "offset": "0x8019d",
+    "text": "$BjutHomeSchoolCardEntityFromJson"
+  },
+  {
+    "offset": "0x824d0",
+    "text": "_buildSchoolCardData@1542438096"
+  },
+  {
+    "offset": "0x90ad6",
+    "text": "$BjutHomeSchoolCardDToJson"
+  },
+  {
+    "offset": "0x95d68",
+    "text": "goToPayCode`"
+  },
+  {
+    "offset": "0x98b9c",
+    "text": "BjutHomeSchoolCardD"
+  },
+  {
+    "offset": "0xa4ec9",
+    "text": "init:bjutHomeSchoolCardProvider"
+  },
+  {
+    "offset": "0xb52fb",
+    "text": "BjutHomeSchoolCardEntity"
+  },
+  {
+    "offset": "0xb7009",
+    "text": "application/set-payment-initiation"
+  },
+  {
+    "offset": "0xb8d4c",
+    "text": "_buildSchoolCard@1542438096"
+  },
+  {
+    "offset": "0xbfff6",
+    "text": "loadHomeSchoolCard"
+  },
+  {
+    "offset": "0xc549c",
+    "text": "homeSchoolCardInfo"
+  },
+  {
+    "offset": "0xce151",
+    "text": "BjutHomeSchoolCardD.fromJson"
+  },
+  {
+    "offset": "0xd21f7",
+    "text": "package:oneness/generated/json/bjut_home_school_card_entity.g.dart"
+  },
+  {
+    "offset": "0xd288b",
+    "text": "package:oneness/model/bjut/bjut_home_school_card_entity.dart"
+  },
+  {
+    "offset": "0xd336e",
+    "text": "/bjutapp/wap/default/consumption-code"
+  },
+  {
+    "offset": "0xd8739",
+    "text": "getHomeSchoolCard: "
+  },
+  {
+    "offset": "0xdde34",
+    "text": "_buildBjutAiSwitchCard@1549522206"
+  },
+  {
+    "offset": "0xe078a",
+    "text": "buildBjutHomeActionCards"
+  },
+  {
+    "offset": "0xe2cad",
+    "text": "_getHomeSchoolCard@1469147304"
+  },
+  {
+    "offset": "0xe4f2c",
+    "text": "AudioBalanceRight"
+  },
+  {
+    "offset": "0xe65a2",
+    "text": "package:oneness/notifier/bjut/bjut_home_school_card_notifier.dart"
+  },
+  {
+    "offset": "0xf07aa",
+    "text": "cardRecharge"
+  },
+  {
+    "offset": "0xf490c",
+    "text": "BjutHomeSchoolCardEntity.fromJson"
+  },
+  {
+    "offset": "0xf523b",
+    "text": "$BjutHomeSchoolCardDFromJson"
+  },
+  {
+    "offset": "0xf80cc",
+    "text": "AudioBalanceLeft"
+  },
+  {
+    "offset": "0xf93b0",
+    "text": "getHomeSchoolCard"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "package": "cn.edu.bjut.app",
+  "versionName": "2.8.8",
+  "versionCode": "260801",
+  "app_name": "日新工大",
+  "main_activity": "com.zhilin.all_in_one.MainActivity",
+  "minSdk": "21",
+  "targetSdk": "34",
+  "v1_present": true,
+  "v2_present": true,
+  "v3_present": true,
+  "certificate_sha256": [
+    "37865399e49ec437c7b60d24c58499f659da26593a98b70b8bd967e4b4cc3ac7"
+  ]
+}

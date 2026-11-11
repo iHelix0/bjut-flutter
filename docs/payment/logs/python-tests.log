@@ -1,0 +1,11 @@
+test_bridge_and_source_uris_do_not_claim_an_http_protocol (test_apk_inventory.InventoryTests.test_bridge_and_source_uris_do_not_claim_an_http_protocol) ... ok
+test_crc_corruption_is_rejected_even_when_outer_hash_matches (test_apk_inventory.InventoryTests.test_crc_corruption_is_rejected_even_when_outer_hash_matches) ... ok
+test_private_addresses_and_identifier_shaped_paths_are_redacted (test_apk_inventory.InventoryTests.test_private_addresses_and_identifier_shaped_paths_are_redacted) ... ok
+test_query_values_userinfo_and_fragments_are_not_retained (test_apk_inventory.InventoryTests.test_query_values_userinfo_and_fragments_are_not_retained) ... ok
+test_utf8_and_utf16_offsets_point_to_member_bytes (test_apk_inventory.InventoryTests.test_utf8_and_utf16_offsets_point_to_member_bytes) ... ok
+test_zip_scan_requires_hash_match_and_reads_all_members (test_apk_inventory.InventoryTests.test_zip_scan_requires_hash_match_and_reads_all_members) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK
