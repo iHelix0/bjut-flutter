@@ -1,0 +1,137 @@
+Source: asm/oneness/ui/page/web_page/bjut_web_page.dart
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+Source lines 1-9:
+1: // lib: , url: package:oneness/ui/page/web_page/bjut_web_page.dart
+2: 
+3: // class id: 1049997, size: 0x8
+4: class :: {
+5: }
+6: 
+7: // class id: 3103, size: 0xb8, field offset: 0xb8
+8: class _BjutWebPageState extends OnlineBusinessWebPageState {
+9: 
+
+Source lines 431-552:
+431:   _ beforeInitialWebLoad(/* No info */) async {
+432:     // ** addr: 0xa611d8, size: 0x148
+433:     // 0xa611d8: EnterFrame
+434:     //     0xa611d8: stp             fp, lr, [SP, #-0x10]!
+435:     //     0xa611dc: mov             fp, SP
+436:     // 0xa611e0: AllocStack(0x30)
+437:     //     0xa611e0: sub             SP, SP, #0x30
+438:     // 0xa611e4: SetupParameters(_BjutWebPageState this /* r1 => r1, fp-0x10 */)
+439:     //     0xa611e4: stur            NULL, [fp, #-8]
+440:     //     0xa611e8: stur            x1, [fp, #-0x10]
+441:     // 0xa611ec: CheckStackOverflow
+442:     //     0xa611ec: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+443:     //     0xa611f0: cmp             SP, x16
+444:     //     0xa611f4: b.ls            #0xa61318
+445:     // 0xa611f8: InitAsync() -> Future<void?>
+446:     //     0xa611f8: ldr             x0, [PP, #0x18f0]  ; [pp+0x18f0] TypeArguments: <void?>
+447:     //     0xa611fc: bl              #0x499c28  ; InitAsyncStub
+448:     // 0xa61200: ldur            x1, [fp, #-0x10]
+449:     // 0xa61204: LoadField: r0 = r1->field_13
+450:     //     0xa61204: ldur            w0, [x1, #0x13]
+451:     // 0xa61208: DecompressPointer r0
+452:     //     0xa61208: add             x0, x0, HEAP, lsl #32
+453:     // 0xa6120c: r16 = Sentinel
+454:     //     0xa6120c: ldr             x16, [PP, #0x40]  ; [pp+0x40] Sentinel
+455:     // 0xa61210: cmp             w0, w16
+456:     // 0xa61214: b.ne            #0xa61224
+457:     // 0xa61218: r2 = ref
+458:     //     0xa61218: add             x2, PP, #0x1c, lsl #12  ; [pp+0x1c2c0] Field <ConsumerState.ref>: late final (offset: 0x14)
+459:     //     0xa6121c: ldr             x2, [x2, #0x2c0]
+460:     // 0xa61220: r0 = InitLateFinalInstanceField()
+461:     //     0xa61220: bl              #0xb1dca4  ; InitLateFinalInstanceFieldStub
+462:     // 0xa61224: stur            x0, [fp, #-0x18]
+463:     // 0xa61228: r0 = InitLateStaticField(0x126c) // [package:oneness/notifier/bjut/bjut_mine_notifier.dart] ::bjutCheckLoginStatusProvider
+464:     //     0xa61228: ldr             x0, [THR, #0x68]  ; THR::field_table_values
+465:     //     0xa6122c: ldr             x0, [x0, #0x24d8]
+466:     //     0xa61230: ldr             x16, [PP, #0x40]  ; [pp+0x40] Sentinel
+467:     //     0xa61234: cmp             w0, w16
+468:     //     0xa61238: b.ne            #0xa61248
+469:     //     0xa6123c: add             x2, PP, #0x1c, lsl #12  ; [pp+0x1c2c8] Field <::.bjutCheckLoginStatusProvider>: static late final (offset: 0x126c)
+470:     //     0xa61240: ldr             x2, [x2, #0x2c8]
+471:     //     0xa61244: bl              #0xb1dde8  ; InitLateFinalStaticFieldStub
+472:     // 0xa61248: mov             x1, x0
+473:     // 0xa6124c: LoadField: r0 = r1->field_1b
+474:     //     0xa6124c: ldur            w0, [x1, #0x1b]
+475:     // 0xa61250: DecompressPointer r0
+476:     //     0xa61250: add             x0, x0, HEAP, lsl #32
+477:     // 0xa61254: r16 = Sentinel
+478:     //     0xa61254: ldr             x16, [PP, #0x40]  ; [pp+0x40] Sentinel
+479:     // 0xa61258: cmp             w0, w16
+480:     // 0xa6125c: b.ne            #0xa6126c
+481:     // 0xa61260: r2 = notifier
+482:     //     0xa61260: add             x2, PP, #0x1c, lsl #12  ; [pp+0x1c2d0] Field <AsyncNotifierProviderImpl.notifier>: late final (offset: 0x1c)
+483:     //     0xa61264: ldr             x2, [x2, #0x2d0]
+484:     // 0xa61268: r0 = InitLateFinalInstanceField()
+485:     //     0xa61268: bl              #0xb1dca4  ; InitLateFinalInstanceFieldStub
+486:     // 0xa6126c: r16 = <BjutCheckLoginStatusNotifier>
+487:     //     0xa6126c: add             x16, PP, #0x1c, lsl #12  ; [pp+0x1c2d8] TypeArguments: <BjutCheckLoginStatusNotifier>
+488:     //     0xa61270: ldr             x16, [x16, #0x2d8]
+489:     // 0xa61274: ldur            lr, [fp, #-0x18]
+490:     // 0xa61278: stp             lr, x16, [SP, #8]
+491:     // 0xa6127c: str             x0, [SP]
+492:     // 0xa61280: r4 = const [0x1, 0x2, 0x2, 0x2, null]
+493:     //     0xa61280: ldr             x4, [PP, #0x58]  ; [pp+0x58] List(5) [0x1, 0x2, 0x2, 0x2, Null]
+494:     // 0xa61284: r0 = read()
+495:     //     0xa61284: bl              #0x57f99c  ; [package:flutter_riverpod/src/consumer.dart] ConsumerStatefulElement::read
+496:     // 0xa61288: mov             x1, x0
+497:     // 0xa6128c: r0 = waitForWarmUp()
+498:     //     0xa6128c: bl              #0xa61610  ; [package:oneness/notifier/bjut/bjut_mine_notifier.dart] BjutCheckLoginStatusNotifier::waitForWarmUp
+499:     // 0xa61290: mov             x1, x0
+500:     // 0xa61294: stur            x1, [fp, #-0x18]
+501:     // 0xa61298: r0 = Await()
+502:     //     0xa61298: bl              #0x4999e8  ; AwaitStub
+503:     // 0xa6129c: r1 = Null
+504:     //     0xa6129c: mov             x1, NULL
+505:     // 0xa612a0: r2 = 4
+506:     //     0xa612a0: mov             x2, #4
+507:     // 0xa612a4: stur            x0, [fp, #-0x18]
+508:     // 0xa612a8: r0 = AllocateArray()
+509:     //     0xa612a8: bl              #0xb1fc60  ; AllocateArrayStub
+510:     // 0xa612ac: r17 = "[bjut-web-warmup] beforeInitialWebLoad warmedUp="
+511:     //     0xa612ac: add             x17, PP, #0x2e, lsl #12  ; [pp+0x2e130] "[bjut-web-warmup] beforeInitialWebLoad warmedUp="
+512:     //     0xa612b0: ldr             x17, [x17, #0x130]
+513:     // 0xa612b4: StoreField: r0->field_f = r17
+514:     //     0xa612b4: stur            w17, [x0, #0xf]
+515:     // 0xa612b8: ldur            x1, [fp, #-0x18]
+516:     // 0xa612bc: StoreField: r0->field_13 = r1
+517:     //     0xa612bc: stur            w1, [x0, #0x13]
+518:     // 0xa612c0: str             x0, [SP]
+519:     // 0xa612c4: r0 = _interpolate()
+520:     //     0xa612c4: bl              #0x43c8e8  ; [dart:core] _StringBase::_interpolate
+521:     // 0xa612c8: ldur            x0, [fp, #-0x18]
+522:     // 0xa612cc: tbnz            w0, #5, #0xa612d4
+523:     // 0xa612d0: r0 = AssertBoolean()
+524:     //     0xa612d0: bl              #0xb1defc  ; AssertBooleanStub
+525:     // 0xa612d4: ldur            x0, [fp, #-0x18]
+526:     // 0xa612d8: tbnz            w0, #4, #0xa61310
+527:     // 0xa612dc: ldur            x0, [fp, #-0x10]
+528:     // 0xa612e0: mov             x1, x0
+529:     // 0xa612e4: r0 = _clearInvalidRuntimeCookies()
+530:     //     0xa612e4: bl              #0xa60d40  ; [package:oneness/ui/page/web_page/bjut_web_page.dart] _BjutWebPageState::_clearInvalidRuntimeCookies
+531:     // 0xa612e8: mov             x1, x0
+532:     // 0xa612ec: stur            x1, [fp, #-0x18]
+533:     // 0xa612f0: r0 = Await()
+534:     //     0xa612f0: bl              #0x4999e8  ; AwaitStub
+535:     // 0xa612f4: ldur            x1, [fp, #-0x10]
+536:     // 0xa612f8: r0 = _resetExpiredBjutWebSessionIfNeeded()
+537:     //     0xa612f8: bl              #0xa61320  ; [package:oneness/ui/page/web_page/bjut_web_page.dart] _BjutWebPageState::_resetExpiredBjutWebSessionIfNeeded
+538:     // 0xa612fc: mov             x1, x0
+539:     // 0xa61300: stur            x1, [fp, #-0x18]
+540:     // 0xa61304: r0 = Await()
+541:     //     0xa61304: bl              #0x4999e8  ; AwaitStub
+542:     // 0xa61308: ldur            x1, [fp, #-0x10]
+543:     // 0xa6130c: StoreField: r1->field_b3 = r0
+544:     //     0xa6130c: stur            w0, [x1, #0xb3]
+545:     // 0xa61310: r0 = Null
+546:     //     0xa61310: mov             x0, NULL
+547:     // 0xa61314: r0 = ReturnAsyncNotFuture()
+548:     //     0xa61314: b               #0x499834  ; ReturnAsyncNotFutureStub
+549:     // 0xa61318: r0 = StackOverflowSharedWithoutFPURegs()
+550:     //     0xa61318: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+551:     // 0xa6131c: b               #0xa611f8
+552:   }

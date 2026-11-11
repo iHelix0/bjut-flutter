@@ -1,0 +1,71 @@
+[
+  {
+    "file": "bjut-web-before-load.txt",
+    "source": "oneness/ui/page/web_page/bjut_web_page.dart",
+    "ranges": [
+      1,
+      9,
+      431,
+      552
+    ],
+    "sha256": "44318c21401461a4196512659dcfdb5a139a1e4e523d1ccfe54c322eefe27ed0"
+  },
+  {
+    "file": "bjut-warmup-manager.txt",
+    "source": "oneness/utils/bjut_session_warmup_manager.dart",
+    "ranges": [
+      1,
+      235
+    ],
+    "sha256": "63a09565687bcb0a33189df2d22903623d0edd2cf2450ab2b30531732ca95afb"
+  },
+  {
+    "file": "bjut-notifier-check.txt",
+    "source": "oneness/notifier/bjut/bjut_mine_notifier.dart",
+    "ranges": [
+      327,
+      463,
+      513,
+      589
+    ],
+    "sha256": "dd79219715a73e0ee210d41adc826987f722882df4a275698c96f75515af6542"
+  },
+  {
+    "file": "check-token-route.txt",
+    "source": "oneness/net/bjut/bjut_net_repository.dart",
+    "ranges": [
+      10,
+      42,
+      126,
+      157
+    ],
+    "sha256": "f9e5b38b13c165d73e3ca8251c09b49f8a7b31435aac4123838986aa2d9cdc60"
+  },
+  {
+    "file": "web-session-expiry.txt",
+    "source": "oneness/ui/page/web_page/bjut_web_page.dart",
+    "ranges": [
+      606,
+      777
+    ],
+    "sha256": "9a3fa2578a9203b70260f4ddf26a28385ada931abd8a5f8f988cc56bb43e0ad5"
+  },
+  {
+    "file": "external-payment-launch.txt",
+    "source": "oneness/ui/page/web_page/online_business_web_page.dart",
+    "ranges": [
+      17049,
+      17415
+    ],
+    "sha256": "f34d72db145249600aeaa2394c4898789297c053dcdabd9ac701bca2ee1602e1"
+  },
+  {
+    "file": "payment-launch-feedback.txt",
+    "source": "oneness/ui/page/web_page/online_business_web_page.dart",
+    "ranges": [
+      18043,
+      18160
+    ],
+    "sha256": "b448d720b9642f0edb2b0f38b3a33ab3f3788cb1664a94830caf75631c883fa6"
+  }
+]

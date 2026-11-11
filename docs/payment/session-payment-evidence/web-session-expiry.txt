@@ -1,0 +1,176 @@
+Source: asm/oneness/ui/page/web_page/bjut_web_page.dart
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+Source lines 606-777:
+606:   _ _doResetExpiredBjutWebSessionIfNeeded(/* No info */) async {
+607:     // ** addr: 0xa613a0, size: 0x1c0
+608:     // 0xa613a0: EnterFrame
+609:     //     0xa613a0: stp             fp, lr, [SP, #-0x10]!
+610:     //     0xa613a4: mov             fp, SP
+611:     // 0xa613a8: AllocStack(0x30)
+612:     //     0xa613a8: sub             SP, SP, #0x30
+613:     // 0xa613ac: SetupParameters(_BjutWebPageState this /* r1 => r1, fp-0x10 */)
+614:     //     0xa613ac: stur            NULL, [fp, #-8]
+615:     //     0xa613b0: stur            x1, [fp, #-0x10]
+616:     // 0xa613b4: CheckStackOverflow
+617:     //     0xa613b4: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+618:     //     0xa613b8: cmp             SP, x16
+619:     //     0xa613bc: b.ls            #0xa61558
+620:     // 0xa613c0: InitAsync() -> Future<bool>
+621:     //     0xa613c0: ldr             x0, [PP, #0x3058]  ; [pp+0x3058] TypeArguments: <bool>
+622:     //     0xa613c4: bl              #0x499c28  ; InitAsyncStub
+623:     // 0xa613c8: r1 = "bjut_last_cas_session_refresh_time_v2"
+624:     //     0xa613c8: add             x1, PP, #0x2e, lsl #12  ; [pp+0x2e140] "bjut_last_cas_session_refresh_time_v2"
+625:     //     0xa613cc: ldr             x1, [x1, #0x140]
+626:     // 0xa613d0: r0 = getDataString()
+627:     //     0xa613d0: bl              #0x572f6c  ; [package:zhilin_flutter_tools/zhilin_tools_lib.dart] SPUtils::getDataString
+628:     // 0xa613d4: mov             x1, x0
+629:     // 0xa613d8: stur            x1, [fp, #-0x18]
+630:     // 0xa613dc: r0 = Await()
+631:     //     0xa613dc: bl              #0x4999e8  ; AwaitStub
+632:     // 0xa613e0: LoadField: r1 = r0->field_7
+633:     //     0xa613e0: ldur            w1, [x0, #7]
+634:     // 0xa613e4: DecompressPointer r1
+635:     //     0xa613e4: add             x1, x1, HEAP, lsl #32
+636:     // 0xa613e8: cbnz            w1, #0xa61408
+637:     // 0xa613ec: ldur            x1, [fp, #-0x10]
+638:     // 0xa613f0: r0 = _recordCasSessionRefreshTime()
+639:     //     0xa613f0: bl              #0xa61560  ; [package:oneness/ui/page/web_page/bjut_web_page.dart] _BjutWebPageState::_recordCasSessionRefreshTime
+640:     // 0xa613f4: mov             x1, x0
+641:     // 0xa613f8: stur            x1, [fp, #-0x18]
+642:     // 0xa613fc: r0 = Await()
+643:     //     0xa613fc: bl              #0x4999e8  ; AwaitStub
+644:     // 0xa61400: r0 = false
+645:     //     0xa61400: add             x0, NULL, #0x30  ; false
+646:     // 0xa61404: r0 = ReturnAsyncNotFuture()
+647:     //     0xa61404: b               #0x499834  ; ReturnAsyncNotFutureStub
+648:     // 0xa61408: mov             x1, x0
+649:     // 0xa6140c: r4 = const [0, 0x1, 0, 0x1, null]
+650:     //     0xa6140c: ldr             x4, [PP, #0x560]  ; [pp+0x560] List(5) [0, 0x1, 0, 0x1, Null]
+651:     // 0xa61410: r0 = tryParse()
+652:     //     0xa61410: bl              #0x4605ac  ; [dart:core] int::tryParse
+653:     // 0xa61414: stur            x0, [fp, #-0x20]
+654:     // 0xa61418: cmp             w0, NULL
+655:     // 0xa6141c: b.ne            #0xa6143c
+656:     // 0xa61420: ldur            x1, [fp, #-0x10]
+657:     // 0xa61424: r0 = _recordCasSessionRefreshTime()
+658:     //     0xa61424: bl              #0xa61560  ; [package:oneness/ui/page/web_page/bjut_web_page.dart] _BjutWebPageState::_recordCasSessionRefreshTime
+659:     // 0xa61428: mov             x1, x0
+660:     // 0xa6142c: stur            x1, [fp, #-0x18]
+661:     // 0xa61430: r0 = Await()
+662:     //     0xa61430: bl              #0x4999e8  ; AwaitStub
+663:     // 0xa61434: r0 = false
+664:     //     0xa61434: add             x0, NULL, #0x30  ; false
+665:     // 0xa61438: r0 = ReturnAsyncNotFuture()
+666:     //     0xa61438: b               #0x499834  ; ReturnAsyncNotFutureStub
+667:     // 0xa6143c: r0 = _getCurrentMicros()
+668:     //     0xa6143c: bl              #0x496918  ; [dart:core] DateTime::_getCurrentMicros
+669:     // 0xa61440: r1 = LoadInt32Instr(r0)
+670:     //     0xa61440: sbfx            x1, x0, #1, #0x1f
+671:     //     0xa61444: tbz             w0, #0, #0xa6144c
+672:     //     0xa61448: ldur            x1, [x0, #7]
+673:     // 0xa6144c: r0 = 1000
+674:     //     0xa6144c: mov             x0, #0x3e8
+675:     // 0xa61450: sdiv            x2, x1, x0
+676:     // 0xa61454: sdiv            x1, x2, x0
+677:     // 0xa61458: ldur            x0, [fp, #-0x20]
+678:     // 0xa6145c: r2 = LoadInt32Instr(r0)
+679:     //     0xa6145c: sbfx            x2, x0, #1, #0x1f
+680:     //     0xa61460: tbz             w0, #0, #0xa61468
+681:     //     0xa61464: ldur            x2, [x0, #7]
+682:     // 0xa61468: sub             x0, x1, x2
+683:     // 0xa6146c: stur            x0, [fp, #-0x28]
+684:     // 0xa61470: r17 = 7200
+685:     //     0xa61470: mov             x17, #0x1c20
+686:     // 0xa61474: cmp             x0, x17
+687:     // 0xa61478: b.gt            #0xa61498
+688:     // 0xa6147c: ldur            x1, [fp, #-0x10]
+689:     // 0xa61480: r0 = _recordCasSessionRefreshTime()
+690:     //     0xa61480: bl              #0xa61560  ; [package:oneness/ui/page/web_page/bjut_web_page.dart] _BjutWebPageState::_recordCasSessionRefreshTime
+691:     // 0xa61484: mov             x1, x0
+692:     // 0xa61488: stur            x1, [fp, #-0x18]
+693:     // 0xa6148c: r0 = Await()
+694:     //     0xa6148c: bl              #0x4999e8  ; AwaitStub
+695:     // 0xa61490: r0 = false
+696:     //     0xa61490: add             x0, NULL, #0x30  ; false
+697:     // 0xa61494: r0 = ReturnAsyncNotFuture()
+698:     //     0xa61494: b               #0x499834  ; ReturnAsyncNotFutureStub
+699:     // 0xa61498: r1 = Null
+700:     //     0xa61498: mov             x1, NULL
+701:     // 0xa6149c: r2 = 10
+702:     //     0xa6149c: mov             x2, #0xa
+703:     // 0xa614a0: r0 = AllocateArray()
+704:     //     0xa614a0: bl              #0xb1fc60  ; AllocateArrayStub
+705:     // 0xa614a4: mov             x2, x0
+706:     // 0xa614a8: r17 = "[bjut-web-session] 距离上次 CAS 刷新已过 "
+707:     //     0xa614a8: add             x17, PP, #0x2e, lsl #12  ; [pp+0x2e148] "[bjut-web-session] 距离上次 CAS 刷新已过 "
+708:     //     0xa614ac: ldr             x17, [x17, #0x148]
+709:     // 0xa614b0: StoreField: r2->field_f = r17
+710:     //     0xa614b0: stur            w17, [x2, #0xf]
+711:     // 0xa614b4: ldur            x3, [fp, #-0x28]
+712:     // 0xa614b8: r0 = BoxInt64Instr(r3)
+713:     //     0xa614b8: sbfiz           x0, x3, #1, #0x1f
+714:     //     0xa614bc: cmp             x3, x0, asr #1
+715:     //     0xa614c0: b.eq            #0xa614cc
+716:     //     0xa614c4: bl              #0xb1fee8  ; AllocateMintSharedWithoutFPURegsStub
+717:     //     0xa614c8: stur            x3, [x0, #7]
+718:     // 0xa614cc: StoreField: r2->field_13 = r0
+719:     //     0xa614cc: stur            w0, [x2, #0x13]
+720:     // 0xa614d0: r17 = "s (>"
+721:     //     0xa614d0: add             x17, PP, #0x2e, lsl #12  ; [pp+0x2e150] "s (>"
+722:     //     0xa614d4: ldr             x17, [x17, #0x150]
+723:     // 0xa614d8: ArrayStore: r2[0] = r17  ; List_4
+724:     //     0xa614d8: stur            w17, [x2, #0x17]
+725:     // 0xa614dc: r17 = 14400
+726:     //     0xa614dc: mov             x17, #0x3840
+727:     // 0xa614e0: StoreField: r2->field_1b = r17
+728:     //     0xa614e0: stur            w17, [x2, #0x1b]
+729:     // 0xa614e4: r17 = "s)，按刚登录后的路径重建 Web 层"
+730:     //     0xa614e4: add             x17, PP, #0x2e, lsl #12  ; [pp+0x2e158] "s)，按刚登录后的路径重建 Web 层"
+731:     //     0xa614e8: ldr             x17, [x17, #0x158]
+732:     // 0xa614ec: StoreField: r2->field_1f = r17
+733:     //     0xa614ec: stur            w17, [x2, #0x1f]
+734:     // 0xa614f0: str             x2, [SP]
+735:     // 0xa614f4: r0 = _interpolate()
+736:     //     0xa614f4: bl              #0x43c8e8  ; [dart:core] _StringBase::_interpolate
+737:     // 0xa614f8: r0 = CookieUtils()
+738:     //     0xa614f8: bl              #0x52abac  ; AllocateCookieUtilsStub -> CookieUtils (size=0x8)
+739:     // 0xa614fc: mov             x1, x0
+740:     // 0xa61500: r4 = const [0, 0x1, 0, 0x1, null]
+741:     //     0xa61500: ldr             x4, [PP, #0x560]  ; [pp+0x560] List(5) [0, 0x1, 0, 0x1, Null]
+742:     // 0xa61504: r0 = clearPersistedCookies()
+743:     //     0xa61504: bl              #0x7ea9a0  ; [package:oneness/utils/cookie_utils.dart] CookieUtils::clearPersistedCookies
+744:     // 0xa61508: mov             x1, x0
+745:     // 0xa6150c: stur            x1, [fp, #-0x18]
+746:     // 0xa61510: r0 = Await()
+747:     //     0xa61510: bl              #0x4999e8  ; AwaitStub
+748:     // 0xa61514: r0 = instance()
+749:     //     0xa61514: bl              #0x52a9a0  ; [package:flutter_inappwebview/src/cookie_manager.dart] CookieManager::instance
+750:     // 0xa61518: mov             x1, x0
+751:     // 0xa6151c: r0 = deleteAllCookies()
+752:     //     0xa6151c: bl              #0x71358c  ; [package:flutter_inappwebview/src/cookie_manager.dart] CookieManager::deleteAllCookies
+753:     // 0xa61520: mov             x1, x0
+754:     // 0xa61524: stur            x1, [fp, #-0x18]
+755:     // 0xa61528: r0 = Await()
+756:     //     0xa61528: bl              #0x4999e8  ; AwaitStub
+757:     // 0xa6152c: r0 = clearAllCache()
+758:     //     0xa6152c: bl              #0x7ea460  ; [package:flutter_inappwebview/src/in_app_webview/in_app_webview_controller.dart] InAppWebViewController::clearAllCache
+759:     // 0xa61530: mov             x1, x0
+760:     // 0xa61534: stur            x1, [fp, #-0x18]
+761:     // 0xa61538: r0 = Await()
+762:     //     0xa61538: bl              #0x4999e8  ; AwaitStub
+763:     // 0xa6153c: ldur            x1, [fp, #-0x10]
+764:     // 0xa61540: r0 = _recordCasSessionRefreshTime()
+765:     //     0xa61540: bl              #0xa61560  ; [package:oneness/ui/page/web_page/bjut_web_page.dart] _BjutWebPageState::_recordCasSessionRefreshTime
+766:     // 0xa61544: mov             x1, x0
+767:     // 0xa61548: stur            x1, [fp, #-0x10]
+768:     // 0xa6154c: r0 = Await()
+769:     //     0xa6154c: bl              #0x4999e8  ; AwaitStub
+770:     // 0xa61550: r0 = true
+771:     //     0xa61550: add             x0, NULL, #0x20  ; true
+772:     // 0xa61554: r0 = ReturnAsyncNotFuture()
+773:     //     0xa61554: b               #0x499834  ; ReturnAsyncNotFutureStub
+774:     // 0xa61558: r0 = StackOverflowSharedWithoutFPURegs()
+775:     //     0xa61558: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+776:     // 0xa6155c: b               #0xa613c0
+777:   }

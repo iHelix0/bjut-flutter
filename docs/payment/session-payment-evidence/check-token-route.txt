@@ -1,0 +1,71 @@
+Source: asm/oneness/net/bjut/bjut_net_repository.dart
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+Source lines 10-42:
+10:   _ checkToken(/* No info */) async {
+11:     // ** addr: 0x4be370, size: 0x330
+12:     // 0x4be370: EnterFrame
+13:     //     0x4be370: stp             fp, lr, [SP, #-0x10]!
+14:     //     0x4be374: mov             fp, SP
+15:     // 0x4be378: AllocStack(0x38)
+16:     //     0x4be378: sub             SP, SP, #0x38
+17:     // 0x4be37c: SetupParameters(BjutNetRepository this /* r1 => r1, fp-0x10 */)
+18:     //     0x4be37c: stur            NULL, [fp, #-8]
+19:     //     0x4be380: stur            x1, [fp, #-0x10]
+20:     // 0x4be384: CheckStackOverflow
+21:     //     0x4be384: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+22:     //     0x4be388: cmp             SP, x16
+23:     //     0x4be38c: b.ls            #0x4be680
+24:     // 0x4be390: InitAsync() -> Future<EmptyEntity>
+25:     //     0x4be390: add             x0, PP, #0x1c, lsl #12  ; [pp+0x1c3c0] TypeArguments: <EmptyEntity>
+26:     //     0x4be394: ldr             x0, [x0, #0x3c0]
+27:     //     0x4be398: bl              #0x499c28  ; InitAsyncStub
+28:     // 0x4be39c: r0 = loginTicket()
+29:     //     0x4be39c: bl              #0x572e38  ; [package:oneness/utils/standard_user_utils.dart] StandardUserUtils::loginTicket
+30:     // 0x4be3a0: mov             x1, x0
+31:     // 0x4be3a4: stur            x1, [fp, #-0x18]
+32:     // 0x4be3a8: r0 = Await()
+33:     //     0x4be3a8: bl              #0x4999e8  ; AwaitStub
+34:     // 0x4be3ac: stur            x0, [fp, #-0x10]
+35:     // 0x4be3b0: cmp             w0, NULL
+36:     // 0x4be3b4: b.eq            #0x4be3c4
+37:     // 0x4be3b8: LoadField: r1 = r0->field_7
+38:     //     0x4be3b8: ldur            w1, [x0, #7]
+39:     // 0x4be3bc: DecompressPointer r1
+40:     //     0x4be3bc: add             x1, x1, HEAP, lsl #32
+41:     // 0x4be3c0: cbnz            w1, #0x4be3cc
+42:     // 0x4be3c4: r0 = EmptyEntity()
+
+Source lines 126-157:
+126:     //     0x4be4b4: ldr             x16, [PP, #0x3090]  ; [pp+0x3090] TypeArguments: <String, String>
+127:     // 0x4be4b8: ldr             lr, [THR, #0x88]  ; THR::empty_array
+128:     // 0x4be4bc: stp             lr, x16, [SP]
+129:     // 0x4be4c0: r0 = Map._fromLiteral()
+130:     //     0x4be4c0: bl              #0x44a58c  ; [dart:core] Map::Map._fromLiteral
+131:     // 0x4be4c4: mov             x4, x0
+132:     // 0x4be4c8: stur            x4, [fp, #-0x18]
+133:     // 0x4be4cc: r0 = LoadClassIdInstr(r4)
+134:     //     0x4be4cc: ldur            x0, [x4, #-1]
+135:     //     0x4be4d0: ubfx            x0, x0, #0xc, #0x14
+136:     // 0x4be4d4: mov             x1, x4
+137:     // 0x4be4d8: ldur            x3, [fp, #-0x10]
+138:     // 0x4be4dc: r2 = "ticket"
+139:     //     0x4be4dc: add             x2, PP, #0x1c, lsl #12  ; [pp+0x1c400] "ticket"
+140:     //     0x4be4e0: ldr             x2, [x2, #0x400]
+141:     // 0x4be4e4: r0 = GDT[cid_x0 + -0x112]()
+142:     //     0x4be4e4: sub             lr, x0, #0x112
+143:     //     0x4be4e8: ldr             lr, [x21, lr, lsl #3]
+144:     //     0x4be4ec: blr             lr
+145:     // 0x4be4f0: r0 = ZhilinFlutterNetwork()
+146:     //     0x4be4f0: bl              #0x56e004  ; AllocateZhilinFlutterNetworkStub -> ZhilinFlutterNetwork (size=0x8)
+147:     // 0x4be4f4: ldur            x16, [fp, #-0x18]
+148:     // 0x4be4f8: str             x16, [SP]
+149:     // 0x4be4fc: mov             x1, x0
+150:     // 0x4be500: r2 = "/bjutapp/wap/app-login/check"
+151:     //     0x4be500: add             x2, PP, #0x1c, lsl #12  ; [pp+0x1c408] "/bjutapp/wap/app-login/check"
+152:     //     0x4be504: ldr             x2, [x2, #0x408]
+153:     // 0x4be508: r4 = const [0, 0x3, 0x1, 0x2, data, 0x2, null]
+154:     //     0x4be508: ldr             x4, [PP, #0x30e8]  ; [pp+0x30e8] List(7) [0, 0x3, 0x1, 0x2, "data", 0x2, Null]
+155:     // 0x4be50c: r0 = rsaPost()
+156:     //     0x4be50c: bl              #0x52abb8  ; [package:zhilin_flutter_network/zhilin_network_lib.dart] ZhilinFlutterNetwork::rsaPost
+157:     // 0x4be510: mov             x1, x0

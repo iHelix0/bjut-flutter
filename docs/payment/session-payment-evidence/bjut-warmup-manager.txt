@@ -1,0 +1,220 @@
+Source: asm/oneness/utils/bjut_session_warmup_manager.dart
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+Source lines 1-235:
+1: // lib: , url: package:oneness/utils/bjut_session_warmup_manager.dart
+2: 
+3: // class id: 1050059, size: 0x8
+4: class :: {
+5: }
+6: 
+7: // class id: 705, size: 0xc, field offset: 0x8
+8: class BjutSessionWarmupManager extends Object {
+9: 
+10:   _ start(/* No info */) {
+11:     // ** addr: 0x4bd790, size: 0x138
+12:     // 0x4bd790: EnterFrame
+13:     //     0x4bd790: stp             fp, lr, [SP, #-0x10]!
+14:     //     0x4bd794: mov             fp, SP
+15:     // 0x4bd798: AllocStack(0x38)
+16:     //     0x4bd798: sub             SP, SP, #0x38
+17:     // 0x4bd79c: SetupParameters(BjutSessionWarmupManager this /* r1 => r1, fp-0x8 */, dynamic _ /* r2 => r0, fp-0x10 */)
+18:     //     0x4bd79c: mov             x0, x2
+19:     //     0x4bd7a0: stur            x1, [fp, #-8]
+20:     //     0x4bd7a4: stur            x2, [fp, #-0x10]
+21:     // 0x4bd7a8: CheckStackOverflow
+22:     //     0x4bd7a8: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+23:     //     0x4bd7ac: cmp             SP, x16
+24:     //     0x4bd7b0: b.ls            #0x4bd8c0
+25:     // 0x4bd7b4: r1 = 2
+26:     //     0x4bd7b4: mov             x1, #2
+27:     // 0x4bd7b8: r0 = AllocateContext()
+28:     //     0x4bd7b8: bl              #0xb1ebc4  ; AllocateContextStub
+29:     // 0x4bd7bc: mov             x2, x0
+30:     // 0x4bd7c0: ldur            x1, [fp, #-8]
+31:     // 0x4bd7c4: stur            x2, [fp, #-0x18]
+32:     // 0x4bd7c8: StoreField: r2->field_f = r1
+33:     //     0x4bd7c8: stur            w1, [x2, #0xf]
+34:     // 0x4bd7cc: LoadField: r0 = r1->field_7
+35:     //     0x4bd7cc: ldur            w0, [x1, #7]
+36:     // 0x4bd7d0: DecompressPointer r0
+37:     //     0x4bd7d0: add             x0, x0, HEAP, lsl #32
+38:     // 0x4bd7d4: cmp             w0, NULL
+39:     // 0x4bd7d8: b.eq            #0x4bd7e8
+40:     // 0x4bd7dc: LeaveFrame
+41:     //     0x4bd7dc: mov             SP, fp
+42:     //     0x4bd7e0: ldp             fp, lr, [SP], #0x10
+43:     // 0x4bd7e4: ret
+44:     //     0x4bd7e4: ret             
+45:     // 0x4bd7e8: ldur            x16, [fp, #-0x10]
+46:     // 0x4bd7ec: str             x16, [SP]
+47:     // 0x4bd7f0: ldur            x0, [fp, #-0x10]
+48:     // 0x4bd7f4: ClosureCall
+49:     //     0x4bd7f4: ldr             x4, [PP, #0x430]  ; [pp+0x430] List(5) [0, 0x1, 0x1, 0x1, Null]
+50:     //     0x4bd7f8: ldur            x2, [x0, #0x1f]
+51:     //     0x4bd7fc: blr             x2
+52:     // 0x4bd800: mov             x4, x0
+53:     // 0x4bd804: ldur            x3, [fp, #-0x18]
+54:     // 0x4bd808: stur            x4, [fp, #-0x10]
+55:     // 0x4bd80c: StoreField: r3->field_13 = r0
+56:     //     0x4bd80c: stur            w0, [x3, #0x13]
+57:     //     0x4bd810: tbz             w0, #0, #0x4bd82c
+58:     //     0x4bd814: ldurb           w16, [x3, #-1]
+59:     //     0x4bd818: ldurb           w17, [x0, #-1]
+60:     //     0x4bd81c: and             x16, x17, x16, lsr #2
+61:     //     0x4bd820: tst             x16, HEAP, lsr #32
+62:     //     0x4bd824: b.eq            #0x4bd82c
+63:     //     0x4bd828: bl              #0xb1e3c4  ; WriteBarrierWrappersStub
+64:     // 0x4bd82c: mov             x0, x4
+65:     // 0x4bd830: ldur            x1, [fp, #-8]
+66:     // 0x4bd834: StoreField: r1->field_7 = r0
+67:     //     0x4bd834: stur            w0, [x1, #7]
+68:     //     0x4bd838: ldurb           w16, [x1, #-1]
+69:     //     0x4bd83c: ldurb           w17, [x0, #-1]
+70:     //     0x4bd840: and             x16, x17, x16, lsr #2
+71:     //     0x4bd844: tst             x16, HEAP, lsr #32
+72:     //     0x4bd848: b.eq            #0x4bd850
+73:     //     0x4bd84c: bl              #0xb1e384  ; WriteBarrierWrappersStub
+74:     // 0x4bd850: r1 = Function '<anonymous closure>':.
+75:     //     0x4bd850: add             x1, PP, #0x1d, lsl #12  ; [pp+0x1d848] Function: [dart:ui] Shader::Shader._ (0xb16384)
+76:     //     0x4bd854: ldr             x1, [x1, #0x848]
+77:     // 0x4bd858: r2 = Null
+78:     //     0x4bd858: mov             x2, NULL
+79:     // 0x4bd85c: r0 = AllocateClosure()
+80:     //     0x4bd85c: bl              #0xb1ef88  ; AllocateClosureStub
+81:     // 0x4bd860: r1 = Function '<anonymous closure>':.
+82:     //     0x4bd860: add             x1, PP, #0x1d, lsl #12  ; [pp+0x1d850] Function: [dart:ui] Shader::Shader._ (0xb16384)
+83:     //     0x4bd864: ldr             x1, [x1, #0x850]
+84:     // 0x4bd868: r2 = Null
+85:     //     0x4bd868: mov             x2, NULL
+86:     // 0x4bd86c: stur            x0, [fp, #-8]
+87:     // 0x4bd870: r0 = AllocateClosure()
+88:     //     0x4bd870: bl              #0xb1ef88  ; AllocateClosureStub
+89:     // 0x4bd874: r16 = <void?>
+90:     //     0x4bd874: ldr             x16, [PP, #0x18f0]  ; [pp+0x18f0] TypeArguments: <void?>
+91:     // 0x4bd878: ldur            lr, [fp, #-0x10]
+92:     // 0x4bd87c: stp             lr, x16, [SP, #0x10]
+93:     // 0x4bd880: ldur            x16, [fp, #-8]
+94:     // 0x4bd884: stp             x0, x16, [SP]
+95:     // 0x4bd888: r4 = const [0x1, 0x3, 0x3, 0x2, onError, 0x2, null]
+96:     //     0x4bd888: ldr             x4, [PP, #0x1968]  ; [pp+0x1968] List(7) [0x1, 0x3, 0x3, 0x2, "onError", 0x2, Null]
+97:     // 0x4bd88c: r0 = then()
+98:     //     0x4bd88c: bl              #0xa47eec  ; [dart:async] _Future::then
+99:     // 0x4bd890: ldur            x2, [fp, #-0x18]
+100:     // 0x4bd894: r1 = Function '<anonymous closure>':.
+101:     //     0x4bd894: add             x1, PP, #0x1d, lsl #12  ; [pp+0x1d858] AnonymousClosure: (0x4bd8e8), in [package:oneness/utils/bjut_session_warmup_manager.dart] BjutSessionWarmupManager::start (0x4bd790)
+102:     //     0x4bd898: ldr             x1, [x1, #0x858]
+103:     // 0x4bd89c: stur            x0, [fp, #-8]
+104:     // 0x4bd8a0: r0 = AllocateClosure()
+105:     //     0x4bd8a0: bl              #0xb1ef88  ; AllocateClosureStub
+106:     // 0x4bd8a4: ldur            x1, [fp, #-8]
+107:     // 0x4bd8a8: mov             x2, x0
+108:     // 0x4bd8ac: r0 = whenComplete()
+109:     //     0x4bd8ac: bl              #0xa47d80  ; [dart:async] _Future::whenComplete
+110:     // 0x4bd8b0: ldur            x0, [fp, #-0x10]
+111:     // 0x4bd8b4: LeaveFrame
+112:     //     0x4bd8b4: mov             SP, fp
+113:     //     0x4bd8b8: ldp             fp, lr, [SP], #0x10
+114:     // 0x4bd8bc: ret
+115:     //     0x4bd8bc: ret             
+116:     // 0x4bd8c0: r0 = StackOverflowSharedWithoutFPURegs()
+117:     //     0x4bd8c0: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+118:     // 0x4bd8c4: b               #0x4bd7b4
+119:   }
+120:   [closure] Null <anonymous closure>(dynamic) {
+121:     // ** addr: 0x4bd8e8, size: 0x38
+122:     // 0x4bd8e8: ldr             x1, [SP]
+123:     // 0x4bd8ec: ArrayLoad: r2 = r1[0]  ; List_4
+124:     //     0x4bd8ec: ldur            w2, [x1, #0x17]
+125:     // 0x4bd8f0: DecompressPointer r2
+126:     //     0x4bd8f0: add             x2, x2, HEAP, lsl #32
+127:     // 0x4bd8f4: LoadField: r1 = r2->field_f
+128:     //     0x4bd8f4: ldur            w1, [x2, #0xf]
+129:     // 0x4bd8f8: DecompressPointer r1
+130:     //     0x4bd8f8: add             x1, x1, HEAP, lsl #32
+131:     // 0x4bd8fc: LoadField: r3 = r1->field_7
+132:     //     0x4bd8fc: ldur            w3, [x1, #7]
+133:     // 0x4bd900: DecompressPointer r3
+134:     //     0x4bd900: add             x3, x3, HEAP, lsl #32
+135:     // 0x4bd904: LoadField: r4 = r2->field_13
+136:     //     0x4bd904: ldur            w4, [x2, #0x13]
+137:     // 0x4bd908: DecompressPointer r4
+138:     //     0x4bd908: add             x4, x4, HEAP, lsl #32
+139:     // 0x4bd90c: cmp             w3, w4
+140:     // 0x4bd910: b.ne            #0x4bd918
+141:     // 0x4bd914: StoreField: r1->field_7 = rNULL
+142:     //     0x4bd914: stur            NULL, [x1, #7]
+143:     // 0x4bd918: r0 = Null
+144:     //     0x4bd918: mov             x0, NULL
+145:     // 0x4bd91c: ret
+146:     //     0x4bd91c: ret             
+147:   }
+148:   _ waitOrStart(/* No info */) async {
+149:     // ** addr: 0xa616d8, size: 0xa8
+150:     // 0xa616d8: EnterFrame
+151:     //     0xa616d8: stp             fp, lr, [SP, #-0x10]!
+152:     //     0xa616dc: mov             fp, SP
+153:     // 0xa616e0: AllocStack(0x80)
+154:     //     0xa616e0: sub             SP, SP, #0x80
+155:     // 0xa616e4: SetupParameters(BjutSessionWarmupManager this /* r1 => r1, fp-0x68 */, dynamic _ /* r2 => r2, fp-0x70 */)
+156:     //     0xa616e4: stur            NULL, [fp, #-8]
+157:     //     0xa616e8: stur            x1, [fp, #-0x68]
+158:     //     0xa616ec: stur            x2, [fp, #-0x70]
+159:     // 0xa616f0: CheckStackOverflow
+160:     //     0xa616f0: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+161:     //     0xa616f4: cmp             SP, x16
+162:     //     0xa616f8: b.ls            #0xa61778
+163:     // 0xa616fc: InitAsync() -> Future<bool>
+164:     //     0xa616fc: ldr             x0, [PP, #0x3058]  ; [pp+0x3058] TypeArguments: <bool>
+165:     //     0xa61700: bl              #0x499c28  ; InitAsyncStub
+166:     // 0xa61704: ldur            x1, [fp, #-0x68]
+167:     // 0xa61708: LoadField: r0 = r1->field_7
+168:     //     0xa61708: ldur            w0, [x1, #7]
+169:     // 0xa6170c: DecompressPointer r0
+170:     //     0xa6170c: add             x0, x0, HEAP, lsl #32
+171:     // 0xa61710: cmp             w0, NULL
+172:     // 0xa61714: b.ne            #0xa61720
+173:     // 0xa61718: ldur            x2, [fp, #-0x70]
+174:     // 0xa6171c: r0 = start()
+175:     //     0xa6171c: bl              #0x4bd790  ; [package:oneness/utils/bjut_session_warmup_manager.dart] BjutSessionWarmupManager::start
+176:     // 0xa61720: r16 = Instance_Duration
+177:     //     0xa61720: add             x16, PP, #0x2e, lsl #12  ; [pp+0x2e168] Obj!Duration@a815a1
+178:     //     0xa61724: ldr             x16, [x16, #0x168]
+179:     // 0xa61728: stp             x16, x0, [SP]
+180:     // 0xa6172c: r4 = const [0, 0x2, 0x2, 0x2, null]
+181:     //     0xa6172c: ldr             x4, [PP, #0x1d8]  ; [pp+0x1d8] List(5) [0, 0x2, 0x2, 0x2, Null]
+182:     // 0xa61730: r0 = timeout()
+183:     //     0xa61730: bl              #0x43854c  ; [dart:async] _Future::timeout
+184:     // 0xa61734: mov             x1, x0
+185:     // 0xa61738: stur            x1, [fp, #-0x68]
+186:     // 0xa6173c: r0 = Await()
+187:     //     0xa6173c: bl              #0x4999e8  ; AwaitStub
+188:     // 0xa61740: r0 = true
+189:     //     0xa61740: add             x0, NULL, #0x20  ; true
+190:     // 0xa61744: r0 = ReturnAsyncNotFuture()
+191:     //     0xa61744: b               #0x499834  ; ReturnAsyncNotFutureStub
+192:     // 0xa61748: sub             SP, fp, #0x80
+193:     // 0xa6174c: r1 = 59
+194:     //     0xa6174c: mov             x1, #0x3b
+195:     // 0xa61750: branchIfSmi(r0, 0xa6175c)
+196:     //     0xa61750: tbz             w0, #0, #0xa6175c
+197:     // 0xa61754: r1 = LoadClassIdInstr(r0)
+198:     //     0xa61754: ldur            x1, [x0, #-1]
+199:     //     0xa61758: ubfx            x1, x1, #0xc, #0x14
+200:     // 0xa6175c: r17 = 5188
+201:     //     0xa6175c: mov             x17, #0x1444
+202:     // 0xa61760: cmp             x1, x17
+203:     // 0xa61764: b.ne            #0xa61770
+204:     // 0xa61768: r0 = false
+205:     //     0xa61768: add             x0, NULL, #0x30  ; false
+206:     // 0xa6176c: r0 = ReturnAsyncNotFuture()
+207:     //     0xa6176c: b               #0x499834  ; ReturnAsyncNotFutureStub
+208:     // 0xa61770: r0 = false
+209:     //     0xa61770: add             x0, NULL, #0x30  ; false
+210:     // 0xa61774: r0 = ReturnAsyncNotFuture()
+211:     //     0xa61774: b               #0x499834  ; ReturnAsyncNotFutureStub
+212:     // 0xa61778: r0 = StackOverflowSharedWithoutFPURegs()
+213:     //     0xa61778: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+214:     // 0xa6177c: b               #0xa616fc
+215:   }
+216: }

@@ -1,0 +1,11 @@
+Obj!Duration@a815a1 : {
+  off_8: int(0x124f80)
+}
+
+Obj!LaunchMode@a78151 : {
+  Super!_Enum : {
+    off_8: int(0x2),
+    off_10: "externalApplication"
+  }
+}
+

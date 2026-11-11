@@ -1,0 +1,371 @@
+Source: asm/oneness/ui/page/web_page/online_business_web_page.dart
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+Source lines 17049-17415:
+17049:     // 0x870cc0: r0 = ReturnAsyncNotFuture()
+17050:     //     0x870cc0: b               #0x499834  ; ReturnAsyncNotFutureStub
+17051:     // 0x870cc4: ldur            x0, [fp, #-0xd0]
+17052:     // 0x870cc8: b               #0x870cd0
+17053:     // 0x870ccc: ldur            x0, [fp, #-0xd0]
+17054:     // 0x870cd0: mov             x1, x0
+17055:     // 0x870cd4: r2 = "weixin://"
+17056:     //     0x870cd4: add             x2, PP, #0x24, lsl #12  ; [pp+0x24198] "weixin://"
+17057:     //     0x870cd8: ldr             x2, [x2, #0x198]
+17058:     // 0x870cdc: r4 = const [0, 0x2, 0, 0x2, null]
+17059:     //     0x870cdc: ldr             x4, [PP, #0x2f8]  ; [pp+0x2f8] List(5) [0, 0x2, 0, 0x2, Null]
+17060:     // 0x870ce0: r0 = startsWith()
+17061:     //     0x870ce0: bl              #0x446964  ; [dart:core] _StringBase::startsWith
+17062:     // 0x870ce4: tbnz            w0, #4, #0x870eb0
+17063:     // 0x870ce8: ldur            x1, [fp, #-0xd0]
+17064:     // 0x870cec: r4 = const [0, 0x1, 0, 0x1, null]
+17065:     //     0x870cec: ldr             x4, [PP, #0x560]  ; [pp+0x560] List(5) [0, 0x1, 0, 0x1, Null]
+17066:     // 0x870cf0: r0 = parse()
+17067:     //     0x870cf0: bl              #0x45ee00  ; [dart:core] Uri::parse
+17068:     // 0x870cf4: r16 = Instance_LaunchMode
+17069:     //     0x870cf4: add             x16, PP, #0x24, lsl #12  ; [pp+0x241a0] Obj!LaunchMode@a78151
+17070:     //     0x870cf8: ldr             x16, [x16, #0x1a0]
+17071:     // 0x870cfc: str             x16, [SP]
+17072:     // 0x870d00: mov             x1, x0
+17073:     // 0x870d04: r4 = const [0, 0x2, 0x1, 0x1, mode, 0x1, null]
+17074:     //     0x870d04: add             x4, PP, #0x18, lsl #12  ; [pp+0x18d10] List(7) [0, 0x2, 0x1, 0x1, "mode", 0x1, Null]
+17075:     //     0x870d08: ldr             x4, [x4, #0xd10]
+17076:     // 0x870d0c: r0 = launchUrl()
+17077:     //     0x870d0c: bl              #0x6e8ecc  ; [package:url_launcher/src/url_launcher_uri.dart] ::launchUrl
+17078:     // 0x870d10: mov             x1, x0
+17079:     // 0x870d14: stur            x1, [fp, #-0xd8]
+17080:     // 0x870d18: r0 = Await()
+17081:     //     0x870d18: bl              #0x4999e8  ; AwaitStub
+17082:     // 0x870d1c: mov             x1, x0
+17083:     // 0x870d20: stur            x1, [fp, #-0xd8]
+17084:     // 0x870d24: tbnz            w0, #5, #0x870d2c
+17085:     // 0x870d28: r0 = AssertBoolean()
+17086:     //     0x870d28: bl              #0xb1defc  ; AssertBooleanStub
+17087:     // 0x870d2c: ldur            x0, [fp, #-0xd8]
+17088:     // 0x870d30: tbz             w0, #4, #0x870d54
+17089:     // 0x870d34: r1 = Function '<anonymous closure>':.
+17090:     //     0x870d34: add             x1, PP, #0x24, lsl #12  ; [pp+0x241a8] AnonymousClosure: (0x8719d0), in [package:oneness/ui/page/web_page/online_business_web_page.dart] OnlineBusinessWebPageState::body (0x8611f8)
+17091:     //     0x870d38: ldr             x1, [x1, #0x1a8]
+17092:     // 0x870d3c: r2 = Null
+17093:     //     0x870d3c: mov             x2, NULL
+17094:     // 0x870d40: r0 = AllocateClosure()
+17095:     //     0x870d40: bl              #0xb1ef88  ; AllocateClosureStub
+17096:     // 0x870d44: stp             x0, NULL, [SP]
+17097:     // 0x870d48: r4 = const [0x1, 0x1, 0x1, 0x1, null]
+17098:     //     0x870d48: ldr             x4, [PP, #0xa08]  ; [pp+0xa08] List(5) [0x1, 0x1, 0x1, 0x1, Null]
+17099:     // 0x870d4c: r0 = show()
+17100:     //     0x870d4c: bl              #0x6d142c  ; [package:flutter_smart_dialog/src/smart_dialog.dart] SmartDialog::show
+17101:     // 0x870d50: b               #0x87116c
+17102:     // 0x870d54: ldur            x0, [fp, #-0xd0]
+17103:     // 0x870d58: r1 = LoadClassIdInstr(r0)
+17104:     //     0x870d58: ldur            x1, [x0, #-1]
+17105:     //     0x870d5c: ubfx            x1, x1, #0xc, #0x14
+17106:     // 0x870d60: mov             x16, x0
+17107:     // 0x870d64: mov             x0, x1
+17108:     // 0x870d68: mov             x1, x16
+17109:     // 0x870d6c: r2 = "weixin://wap/pay\?"
+17110:     //     0x870d6c: add             x2, PP, #0x24, lsl #12  ; [pp+0x241b0] "weixin://wap/pay\?"
+17111:     //     0x870d70: ldr             x2, [x2, #0x1b0]
+17112:     // 0x870d74: r4 = const [0, 0x2, 0, 0x2, null]
+17113:     //     0x870d74: ldr             x4, [PP, #0x2f8]  ; [pp+0x2f8] List(5) [0, 0x2, 0, 0x2, Null]
+17114:     // 0x870d78: r0 = GDT[cid_x0 + -0x1000]()
+17115:     //     0x870d78: sub             lr, x0, #1, lsl #12
+17116:     //     0x870d7c: ldr             lr, [x21, lr, lsl #3]
+17117:     //     0x870d80: blr             lr
+17118:     // 0x870d84: tbnz            w0, #4, #0x87116c
+17119:     // 0x870d88: r0 = LoadStaticField(0xb20)
+17120:     //     0x870d88: ldr             x0, [THR, #0x68]  ; THR::field_table_values
+17121:     //     0x870d8c: ldr             x0, [x0, #0x1640]
+17122:     // 0x870d90: stur            x0, [fp, #-0xd8]
+17123:     // 0x870d94: cmp             w0, NULL
+17124:     // 0x870d98: b.eq            #0x871298
+17125:     // 0x870d9c: ldur            x2, [fp, #-0xe0]
+17126:     // 0x870da0: r1 = Function '<anonymous closure>':.
+17127:     //     0x870da0: add             x1, PP, #0x24, lsl #12  ; [pp+0x241b8] AnonymousClosure: (0x871988), in [package:oneness/ui/page/web_page/online_business_web_page.dart] OnlineBusinessWebPageState::body (0x8611f8)
+17128:     //     0x870da4: ldr             x1, [x1, #0x1b8]
+17129:     // 0x870da8: r0 = AllocateClosure()
+17130:     //     0x870da8: bl              #0xb1ef88  ; AllocateClosureStub
+17131:     // 0x870dac: mov             x4, x0
+17132:     // 0x870db0: ldur            x3, [fp, #-0xd8]
+17133:     // 0x870db4: r17 = -280
+17134:     //     0x870db4: mov             x17, #-0x118
+17135:     // 0x870db8: str             x4, [fp, x17]
+17136:     // 0x870dbc: LoadField: r5 = r3->field_53
+17137:     //     0x870dbc: ldur            w5, [x3, #0x53]
+17138:     // 0x870dc0: DecompressPointer r5
+17139:     //     0x870dc0: add             x5, x5, HEAP, lsl #32
+17140:     // 0x870dc4: r17 = -272
+17141:     //     0x870dc4: mov             x17, #-0x110
+17142:     // 0x870dc8: str             x5, [fp, x17]
+17143:     // 0x870dcc: LoadField: r6 = r5->field_7
+17144:     //     0x870dcc: ldur            w6, [x5, #7]
+17145:     // 0x870dd0: DecompressPointer r6
+17146:     //     0x870dd0: add             x6, x6, HEAP, lsl #32
+17147:     // 0x870dd4: mov             x0, x4
+17148:     // 0x870dd8: mov             x2, x6
+17149:     // 0x870ddc: r17 = -264
+17150:     //     0x870ddc: mov             x17, #-0x108
+17151:     // 0x870de0: str             x6, [fp, x17]
+17152:     // 0x870de4: r1 = Null
+17153:     //     0x870de4: mov             x1, NULL
+17154:     // 0x870de8: cmp             w2, NULL
+17155:     // 0x870dec: b.eq            #0x870e0c
+17156:     // 0x870df0: ArrayLoad: r4 = r2[0]  ; List_4
+17157:     //     0x870df0: ldur            w4, [x2, #0x17]
+17158:     // 0x870df4: DecompressPointer r4
+17159:     //     0x870df4: add             x4, x4, HEAP, lsl #32
+17160:     // 0x870df8: r8 = X0
+17161:     //     0x870df8: ldr             x8, [PP, #0x200]  ; [pp+0x200] TypeParameter: X0
+17162:     // 0x870dfc: LoadField: r9 = r4->field_7
+17163:     //     0x870dfc: ldur            x9, [x4, #7]
+17164:     // 0x870e00: r3 = Null
+17165:     //     0x870e00: add             x3, PP, #0x24, lsl #12  ; [pp+0x241c0] Null
+17166:     //     0x870e04: ldr             x3, [x3, #0x1c0]
+17167:     // 0x870e08: blr             x9
+17168:     // 0x870e0c: r17 = -272
+17169:     //     0x870e0c: mov             x17, #-0x110
+17170:     // 0x870e10: ldr             x0, [fp, x17]
+17171:     // 0x870e14: LoadField: r2 = r0->field_b
+17172:     //     0x870e14: ldur            w2, [x0, #0xb]
+17173:     // 0x870e18: DecompressPointer r2
+17174:     //     0x870e18: add             x2, x2, HEAP, lsl #32
+17175:     // 0x870e1c: r17 = -264
+17176:     //     0x870e1c: mov             x17, #-0x108
+17177:     // 0x870e20: str             x2, [fp, x17]
+17178:     // 0x870e24: LoadField: r1 = r0->field_f
+17179:     //     0x870e24: ldur            w1, [x0, #0xf]
+17180:     // 0x870e28: DecompressPointer r1
+17181:     //     0x870e28: add             x1, x1, HEAP, lsl #32
+17182:     // 0x870e2c: LoadField: r3 = r1->field_b
+17183:     //     0x870e2c: ldur            w3, [x1, #0xb]
+17184:     // 0x870e30: DecompressPointer r3
+17185:     //     0x870e30: add             x3, x3, HEAP, lsl #32
+17186:     // 0x870e34: r4 = LoadInt32Instr(r2)
+17187:     //     0x870e34: sbfx            x4, x2, #1, #0x1f
+17188:     // 0x870e38: stur            x4, [fp, #-0xe8]
+17189:     // 0x870e3c: r1 = LoadInt32Instr(r3)
+17190:     //     0x870e3c: sbfx            x1, x3, #1, #0x1f
+17191:     // 0x870e40: cmp             x4, x1
+17192:     // 0x870e44: b.ne            #0x870e50
+17193:     // 0x870e48: mov             x1, x0
+17194:     // 0x870e4c: r0 = _growToNextCapacity()
+17195:     //     0x870e4c: bl              #0x446ac0  ; [dart:core] _GrowableList::_growToNextCapacity
+17196:     // 0x870e50: r17 = -272
+17197:     //     0x870e50: mov             x17, #-0x110
+17198:     // 0x870e54: ldr             x2, [fp, x17]
+17199:     // 0x870e58: ldur            x3, [fp, #-0xe8]
+17200:     // 0x870e5c: add             x0, x3, #1
+17201:     // 0x870e60: lsl             x1, x0, #1
+17202:     // 0x870e64: StoreField: r2->field_b = r1
+17203:     //     0x870e64: stur            w1, [x2, #0xb]
+17204:     // 0x870e68: mov             x1, x3
+17205:     // 0x870e6c: cmp             x1, x0
+17206:     // 0x870e70: b.hs            #0x87129c
+17207:     // 0x870e74: LoadField: r1 = r2->field_f
+17208:     //     0x870e74: ldur            w1, [x2, #0xf]
+17209:     // 0x870e78: DecompressPointer r1
+17210:     //     0x870e78: add             x1, x1, HEAP, lsl #32
+17211:     // 0x870e7c: r17 = -280
+17212:     //     0x870e7c: mov             x17, #-0x118
+17213:     // 0x870e80: ldr             x0, [fp, x17]
+17214:     // 0x870e84: ArrayStore: r1[r3] = r0  ; List_4
+17215:     //     0x870e84: add             x25, x1, x3, lsl #2
+17216:     //     0x870e88: add             x25, x25, #0xf
+17217:     //     0x870e8c: str             w0, [x25]
+17218:     //     0x870e90: tbz             w0, #0, #0x870eac
+17219:     //     0x870e94: ldurb           w16, [x1, #-1]
+17220:     //     0x870e98: ldurb           w17, [x0, #-1]
+17221:     //     0x870e9c: and             x16, x17, x16, lsr #2
+17222:     //     0x870ea0: tst             x16, HEAP, lsr #32
+17223:     //     0x870ea4: b.eq            #0x870eac
+17224:     //     0x870ea8: bl              #0xb1df68  ; ArrayWriteBarrierStub
+17225:     // 0x870eac: b               #0x87116c
+17226:     // 0x870eb0: ldur            x0, [fp, #-0xd0]
+17227:     // 0x870eb4: mov             x1, x0
+17228:     // 0x870eb8: r2 = "alipays://"
+17229:     //     0x870eb8: add             x2, PP, #0x24, lsl #12  ; [pp+0x241d0] "alipays://"
+17230:     //     0x870ebc: ldr             x2, [x2, #0x1d0]
+17231:     // 0x870ec0: r4 = const [0, 0x2, 0, 0x2, null]
+17232:     //     0x870ec0: ldr             x4, [PP, #0x2f8]  ; [pp+0x2f8] List(5) [0, 0x2, 0, 0x2, Null]
+17233:     // 0x870ec4: r0 = startsWith()
+17234:     //     0x870ec4: bl              #0x446964  ; [dart:core] _StringBase::startsWith
+17235:     // 0x870ec8: tbz             w0, #4, #0x870ee4
+17236:     // 0x870ecc: ldur            x1, [fp, #-0xd0]
+17237:     // 0x870ed0: r2 = "alipay://"
+17238:     //     0x870ed0: add             x2, PP, #0x24, lsl #12  ; [pp+0x241d8] "alipay://"
+17239:     //     0x870ed4: ldr             x2, [x2, #0x1d8]
+17240:     // 0x870ed8: r4 = const [0, 0x2, 0, 0x2, null]
+17241:     //     0x870ed8: ldr             x4, [PP, #0x2f8]  ; [pp+0x2f8] List(5) [0, 0x2, 0, 0x2, Null]
+17242:     // 0x870edc: r0 = startsWith()
+17243:     //     0x870edc: bl              #0x446964  ; [dart:core] _StringBase::startsWith
+17244:     // 0x870ee0: tbnz            w0, #4, #0x871030
+17245:     // 0x870ee4: ldur            x0, [fp, #-0xd0]
+17246:     // 0x870ee8: r1 = Null
+17247:     //     0x870ee8: mov             x1, NULL
+17248:     // 0x870eec: r2 = 4
+17249:     //     0x870eec: mov             x2, #4
+17250:     // 0x870ef0: r0 = AllocateArray()
+17251:     //     0x870ef0: bl              #0xb1fc60  ; AllocateArrayStub
+17252:     // 0x870ef4: r17 = "打开支付宝应用 url = "
+17253:     //     0x870ef4: add             x17, PP, #0x24, lsl #12  ; [pp+0x241e0] "打开支付宝应用 url = "
+17254:     //     0x870ef8: ldr             x17, [x17, #0x1e0]
+17255:     // 0x870efc: StoreField: r0->field_f = r17
+17256:     //     0x870efc: stur            w17, [x0, #0xf]
+17257:     // 0x870f00: ldur            x1, [fp, #-0xd0]
+17258:     // 0x870f04: StoreField: r0->field_13 = r1
+17259:     //     0x870f04: stur            w1, [x0, #0x13]
+17260:     // 0x870f08: str             x0, [SP]
+17261:     // 0x870f0c: r0 = _interpolate()
+17262:     //     0x870f0c: bl              #0x43c8e8  ; [dart:core] _StringBase::_interpolate
+17263:     // 0x870f10: ldur            x1, [fp, #-0xd0]
+17264:     // 0x870f14: r4 = const [0, 0x1, 0, 0x1, null]
+17265:     //     0x870f14: ldr             x4, [PP, #0x560]  ; [pp+0x560] List(5) [0, 0x1, 0, 0x1, Null]
+17266:     // 0x870f18: r0 = parse()
+17267:     //     0x870f18: bl              #0x45ee00  ; [dart:core] Uri::parse
+17268:     // 0x870f1c: ldur            x1, [fp, #-0xd0]
+17269:     // 0x870f20: stur            x0, [fp, #-0xd8]
+17270:     // 0x870f24: r0 = encodeComponent()
+17271:     //     0x870f24: bl              #0x805580  ; [dart:core] Uri::encodeComponent
+17272:     // 0x870f28: mov             x1, x0
+17273:     // 0x870f2c: r2 = "alipays"
+17274:     //     0x870f2c: add             x2, PP, #0x24, lsl #12  ; [pp+0x241e8] "alipays"
+17275:     //     0x870f30: ldr             x2, [x2, #0x1e8]
+17276:     // 0x870f34: r3 = "ydapp.bjut.edu.cn"
+17277:     //     0x870f34: add             x3, PP, #0x24, lsl #12  ; [pp+0x24158] "ydapp.bjut.edu.cn"
+17278:     //     0x870f38: ldr             x3, [x3, #0x158]
+17279:     // 0x870f3c: r0 = replaceAll()
+17280:     //     0x870f3c: bl              #0x447a44  ; [dart:core] _StringBase::replaceAll
+17281:     // 0x870f40: mov             x1, x0
+17282:     // 0x870f44: r2 = "alipay://alipayclient/\?"
+17283:     //     0x870f44: add             x2, PP, #0x24, lsl #12  ; [pp+0x241f0] "alipay://alipayclient/\?"
+17284:     //     0x870f48: ldr             x2, [x2, #0x1f0]
+17285:     // 0x870f4c: r17 = -264
+17286:     //     0x870f4c: mov             x17, #-0x108
+17287:     // 0x870f50: str             x0, [fp, x17]
+17288:     // 0x870f54: r4 = const [0, 0x2, 0, 0x2, null]
+17289:     //     0x870f54: ldr             x4, [PP, #0x2f8]  ; [pp+0x2f8] List(5) [0, 0x2, 0, 0x2, Null]
+17290:     // 0x870f58: r0 = startsWith()
+17291:     //     0x870f58: bl              #0x446964  ; [dart:core] _StringBase::startsWith
+17292:     // 0x870f5c: tbnz            w0, #4, #0x870fd0
+17293:     // 0x870f60: r17 = -264
+17294:     //     0x870f60: mov             x17, #-0x108
+17295:     // 0x870f64: ldr             x1, [fp, x17]
+17296:     // 0x870f68: r2 = 23
+17297:     //     0x870f68: mov             x2, #0x17
+17298:     // 0x870f6c: r4 = const [0, 0x2, 0, 0x2, null]
+17299:     //     0x870f6c: ldr             x4, [PP, #0x2f8]  ; [pp+0x2f8] List(5) [0, 0x2, 0, 0x2, Null]
+17300:     // 0x870f70: r0 = substring()
+17301:     //     0x870f70: bl              #0x43e600  ; [dart:core] _StringBase::substring
+17302:     // 0x870f74: r16 = "alipay://alipayclient/\?"
+17303:     //     0x870f74: add             x16, PP, #0x24, lsl #12  ; [pp+0x241f0] "alipay://alipayclient/\?"
+17304:     //     0x870f78: ldr             x16, [x16, #0x1f0]
+17305:     // 0x870f7c: stp             x0, x16, [SP]
+17306:     // 0x870f80: r0 = +()
+17307:     //     0x870f80: bl              #0x43cbc4  ; [dart:core] _StringBase::+
+17308:     // 0x870f84: r1 = Null
+17309:     //     0x870f84: mov             x1, NULL
+17310:     // 0x870f88: r2 = 4
+17311:     //     0x870f88: mov             x2, #4
+17312:     // 0x870f8c: r17 = -264
+17313:     //     0x870f8c: mov             x17, #-0x108
+17314:     // 0x870f90: str             x0, [fp, x17]
+17315:     // 0x870f94: r0 = AllocateArray()
+17316:     //     0x870f94: bl              #0xb1fc60  ; AllocateArrayStub
+17317:     // 0x870f98: r17 = "打开支付宝应用 encodedString = "
+17318:     //     0x870f98: add             x17, PP, #0x24, lsl #12  ; [pp+0x241f8] "打开支付宝应用 encodedString = "
+17319:     //     0x870f9c: ldr             x17, [x17, #0x1f8]
+17320:     // 0x870fa0: StoreField: r0->field_f = r17
+17321:     //     0x870fa0: stur            w17, [x0, #0xf]
+17322:     // 0x870fa4: r17 = -264
+17323:     //     0x870fa4: mov             x17, #-0x108
+17324:     // 0x870fa8: ldr             x1, [fp, x17]
+17325:     // 0x870fac: StoreField: r0->field_13 = r1
+17326:     //     0x870fac: stur            w1, [x0, #0x13]
+17327:     // 0x870fb0: str             x0, [SP]
+17328:     // 0x870fb4: r0 = _interpolate()
+17329:     //     0x870fb4: bl              #0x43c8e8  ; [dart:core] _StringBase::_interpolate
+17330:     // 0x870fb8: r17 = -264
+17331:     //     0x870fb8: mov             x17, #-0x108
+17332:     // 0x870fbc: ldr             x1, [fp, x17]
+17333:     // 0x870fc0: r4 = const [0, 0x1, 0, 0x1, null]
+17334:     //     0x870fc0: ldr             x4, [PP, #0x560]  ; [pp+0x560] List(5) [0, 0x1, 0, 0x1, Null]
+17335:     // 0x870fc4: r0 = parse()
+17336:     //     0x870fc4: bl              #0x45ee00  ; [dart:core] Uri::parse
+17337:     // 0x870fc8: mov             x1, x0
+17338:     // 0x870fcc: b               #0x870fd4
+17339:     // 0x870fd0: ldur            x1, [fp, #-0xd8]
+17340:     // 0x870fd4: r16 = Instance_LaunchMode
+17341:     //     0x870fd4: add             x16, PP, #0x24, lsl #12  ; [pp+0x241a0] Obj!LaunchMode@a78151
+17342:     //     0x870fd8: ldr             x16, [x16, #0x1a0]
+17343:     // 0x870fdc: str             x16, [SP]
+17344:     // 0x870fe0: r4 = const [0, 0x2, 0x1, 0x1, mode, 0x1, null]
+17345:     //     0x870fe0: add             x4, PP, #0x18, lsl #12  ; [pp+0x18d10] List(7) [0, 0x2, 0x1, 0x1, "mode", 0x1, Null]
+17346:     //     0x870fe4: ldr             x4, [x4, #0xd10]
+17347:     // 0x870fe8: r0 = launchUrl()
+17348:     //     0x870fe8: bl              #0x6e8ecc  ; [package:url_launcher/src/url_launcher_uri.dart] ::launchUrl
+17349:     // 0x870fec: mov             x1, x0
+17350:     // 0x870ff0: stur            x1, [fp, #-0xd8]
+17351:     // 0x870ff4: r0 = Await()
+17352:     //     0x870ff4: bl              #0x4999e8  ; AwaitStub
+17353:     // 0x870ff8: mov             x1, x0
+17354:     // 0x870ffc: stur            x1, [fp, #-0xd8]
+17355:     // 0x871000: tbnz            w0, #5, #0x871008
+17356:     // 0x871004: r0 = AssertBoolean()
+17357:     //     0x871004: bl              #0xb1defc  ; AssertBooleanStub
+17358:     // 0x871008: ldur            x0, [fp, #-0xd8]
+17359:     // 0x87100c: tbz             w0, #4, #0x8711a8
+17360:     // 0x871010: r1 = Function '<anonymous closure>':.
+17361:     //     0x871010: add             x1, PP, #0x24, lsl #12  ; [pp+0x24200] AnonymousClosure: (0x871924), in [package:oneness/ui/page/web_page/online_business_web_page.dart] OnlineBusinessWebPageState::body (0x8611f8)
+17362:     //     0x871014: ldr             x1, [x1, #0x200]
+17363:     // 0x871018: r2 = Null
+17364:     //     0x871018: mov             x2, NULL
+17365:     // 0x87101c: r0 = AllocateClosure()
+17366:     //     0x87101c: bl              #0xb1ef88  ; AllocateClosureStub
+17367:     // 0x871020: stp             x0, NULL, [SP]
+17368:     // 0x871024: r4 = const [0x1, 0x1, 0x1, 0x1, null]
+17369:     //     0x871024: ldr             x4, [PP, #0xa08]  ; [pp+0xa08] List(5) [0x1, 0x1, 0x1, 0x1, Null]
+17370:     // 0x871028: r0 = show()
+17371:     //     0x871028: bl              #0x6d142c  ; [package:flutter_smart_dialog/src/smart_dialog.dart] SmartDialog::show
+17372:     // 0x87102c: b               #0x8711a8
+17373:     // 0x871030: ldur            x0, [fp, #-0xc8]
+17374:     // 0x871034: LoadField: r1 = r0->field_1f
+17375:     //     0x871034: ldur            w1, [x0, #0x1f]
+17376:     // 0x871038: DecompressPointer r1
+17377:     //     0x871038: add             x1, x1, HEAP, lsl #32
+17378:     // 0x87103c: tbz             w1, #4, #0x87104c
+17379:     // 0x871040: r0 = Instance_NavigationActionPolicy
+17380:     //     0x871040: add             x0, PP, #0x20, lsl #12  ; [pp+0x20b48] Obj!NavigationActionPolicy@a62291
+17381:     //     0x871044: ldr             x0, [x0, #0xb48]
+17382:     // 0x871048: r0 = ReturnAsyncNotFuture()
+17383:     //     0x871048: b               #0x499834  ; ReturnAsyncNotFutureStub
+17384:     // 0x87104c: ldur            x3, [fp, #-0xc0]
+17385:     // 0x871050: LoadField: r1 = r0->field_2f
+17386:     //     0x871050: ldur            w1, [x0, #0x2f]
+17387:     // 0x871054: DecompressPointer r1
+17388:     //     0x871054: add             x1, x1, HEAP, lsl #32
+17389:     // 0x871058: r16 = true
+17390:     //     0x871058: add             x16, NULL, #0x20  ; true
+17391:     // 0x87105c: cmp             w1, w16
+17392:     // 0x871060: r16 = true
+17393:     //     0x871060: add             x16, NULL, #0x20  ; true
+17394:     // 0x871064: r17 = false
+17395:     //     0x871064: add             x17, NULL, #0x30  ; false
+17396:     // 0x871068: csel            x0, x16, x17, eq
+17397:     // 0x87106c: stur            x0, [fp, #-0xc8]
+17398:     // 0x871070: LoadField: r1 = r3->field_f
+17399:     //     0x871070: ldur            w1, [x3, #0xf]
+17400:     // 0x871074: DecompressPointer r1
+17401:     //     0x871074: add             x1, x1, HEAP, lsl #32
+17402:     // 0x871078: ldur            x2, [fp, #-0xd0]
+17403:     // 0x87107c: r0 = _isDownloadRequestUrl()
+17404:     //     0x87107c: bl              #0x868f18  ; [package:oneness/ui/page/web_page/online_business_web_page.dart] OnlineBusinessWebPageState::_isDownloadRequestUrl
+17405:     // 0x871080: mov             x1, x0
+17406:     // 0x871084: ldur            x0, [fp, #-0xc8]
+17407:     // 0x871088: tbz             w0, #4, #0x871090
+17408:     // 0x87108c: tbnz            w1, #4, #0x871124
+17409:     // 0x871090: ldur            x3, [fp, #-0xc0]
+17410:     // 0x871094: ldur            x4, [fp, #-0xd0]
+17411:     // 0x871098: r1 = Null
+17412:     //     0x871098: mov             x1, NULL
+17413:     // 0x87109c: r2 = 12
+17414:     //     0x87109c: mov             x2, #0xc
+17415:     // 0x8710a0: r0 = AllocateArray()

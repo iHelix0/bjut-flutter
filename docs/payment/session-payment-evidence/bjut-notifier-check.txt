@@ -1,0 +1,220 @@
+Source: asm/oneness/notifier/bjut/bjut_mine_notifier.dart
+APK SHA256: 33fdd04e8de0fdd5cbd2fef0a941c79fd2ce6f68420c5fb4c596a3ad08b99784
+
+Source lines 327-463:
+327:   [closure] Future<void> <anonymous closure>(dynamic) async {
+328:     // ** addr: 0x4bdd44, size: 0x78
+329:     // 0x4bdd44: EnterFrame
+330:     //     0x4bdd44: stp             fp, lr, [SP, #-0x10]!
+331:     //     0x4bdd48: mov             fp, SP
+332:     // 0x4bdd4c: AllocStack(0x20)
+333:     //     0x4bdd4c: sub             SP, SP, #0x20
+334:     // 0x4bdd50: SetupParameters(BjutCheckLoginStatusNotifier this /* r1 */)
+335:     //     0x4bdd50: stur            NULL, [fp, #-8]
+336:     //     0x4bdd54: mov             x0, #0
+337:     //     0x4bdd58: add             x1, fp, w0, sxtw #2
+338:     //     0x4bdd5c: ldr             x1, [x1, #0x10]
+339:     //     0x4bdd60: ldur            w2, [x1, #0x17]
+340:     //     0x4bdd64: add             x2, x2, HEAP, lsl #32
+341:     //     0x4bdd68: stur            x2, [fp, #-0x10]
+342:     // 0x4bdd6c: CheckStackOverflow
+343:     //     0x4bdd6c: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+344:     //     0x4bdd70: cmp             SP, x16
+345:     //     0x4bdd74: b.ls            #0x4bddb4
+346:     // 0x4bdd78: InitAsync() -> Future<void?>
+347:     //     0x4bdd78: ldr             x0, [PP, #0x18f0]  ; [pp+0x18f0] TypeArguments: <void?>
+348:     //     0x4bdd7c: bl              #0x499c28  ; InitAsyncStub
+349:     // 0x4bdd80: ldur            x0, [fp, #-0x10]
+350:     // 0x4bdd84: LoadField: r1 = r0->field_f
+351:     //     0x4bdd84: ldur            w1, [x0, #0xf]
+352:     // 0x4bdd88: DecompressPointer r1
+353:     //     0x4bdd88: add             x1, x1, HEAP, lsl #32
+354:     // 0x4bdd8c: r16 = false
+355:     //     0x4bdd8c: add             x16, NULL, #0x30  ; false
+356:     // 0x4bdd90: str             x16, [SP]
+357:     // 0x4bdd94: r4 = const [0, 0x2, 0x1, 0x1, showLoading, 0x1, null]
+358:     //     0x4bdd94: add             x4, PP, #0x1c, lsl #12  ; [pp+0x1c3b0] List(7) [0, 0x2, 0x1, 0x1, "showLoading", 0x1, Null]
+359:     //     0x4bdd98: ldr             x4, [x4, #0x3b0]
+360:     // 0x4bdd9c: r0 = checkLoginStatus()
+361:     //     0x4bdd9c: bl              #0x4bddbc  ; [package:oneness/notifier/bjut/bjut_mine_notifier.dart] BjutCheckLoginStatusNotifier::checkLoginStatus
+362:     // 0x4bdda0: mov             x1, x0
+363:     // 0x4bdda4: stur            x1, [fp, #-0x18]
+364:     // 0x4bdda8: r0 = Await()
+365:     //     0x4bdda8: bl              #0x4999e8  ; AwaitStub
+366:     // 0x4bddac: r0 = Null
+367:     //     0x4bddac: mov             x0, NULL
+368:     // 0x4bddb0: r0 = ReturnAsyncNotFuture()
+369:     //     0x4bddb0: b               #0x499834  ; ReturnAsyncNotFutureStub
+370:     // 0x4bddb4: r0 = StackOverflowSharedWithoutFPURegs()
+371:     //     0x4bddb4: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+372:     // 0x4bddb8: b               #0x4bdd78
+373:   }
+374:   _ checkLoginStatus(/* No info */) async {
+375:     // ** addr: 0x4bddbc, size: 0x100
+376:     // 0x4bddbc: EnterFrame
+377:     //     0x4bddbc: stp             fp, lr, [SP, #-0x10]!
+378:     //     0x4bddc0: mov             fp, SP
+379:     // 0x4bddc4: AllocStack(0x18)
+380:     //     0x4bddc4: sub             SP, SP, #0x18
+381:     // 0x4bddc8: SetupParameters(BjutCheckLoginStatusNotifier this /* r1 => r1, fp-0x18 */, {dynamic showLoading = true /* r2, fp-0x10 */})
+382:     //     0x4bddc8: stur            NULL, [fp, #-8]
+383:     //     0x4bddcc: stur            x1, [fp, #-0x18]
+384:     //     0x4bddd0: ldur            w0, [x4, #0x13]
+385:     //     0x4bddd4: add             x0, x0, HEAP, lsl #32
+386:     //     0x4bddd8: ldur            w2, [x4, #0x1f]
+387:     //     0x4bdddc: add             x2, x2, HEAP, lsl #32
+388:     //     0x4bdde0: add             x16, PP, #0x1c, lsl #12  ; [pp+0x1c3b8] "showLoading"
+389:     //     0x4bdde4: ldr             x16, [x16, #0x3b8]
+390:     //     0x4bdde8: cmp             w2, w16
+391:     //     0x4bddec: b.ne            #0x4bde0c
+392:     //     0x4bddf0: ldur            w2, [x4, #0x23]
+393:     //     0x4bddf4: add             x2, x2, HEAP, lsl #32
+394:     //     0x4bddf8: sub             w3, w0, w2
+395:     //     0x4bddfc: add             x0, fp, w3, sxtw #2
+396:     //     0x4bde00: ldr             x0, [x0, #8]
+397:     //     0x4bde04: mov             x2, x0
+398:     //     0x4bde08: b               #0x4bde10
+399:     //     0x4bde0c: add             x2, NULL, #0x20  ; true
+400:     //     0x4bde10: stur            x2, [fp, #-0x10]
+401:     // 0x4bde14: CheckStackOverflow
+402:     //     0x4bde14: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+403:     //     0x4bde18: cmp             SP, x16
+404:     //     0x4bde1c: b.ls            #0x4bdea8
+405:     // 0x4bde20: InitAsync() -> Future<EmptyEntity>
+406:     //     0x4bde20: add             x0, PP, #0x1c, lsl #12  ; [pp+0x1c3c0] TypeArguments: <EmptyEntity>
+407:     //     0x4bde24: ldr             x0, [x0, #0x3c0]
+408:     //     0x4bde28: bl              #0x499c28  ; InitAsyncStub
+409:     // 0x4bde2c: ldur            x0, [fp, #-0x10]
+410:     // 0x4bde30: tbnz            w0, #4, #0x4bde58
+411:     // 0x4bde34: ldur            x0, [fp, #-0x18]
+412:     // 0x4bde38: LoadField: r1 = r0->field_b
+413:     //     0x4bde38: ldur            w1, [x0, #0xb]
+414:     // 0x4bde3c: DecompressPointer r1
+415:     //     0x4bde3c: add             x1, x1, HEAP, lsl #32
+416:     // 0x4bde40: r16 = Sentinel
+417:     //     0x4bde40: ldr             x16, [PP, #0x40]  ; [pp+0x40] Sentinel
+418:     // 0x4bde44: cmp             w1, w16
+419:     // 0x4bde48: b.eq            #0x4bdeb0
+420:     // 0x4bde4c: r2 = Instance_AsyncLoading
+421:     //     0x4bde4c: add             x2, PP, #0x1c, lsl #12  ; [pp+0x1c3c8] Obj!AsyncLoading<EmptyEntity>@a5fcf1
+422:     //     0x4bde50: ldr             x2, [x2, #0x3c8]
+423:     // 0x4bde54: r0 = state=()
+424:     //     0x4bde54: bl              #0x5750d4  ; [package:riverpod/src/async_notifier.dart] _AsyncNotifierProviderElementBase&ProviderElementBase&FutureHandlerProviderElementMixin::state=
+425:     // 0x4bde58: r0 = BjutNetRepository()
+426:     //     0x4bde58: bl              #0x5750c8  ; AllocateBjutNetRepositoryStub -> BjutNetRepository (size=0x8)
+427:     // 0x4bde5c: mov             x1, x0
+428:     // 0x4bde60: r0 = checkToken()
+429:     //     0x4bde60: bl              #0x4be370  ; [package:oneness/net/bjut/bjut_net_repository.dart] BjutNetRepository::checkToken
+430:     // 0x4bde64: mov             x1, x0
+431:     // 0x4bde68: stur            x1, [fp, #-0x10]
+432:     // 0x4bde6c: r0 = Await()
+433:     //     0x4bde6c: bl              #0x4999e8  ; AwaitStub
+434:     // 0x4bde70: r1 = <EmptyEntity>
+435:     //     0x4bde70: add             x1, PP, #0x1c, lsl #12  ; [pp+0x1c3c0] TypeArguments: <EmptyEntity>
+436:     //     0x4bde74: ldr             x1, [x1, #0x3c0]
+437:     // 0x4bde78: stur            x0, [fp, #-0x10]
+438:     // 0x4bde7c: r0 = AsyncData()
+439:     //     0x4bde7c: bl              #0x4bdf50  ; AllocateAsyncDataStub -> AsyncData<X0> (size=0x1c)
+440:     // 0x4bde80: mov             x1, x0
+441:     // 0x4bde84: ldur            x0, [fp, #-0x10]
+442:     // 0x4bde88: StoreField: r1->field_b = r0
+443:     //     0x4bde88: stur            w0, [x1, #0xb]
+444:     // 0x4bde8c: r2 = false
+445:     //     0x4bde8c: add             x2, NULL, #0x30  ; false
+446:     // 0x4bde90: StoreField: r1->field_f = r2
+447:     //     0x4bde90: stur            w2, [x1, #0xf]
+448:     // 0x4bde94: mov             x2, x1
+449:     // 0x4bde98: ldur            x1, [fp, #-0x18]
+450:     // 0x4bde9c: r0 = state=()
+451:     //     0x4bde9c: bl              #0x4bdebc  ; [package:riverpod/src/async_notifier.dart] AsyncNotifierBase::state=
+452:     // 0x4bdea0: ldur            x0, [fp, #-0x10]
+453:     // 0x4bdea4: r0 = ReturnAsync()
+454:     //     0x4bdea4: b               #0x47c5d4  ; ReturnAsyncStub
+455:     // 0x4bdea8: r0 = StackOverflowSharedWithoutFPURegs()
+456:     //     0x4bdea8: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+457:     // 0x4bdeac: b               #0x4bde20
+458:     // 0x4bdeb0: r9 = _element
+459:     //     0x4bdeb0: add             x9, PP, #0x1c, lsl #12  ; [pp+0x1c3a8] Field <BuildlessAsyncNotifier._element@1068502701>: late final (offset: 0xc)
+460:     //     0x4bdeb4: ldr             x9, [x9, #0x3a8]
+461:     // 0x4bdeb8: r0 = LateInitializationErrorSharedWithoutFPURegs()
+462:     //     0x4bdeb8: bl              #0xb20598  ; LateInitializationErrorSharedWithoutFPURegsStub
+463:   }
+
+Source lines 513-589:
+513:   _ waitForWarmUp(/* No info */) {
+514:     // ** addr: 0xa61610, size: 0xc8
+515:     // 0xa61610: EnterFrame
+516:     //     0xa61610: stp             fp, lr, [SP, #-0x10]!
+517:     //     0xa61614: mov             fp, SP
+518:     // 0xa61618: AllocStack(0x30)
+519:     //     0xa61618: sub             SP, SP, #0x30
+520:     // 0xa6161c: SetupParameters(BjutCheckLoginStatusNotifier this /* r1 => r1, fp-0x8 */)
+521:     //     0xa6161c: stur            x1, [fp, #-8]
+522:     // 0xa61620: CheckStackOverflow
+523:     //     0xa61620: ldr             x16, [THR, #0x38]  ; THR::stack_limit
+524:     //     0xa61624: cmp             SP, x16
+525:     //     0xa61628: b.ls            #0xa616c4
+526:     // 0xa6162c: r1 = 1
+527:     //     0xa6162c: mov             x1, #1
+528:     // 0xa61630: r0 = AllocateContext()
+529:     //     0xa61630: bl              #0xb1ebc4  ; AllocateContextStub
+530:     // 0xa61634: mov             x1, x0
+531:     // 0xa61638: ldur            x0, [fp, #-8]
+532:     // 0xa6163c: stur            x1, [fp, #-0x18]
+533:     // 0xa61640: StoreField: r1->field_f = r0
+534:     //     0xa61640: stur            w0, [x1, #0xf]
+535:     // 0xa61644: LoadField: r2 = r0->field_b
+536:     //     0xa61644: ldur            w2, [x0, #0xb]
+537:     // 0xa61648: DecompressPointer r2
+538:     //     0xa61648: add             x2, x2, HEAP, lsl #32
+539:     // 0xa6164c: r16 = Sentinel
+540:     //     0xa6164c: ldr             x16, [PP, #0x40]  ; [pp+0x40] Sentinel
+541:     // 0xa61650: cmp             w2, w16
+542:     // 0xa61654: b.eq            #0xa616cc
+543:     // 0xa61658: stur            x2, [fp, #-0x10]
+544:     // 0xa6165c: r0 = InitLateStaticField(0x1268) // [package:oneness/notifier/bjut/bjut_mine_notifier.dart] ::bjutSessionWarmupManagerProvider
+545:     //     0xa6165c: ldr             x0, [THR, #0x68]  ; THR::field_table_values
+546:     //     0xa61660: ldr             x0, [x0, #0x24d0]
+547:     //     0xa61664: ldr             x16, [PP, #0x40]  ; [pp+0x40] Sentinel
+548:     //     0xa61668: cmp             w0, w16
+549:     //     0xa6166c: b.ne            #0xa6167c
+550:     //     0xa61670: add             x2, PP, #0x1c, lsl #12  ; [pp+0x1c388] Field <::.bjutSessionWarmupManagerProvider>: static late final (offset: 0x1268)
+551:     //     0xa61674: ldr             x2, [x2, #0x388]
+552:     //     0xa61678: bl              #0xb1dde8  ; InitLateFinalStaticFieldStub
+553:     // 0xa6167c: r16 = <BjutSessionWarmupManager>
+554:     //     0xa6167c: add             x16, PP, #0x1c, lsl #12  ; [pp+0x1c390] TypeArguments: <BjutSessionWarmupManager>
+555:     //     0xa61680: ldr             x16, [x16, #0x390]
+556:     // 0xa61684: ldur            lr, [fp, #-0x10]
+557:     // 0xa61688: stp             lr, x16, [SP, #8]
+558:     // 0xa6168c: str             x0, [SP]
+559:     // 0xa61690: r4 = const [0x1, 0x2, 0x2, 0x2, null]
+560:     //     0xa61690: ldr             x4, [PP, #0x58]  ; [pp+0x58] List(5) [0x1, 0x2, 0x2, 0x2, Null]
+561:     // 0xa61694: r0 = read()
+562:     //     0xa61694: bl              #0x4bd920  ; [package:riverpod/src/framework.dart] ProviderElementBase::read
+563:     // 0xa61698: ldur            x2, [fp, #-0x18]
+564:     // 0xa6169c: r1 = Function '<anonymous closure>':.
+565:     //     0xa6169c: add             x1, PP, #0x2e, lsl #12  ; [pp+0x2e160] AnonymousClosure: (0x4bdd44), in [package:oneness/notifier/bjut/bjut_mine_notifier.dart] BjutCheckLoginStatusNotifier::warmUpSession (0x4bd578)
+566:     //     0xa616a0: ldr             x1, [x1, #0x160]
+567:     // 0xa616a4: stur            x0, [fp, #-8]
+568:     // 0xa616a8: r0 = AllocateClosure()
+569:     //     0xa616a8: bl              #0xb1ef88  ; AllocateClosureStub
+570:     // 0xa616ac: ldur            x1, [fp, #-8]
+571:     // 0xa616b0: mov             x2, x0
+572:     // 0xa616b4: r0 = waitOrStart()
+573:     //     0xa616b4: bl              #0xa616d8  ; [package:oneness/utils/bjut_session_warmup_manager.dart] BjutSessionWarmupManager::waitOrStart
+574:     // 0xa616b8: LeaveFrame
+575:     //     0xa616b8: mov             SP, fp
+576:     //     0xa616bc: ldp             fp, lr, [SP], #0x10
+577:     // 0xa616c0: ret
+578:     //     0xa616c0: ret             
+579:     // 0xa616c4: r0 = StackOverflowSharedWithoutFPURegs()
+580:     //     0xa616c4: bl              #0xb1fd68  ; StackOverflowSharedWithoutFPURegsStub
+581:     // 0xa616c8: b               #0xa6162c
+582:     // 0xa616cc: r9 = _element
+583:     //     0xa616cc: add             x9, PP, #0x1c, lsl #12  ; [pp+0x1c3a8] Field <BuildlessAsyncNotifier._element@1068502701>: late final (offset: 0xc)
+584:     //     0xa616d0: ldr             x9, [x9, #0x3a8]
+585:     // 0xa616d4: r0 = LateInitializationErrorSharedWithoutFPURegs()
+586:     //     0xa616d4: bl              #0xb20598  ; LateInitializationErrorSharedWithoutFPURegsStub
+587:   }
+588: }
+589: 
